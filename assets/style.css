@@ -7,6 +7,9 @@
   --card:#ffffff;
   --line:#e6eaf2;
   --shadow:0 12px 30px rgba(15,23,42,.08);
+  --shadow2:0 18px 40px rgba(15,23,42,.12);
+  --accent:#eef2ff;
+  --accentLine:#dde3ff;
 }
 
 *{box-sizing:border-box}
@@ -20,6 +23,7 @@ body{
 a{color:inherit;text-decoration:none}
 .container{max-width:1120px;margin:0 auto;padding:0 20px}
 
+/* Header */
 .topbar{
   position:sticky; top:0; z-index:50;
   background:rgba(255,255,255,.92);
@@ -29,34 +33,45 @@ a{color:inherit;text-decoration:none}
 .topbar-inner{
   height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px;
 }
-.brand{display:flex; align-items:center; gap:10px; font-weight:900}
-.logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy2));box-shadow:0 10px 20px rgba(31,45,90,.25)}
+.brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:-.2px}
+.brand-logo{
+  width:34px; height:34px; border-radius:10px; display:block;
+  object-fit:cover;
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 10px 20px rgba(31,45,90,.14);
+}
 .nav{display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-size:14px}
 .nav a{padding:10px 8px;border-radius:10px}
-.nav a:hover{background:#eef2ff;color:var(--text)}
+.nav a:hover{background:var(--accent);color:var(--text)}
+.nav a.active{background:var(--accent); color:var(--text); border:1px solid var(--accentLine)}
 .cta{display:flex; gap:10px; align-items:center}
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding:10px 14px; border-radius:12px;
   border:1px solid var(--line); background:#fff;
   font-size:14px; font-weight:800;
+  cursor:pointer;
 }
 .btn.primary{
   border:1px solid transparent;
   background:linear-gradient(135deg,var(--navy),var(--navy2));
-  color:#fff; box-shadow:0 12px 22px rgba(31,45,90,.22);
+  color:#fff;
+  box-shadow:0 12px 22px rgba(31,45,90,.22);
 }
 .btn:hover{transform:translateY(-1px)}
 .btn:active{transform:translateY(0)}
 
+/* Hero */
 .hero{
-  background:radial-gradient(1200px 450px at 50% 0%, rgba(255,255,255,.18), rgba(255,255,255,0) 60%),
-             linear-gradient(135deg,var(--navy),var(--navy2));
-  color:#fff; padding:72px 0 56px;
+  background:
+    radial-gradient(1200px 450px at 50% 0%, rgba(255,255,255,.18), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg,var(--navy),var(--navy2));
+  color:#fff;
+  padding:72px 0 56px;
 }
 .hero-grid{display:grid; grid-template-columns:1.25fr .75fr; gap:22px; align-items:center}
 .hero h1{margin:0; font-size:46px; letter-spacing:-1px; line-height:1.1}
-.hero p{margin:14px 0 0; color:rgba(255,255,255,.86); line-height:1.6; max-width:56ch}
+.hero p{margin:14px 0 0; color:rgba(255,255,255,.86); line-height:1.7; max-width:60ch}
 .pill{
   display:inline-flex; gap:10px; align-items:center;
   padding:14px 16px; border-radius:18px;
@@ -69,25 +84,38 @@ a{color:inherit;text-decoration:none}
 .stat .k{font-size:12px;color:rgba(255,255,255,.75)}
 .stat .v{font-size:20px;font-weight:900;margin-top:6px}
 
+/* Layout */
 section{padding:52px 0}
 .section-head{display:flex; justify-content:space-between; gap:14px; align-items:flex-end; margin-bottom:18px}
 .section-head h2{margin:0; font-size:22px; letter-spacing:-.4px}
-.section-head p{margin:0; color:var(--muted); font-size:14px; line-height:1.5}
+.section-head p{margin:0; color:var(--muted); font-size:14px; line-height:1.6}
 
 .card{
-  background:var(--card); border:1px solid var(--line); border-radius:18px;
-  box-shadow:var(--shadow); padding:18px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:18px;
+  transition:transform .15s ease, box-shadow .15s ease;
 }
+.card:hover{transform:translateY(-3px); box-shadow:var(--shadow2)}
 .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
 .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
 .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
 .tag{
   display:inline-flex; padding:6px 10px; border-radius:999px;
   font-size:12px; font-weight:800;
-  background:#eef2ff; border:1px solid #dde3ff; color:#334155;
+  background:var(--accent); border:1px solid var(--accentLine); color:#334155;
 }
 .card h3{margin:12px 0 6px; font-size:16px}
-.card p{margin:0; color:var(--muted); font-size:13px; line-height:1.55}
+.card p{margin:0; color:var(--muted); font-size:13px; line-height:1.65}
+
+.kv{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+.kv .card h3{margin-top:8px}
 
 .item{
   background:#fff; border:1px solid var(--line); border-radius:16px;
@@ -100,8 +128,45 @@ section{padding:52px 0}
 
 .page-title{padding:28px 0 0}
 .page-title h1{margin:0; font-size:30px; letter-spacing:-.6px}
-.page-title p{margin:10px 0 0; color:var(--muted); line-height:1.6}
+.page-title p{margin:10px 0 0; color:var(--muted); line-height:1.75; max-width:78ch}
 
+.hr{height:1px;background:var(--line); margin:18px 0}
+
+.note{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.7;
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px 16px;
+  box-shadow:0 10px 24px rgba(15,23,42,.05);
+}
+
+/* Forms */
+form{
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+label{font-size:12px; font-weight:900; color:#334155}
+input, textarea{
+  width:100%;
+  margin-top:6px;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  outline:none;
+  font-size:14px;
+  background:#fff;
+}
+textarea{min-height:120px; resize:vertical}
+.full{grid-column:1/-1}
+
+/* Footer */
 footer{
   margin-top:26px;
   padding:26px 0;
@@ -111,11 +176,14 @@ footer{
 footer small{color:rgba(255,255,255,.7)}
 footer .fgrid{display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
 
+/* Responsive */
 @media (max-width:920px){
   .hero-grid{grid-template-columns:1fr}
   .grid-4{grid-template-columns:repeat(2,1fr)}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
+  .kv{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
   .nav{display:none}
 }
 @media (max-width:520px){
