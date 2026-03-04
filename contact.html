@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>문의 | 집현전21</title>
-  <meta name="description" content="집현전21 문의 — 회원가입/후원/협력/프로젝트 제안 접수" />
+  <meta name="description" content="회원가입·후원·협력 문의" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
+  <a class="skip" href="#main">본문으로 바로가기</a>
+
   <div class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="집현전21 홈">
@@ -17,106 +18,107 @@
       </a>
 
       <nav class="nav" aria-label="주요 메뉴">
+        <a href="index.html">홈</a>
         <a href="about.html">기관소개</a>
-        <a href="research.html">사업</a>
-        <a href="education.html">지식교류</a>
-        <a href="publication.html">발간</a>
+        <a href="research.html">사업·연구</a>
+        <a href="education.html">교육·세미나</a>
+        <a href="publication.html">발간물</a>
         <a href="notice.html">공지</a>
         <a class="active" href="contact.html">문의</a>
       </nav>
 
       <div class="cta">
-        <a class="btn" href="contact.html">회원/협력</a>
-        <a class="btn primary" href="research.html">사업 보기</a>
+        <a class="btn gold" href="about.html">기관소개</a>
+        <a class="btn primary" href="research.html">사업·연구</a>
       </div>
     </div>
   </div>
 
-  <div class="container page-title">
-    <h1>문의</h1>
-    <p>
-      회원 가입(정회원/일반회원/후원회원), 협력 제안, 프로젝트 제안, 발간물 제보 등
-      집현전21에 관한 모든 문의를 접수합니다.
-      GitHub Pages 환경에서는 서버 전송이 어려워 <b>이메일(mailto)</b> 방식으로 연결됩니다.
-    </p>
-  </div>
+  <header class="page-hero">
+    <div class="container page-title">
+      <h1>문의</h1>
+      <p>회원가입·후원·협력 제안 등, 모든 문의를 한 곳에서 접수합니다.</p>
+    </div>
+  </header>
 
-  <section>
-    <div class="container">
-      <div class="grid-2">
-        <div class="card">
-          <span class="tag">Membership</span>
-          <h3>회원 안내(정관 근거)</h3>
-          <p>
-            회원은 정회원·일반회원·후원회원으로 구분합니다(정관 제5조).
-            정회원은 총회의결권이 부여되며, 회비 납부 및 규정 준수 의무가 있습니다(제6조).
-          </p>
-          <div class="hr"></div>
-          <div class="item">
-            <div>
-              <div class="title">정회원</div>
-              <div class="meta">이사회 승인 · 회비 납부 · 정기 활동 참여 · 의결권</div>
-            </div>
-            <div class="badge">Voting</div>
-          </div>
-          <div style="height:10px"></div>
-          <div class="item">
-            <div>
-              <div class="title">일반회원 / 후원회원</div>
-              <div class="meta">후원·참여 중심(의결권 없음)</div>
-            </div>
-            <div class="badge">Support</div>
+  <main id="main">
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>문의 접수</h2>
+            <p>GitHub Pages 환경에서는 서버 전송이 어렵기 때문에, 이메일 작성(메일투) 방식으로 연결합니다.</p>
           </div>
         </div>
 
-        <div class="card">
-          <span class="tag">Contact</span>
-          <h3>문의 양식</h3>
-          <p>아래 내용을 작성하시면, 메일 앱이 열리며 자동으로 문의 메일이 작성됩니다.</p>
+        <div class="grid-2">
+          <div class="card">
+            <span class="tag">안내</span>
+            <h3>문의 유형(예시)</h3>
+            <p>
+              • 정회원 가입(의결권 기반 참여)<br/>
+              • 일반회원(참여/후원 중심)<br/>
+              • 후원회원(공익 가치 후원)<br/>
+              • 연구·교육·프로젝트 협력 제안<br/>
+              • 발간물/자료 기고 또는 공동 발간
+            </p>
+          </div>
 
-          <div class="hr"></div>
+          <div class="card">
+            <span class="tag">연락</span>
+            <h3>응답 기준</h3>
+            <p>
+              접수 내용 확인 후, 가능한 빠르게 회신드립니다.<br/>
+              주제에 따라 추가 자료(제안서/레퍼런스)를 요청드릴 수 있습니다.
+            </p>
+          </div>
+        </div>
 
+        <div style="margin-top:14px">
           <form onsubmit="return sendMail();">
             <div class="form-grid">
               <div>
-                <label>이름</label>
+                <label for="name">이름</label>
                 <input id="name" placeholder="예: 홍길동" required />
               </div>
               <div>
-                <label>연락처/이메일</label>
+                <label for="contactInfo">연락처/이메일</label>
                 <input id="contactInfo" placeholder="예: 010-0000-0000 / email@example.com" required />
               </div>
               <div class="full">
-                <label>문의 유형</label>
-                <input id="topic" placeholder="예: 정회원 가입 / 협력 제안 / 프로젝트 제안 / 후원 문의" required />
+                <label for="topic">문의 유형</label>
+                <input id="topic" placeholder="예: 정회원 가입 / 협력 제안 / 후원 문의" required />
               </div>
               <div class="full">
-                <label>문의 내용</label>
-                <textarea id="message" placeholder="구체적인 내용을 적어주세요. (목적/배경/원하시는 방향/기한 등)" required></textarea>
+                <label for="message">문의 내용</label>
+                <textarea id="message" placeholder="상세 내용을 적어주세요. (목적, 일정, 참고자료가 있으면 함께)" required></textarea>
               </div>
             </div>
 
             <div class="form-actions">
-              <button class="btn primary" type="submit">이메일로 보내기</button>
+              <button class="btn primary" type="submit">이메일로 문의 보내기</button>
               <a class="btn" href="index.html">홈으로</a>
+              <a class="btn gold" href="notice.html">공지</a>
             </div>
           </form>
+        </div>
 
-          <div class="hr"></div>
-          <div class="note">
-            <b>안내:</b> 추후 도메인 연결 및 서버(또는 폼 서비스)를 붙이면
-            “웹에서 바로 접수 → 자동 저장(구글시트/DB)”까지 확장 가능합니다.
-          </div>
+        <div style="margin-top:14px" class="callout">
+          <div style="font-weight:950; color:#0b1b3a; font-size:1.08rem;">개인정보 안내</div>
+          <p style="margin:10px 0 0; color:#475569; font-weight:700;">
+            문의 응대를 위해 필요한 범위의 연락처/이메일만 기재해 주세요.
+            불필요한 민감정보는 적지 않으시는 것을 권장드립니다.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <div class="container fgrid">
       <div>
-        <div style="font-weight:900; font-size:16px;">집현전21</div>
-        <small>회원과 협력의 힘으로 연구와 실천을 연결합니다</small>
+        <div style="font-weight:950; font-size:1.05rem;">집현전21</div>
+        <small>지성과 실천으로 사회에 기여하는 공익 공동체</small>
       </div>
       <div>
         <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
@@ -135,12 +137,12 @@
       const message = document.getElementById('message').value.trim();
 
       const to = "wmcprpr@gmail.com";
-      const subject = encodeURIComponent(`[집현전21 문의] ${topic} / ${name}`);
+      const subject = encodeURIComponent("[집현전21 문의] " + topic + " - " + name);
       const body = encodeURIComponent(
-        `이름: ${name}\n` +
-        `연락처/이메일: ${contactInfo}\n` +
-        `문의 유형: ${topic}\n\n` +
-        `문의 내용:\n${message}\n`
+        "이름: " + name + "\n" +
+        "연락처/이메일: " + contactInfo + "\n" +
+        "문의 유형: " + topic + "\n\n" +
+        "문의 내용:\n" + message + "\n"
       );
 
       window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
