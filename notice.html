@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>공지 | 집현전21</title>
+  <meta name="description" content="집현전21의 공식 공지 및 운영 공시 페이지입니다." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="집현전21 홈">
+        <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
+        <span>집현전21</span>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="about.html">기관소개</a>
+        <a href="research.html">주요활동</a>
+        <a class="active" href="notice.html">공지</a>
+        <a href="publication.html">발간물</a>
+        <a href="contact.html">문의</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="contact.html">회원/협력 문의</a>
+        <a class="btn primary" href="contact.html">참여 제안</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container page-title">
+    <h1>공지</h1>
+    <p>
+      공지사항은 단체의 공식 일정·모집·운영 공시를 포함합니다.
+      중요한 변경사항은 기록으로 남기며, 동일한 기준으로 업데이트합니다.
+    </p>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>최신 공지</h2>
+          <p>표준 형식(제목/일자/분류)으로 운영합니다.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          <div class="title">[공지] 집현전21 홈페이지 오픈</div>
+          <div class="meta">2026-03-04 · 운영</div>
+        </div>
+        <div class="badge">NEW</div>
+      </div>
+
+      <div style="height:10px;"></div>
+
+      <div class="item">
+        <div>
+          <div class="title">[안내] 회원 모집 및 참여 방법 (준비중)</div>
+          <div class="meta">예정 · 운영</div>
+        </div>
+        <div class="badge">준비중</div>
+      </div>
+
+      <div style="height:10px;"></div>
+
+      <div class="item">
+        <div>
+          <div class="title">[예정] 세미나/포럼 일정 공지 (준비중)</div>
+          <div class="meta">예정 · 교육</div>
+        </div>
+        <div class="badge">예정</div>
+      </div>
+
+      <div class="note" style="margin-top:18px;">
+        ※ 공지 게시판을 “실제 게시판 형태(목록/상세/검색)”로 만들려면
+        (1) GitHub Issues를 연동하거나, (2) 간단한 JSON 데이터 파일을 만들어 자동 렌더링하도록 확장할 수 있습니다.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container fgrid">
+      <div>
+        <div style="font-weight:900; font-size:16px;">집현전21</div>
+        <small>기록 기반의 투명한 운영을 지향합니다.</small>
+      </div>
+      <div>
+        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
+        <small>문의: wmcprpr@gmail.com</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
