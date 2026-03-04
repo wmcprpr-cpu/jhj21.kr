@@ -4,86 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>문의 | 집현전21</title>
-  <meta name="description" content="집현전21 문의" />
+  <meta name="description" content="집현전21 회원·후원·협력 문의 페이지" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-     <a class="brand" href="index.html" aria-label="집현전21 홈">
-  <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
-  <span>집현전21</span>
-</a>
 
-      <nav class="nav">
-        <a class="nav-link" href="about.html">기관소개</a>
-        <a class="nav-link" href="research.html">주요활동</a>
-        <a class="nav-link" href="education.html">교육·세미나</a>
-        <a class="nav-link" href="publication.html">발간물</a>
-        <a class="nav-link active" href="contact.html">문의</a>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="집현전21 홈">
+        <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
+        <span>집현전21</span>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="about.html">기관소개</a>
+        <a href="research.html">주요활동</a>
+        <a href="notice.html">공지</a>
+        <a href="publication.html">발간물</a>
+        <a class="active" href="contact.html">문의</a>
       </nav>
 
-      <div class="topbar-cta">
-        <a class="btn btn-ghost" href="contact.html">회원/협력 문의</a>
-        <a class="btn btn-primary" href="research.html">활동 보기</a>
+      <div class="cta">
+        <a class="btn" href="contact.html">회원/협력 문의</a>
+        <a class="btn primary" href="research.html">활동 보기</a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <section class="page-hero">
+  <div class="container page-title">
+    <h1>문의</h1>
+    <p>
+      회원 가입, 후원, 협력 제안 및 연구·교육 참여에 관한 문의를 접수합니다.
+      접수된 내용은 내부 검토 후 담당자가 순차적으로 회신드립니다.
+    </p>
+  </div>
+
+  <section>
     <div class="container">
-      <div class="page-hero-box">
-        <p class="badge">Contact</p>
-        <h1 class="page-title">문의</h1>
-        <p class="page-subtitle">회원·협력·후원 관련 문의를 받습니다.</p>
+      <div class="section-head">
+        <div>
+          <h2>문의 접수</h2>
+          <p>GitHub Pages는 서버가 없어 “메일 전송” 방식으로 처리합니다.</p>
+        </div>
+      </div>
+
+      <form onsubmit="return sendMail();">
+        <div class="form-grid">
+          <div>
+            <label>이름</label>
+            <input id="name" placeholder="예: 홍길동" required />
+          </div>
+          <div>
+            <label>연락처/이메일</label>
+            <input id="contactInfo" placeholder="예: 010-0000-0000 / email@example.com" required />
+          </div>
+          <div class="full">
+            <label>문의 분류</label>
+            <input id="category" placeholder="예: 회원 가입 / 후원 / 협력 제안 / 세미나 참여" required />
+          </div>
+          <div class="full">
+            <label>문의 내용</label>
+            <textarea id="message" placeholder="문의 내용을 구체적으로 적어주시면 검토에 도움이 됩니다." required></textarea>
+          </div>
+        </div>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn primary" type="submit">이메일로 문의 보내기</button>
+          <a class="btn" href="index.html">홈으로</a>
+        </div>
+      </form>
+
+      <div class="note" style="margin-top:18px;">
+        ※ 향후 “폼 자동 접수(구글폼/노션폼/메일서버)”로 업그레이드도 가능합니다.
       </div>
     </div>
   </section>
 
-  <main class="page">
-    <div class="container">
-      <section class="section">
-        <div class="grid-2">
-          <div class="card">
-            <div class="card-tag">연락처</div>
-            <h3 class="card-title">기본 안내</h3>
-            <p class="card-desc">
-              아래 정보는 임시 예시입니다. 실제 이메일/연락처로 교체해 주세요.
-            </p>
-            <div class="contact-box">
-              <p><strong>기관명</strong> : 집현전21</p>
-              <p><strong>이메일</strong> : contact@jhj21.kr</p>
-              <p><strong>협력문의</strong> : research@jhj21.kr</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-tag">안내</div>
-            <h3 class="card-title">문의 방법</h3>
-            <p class="card-desc">
-              현재는 “메일 문의” 방식으로 운영을 추천드립니다. (도메인 구매 후 이메일도 함께 정리)
-            </p>
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="mailto:contact@jhj21.kr">메일 보내기</a>
-              <a class="btn btn-ghost" href="index.html">홈으로</a>
-            </div>
-            <p class="muted" style="margin-top:12px;">
-              ※ Gmail 등 개인메일로 운영 중이면, 위 mailto 주소만 실제 주소로 바꾸면 됩니다.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> 집현전21</p>
+  <footer>
+    <div class="container fgrid">
+      <div>
+        <div style="font-weight:900; font-size:16px;">집현전21</div>
+        <small>문의와 제안은 기록으로 남겨 검토합니다.</small>
+      </div>
+      <div>
+        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
+        <small>문의: wmcprpr@gmail.com</small>
+      </div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    function sendMail(){
+      const name = document.getElementById('name').value.trim();
+      const contactInfo = document.getElementById('contactInfo').value.trim();
+      const category = document.getElementById('category').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const to = "wmcprpr@gmail.com";
+      const subject = encodeURIComponent(`[집현전21 문의] ${category} / ${name}`);
+      const body = encodeURIComponent(
+        `이름: ${name}\n` +
+        `연락처/이메일: ${contactInfo}\n` +
+        `문의 분류: ${category}\n\n` +
+        `문의 내용:\n${message}\n`
+      );
+
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      return false;
+    }
   </script>
 </body>
 </html>
