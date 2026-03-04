@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>공지 | 집현전21</title>
-  <meta name="description" content="집현전21의 공식 공지 및 운영 공시 페이지입니다." />
+  <meta name="description" content="집현전21 공지 — 총회/이사회/자문위원회/감사보고 및 사업 공지" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
@@ -18,15 +18,16 @@
 
       <nav class="nav" aria-label="주요 메뉴">
         <a href="about.html">기관소개</a>
-        <a href="research.html">주요활동</a>
+        <a href="research.html">사업</a>
+        <a href="education.html">지식교류</a>
+        <a href="publication.html">발간</a>
         <a class="active" href="notice.html">공지</a>
-        <a href="publication.html">발간물</a>
         <a href="contact.html">문의</a>
       </nav>
 
       <div class="cta">
-        <a class="btn" href="contact.html">회원/협력 문의</a>
-        <a class="btn primary" href="contact.html">참여 제안</a>
+        <a class="btn" href="contact.html">회원/협력</a>
+        <a class="btn primary" href="contact.html">문의하기</a>
       </div>
     </div>
   </div>
@@ -34,8 +35,8 @@
   <div class="container page-title">
     <h1>공지</h1>
     <p>
-      공지사항은 단체의 공식 일정·모집·운영 공시를 포함합니다.
-      중요한 변경사항은 기록으로 남기며, 동일한 기준으로 업데이트합니다.
+      본 공지 섹션은 단체의 투명성과 예측 가능성을 높이기 위한 “공개 기록”입니다.
+      정관상 총회/이사회/자문위원회 운영(제14~18조, 제22~23조) 및 감사 보고(제28조)와 연계됩니다.
     </p>
   </div>
 
@@ -43,42 +44,70 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <h2>최신 공지</h2>
-          <p>표준 형식(제목/일자/분류)으로 운영합니다.</p>
+          <h2>최근 공지</h2>
+          <p>공지 항목은 필요에 따라 계속 추가하시면 됩니다.</p>
         </div>
       </div>
 
-      <div class="item">
-        <div>
-          <div class="title">[공지] 집현전21 홈페이지 오픈</div>
-          <div class="meta">2026-03-04 · 운영</div>
+      <div class="card">
+        <span class="tag">운영</span>
+        <h3>홈페이지(정관 기반) 개편 안내</h3>
+        <p>
+          집현전21의 목적·사업·운영 구조를 정관에 근거하여 정리한 공식 홈페이지를 개편하였습니다.
+          향후 공지/발간물/회의 기록을 순차적으로 업데이트하겠습니다.
+        </p>
+        <div class="hr"></div>
+        <div class="item">
+          <div>
+            <div class="title">게시일: <span id="today"></span></div>
+            <div class="meta">담당: 운영 · 분류: 공지</div>
+          </div>
+          <div class="badge">NEW</div>
         </div>
-        <div class="badge">NEW</div>
       </div>
 
-      <div style="height:10px;"></div>
+      <div style="height:14px"></div>
 
-      <div class="item">
-        <div>
-          <div class="title">[안내] 회원 모집 및 참여 방법 (준비중)</div>
-          <div class="meta">예정 · 운영</div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag">총회</span>
+          <h3>정기총회 일정(예정)</h3>
+          <p>
+            정기총회는 회계연도 종료 후 1개월 이내 소집합니다(정관 제16조).
+            일시·장소·안건은 회일 7일 전까지 서면 통지합니다(제16조).
+          </p>
+          <div class="hr"></div>
+          <div class="item">
+            <div>
+              <div class="title">안건 예시</div>
+              <div class="meta">예산·결산 승인 / 사업계획 승인 / 임원 선출 등(제18조)</div>
+            </div>
+            <div class="badge">Guide</div>
+          </div>
         </div>
-        <div class="badge">준비중</div>
+
+        <div class="card">
+          <span class="tag">이사회·자문위</span>
+          <h3>분기 운영 공지(예정)</h3>
+          <p>
+            자문위원회는 분기 1회 정기회의를 원칙으로 하며(제22조),
+            사업계획·예산·실적보고 등 핵심 사안에 대해 의견을 채택합니다(제23조).
+          </p>
+          <div class="hr"></div>
+          <div class="item">
+            <div>
+              <div class="title">분기 공지 예시</div>
+              <div class="meta">분기 사업계획 / 분기 예산 / 실적 요약 / 후속 계획</div>
+            </div>
+            <div class="badge">Guide</div>
+          </div>
+        </div>
       </div>
 
-      <div style="height:10px;"></div>
-
-      <div class="item">
-        <div>
-          <div class="title">[예정] 세미나/포럼 일정 공지 (준비중)</div>
-          <div class="meta">예정 · 교육</div>
-        </div>
-        <div class="badge">예정</div>
-      </div>
-
-      <div class="note" style="margin-top:18px;">
-        ※ 공지 게시판을 “실제 게시판 형태(목록/상세/검색)”로 만들려면
-        (1) GitHub Issues를 연동하거나, (2) 간단한 JSON 데이터 파일을 만들어 자동 렌더링하도록 확장할 수 있습니다.
+      <div class="hr"></div>
+      <div class="note">
+        <b>팁:</b> 공지는 “짧게(결론)” + “근거(정관 조항)” + “다음 행동(참여/의견/제출)” 3줄 구조로 쓰면
+        기관형 문서 톤이 유지됩니다.
       </div>
     </div>
   </section>
@@ -87,7 +116,7 @@
     <div class="container fgrid">
       <div>
         <div style="font-weight:900; font-size:16px;">집현전21</div>
-        <small>기록 기반의 투명한 운영을 지향합니다.</small>
+        <small>기록과 공개로 신뢰를 쌓고, 참여로 공공선을 확장합니다</small>
       </div>
       <div>
         <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
@@ -98,6 +127,7 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("today").textContent = new Date().toISOString().slice(0,10);
   </script>
 </body>
 </html>
