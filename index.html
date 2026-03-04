@@ -5,519 +5,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>집현전21</title>
   <meta name="description" content="지식과 실천으로 사회에 기여하는 공익 공동체, 집현전21" />
-
-  <style>
-    :root{
-      --navy:#1f2d5a;
-      --navy-2:#243a73;
-      --bg:#f6f8fb;
-      --text:#0f172a;
-      --muted:#64748b;
-      --card:#ffffff;
-      --line:#e6eaf2;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:var(--bg);
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-
-    /* Header */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .topbar-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      height:64px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      letter-spacing:-0.3px;
-    }
-    .logo{
-      width:34px; height:34px;
-      border-radius:10px;
-      background: linear-gradient(135deg, var(--navy), var(--navy-2));
-      box-shadow: 0 8px 18px rgba(31,45,90,0.25);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      font-size:14px;
-      color:var(--muted);
-    }
-    .nav a{
-      padding:10px 8px;
-      border-radius:10px;
-    }
-    .nav a:hover{
-      color:var(--text);
-      background:#eef2ff;
-    }
-
-    .cta{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-size:14px;
-      font-weight:700;
-      cursor:pointer;
-    }
-    .btn.primary{
-      border:1px solid transparent;
-      background: linear-gradient(135deg, var(--navy), var(--navy-2));
-      color:#fff;
-      box-shadow: 0 10px 20px rgba(31,45,90,0.22);
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .btn:active{transform: translateY(0px)}
-
-    /* Hero */
-    .hero{
-      background: radial-gradient(1200px 400px at 50% 0%, rgba(255,255,255,0.18), rgba(255,255,255,0) 60%),
-                  linear-gradient(135deg, var(--navy), var(--navy-2));
-      color:#fff;
-      padding:78px 0 56px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap:26px;
-      align-items:center;
-    }
-    .hero h1{
-      margin:0;
-      font-size:46px;
-      letter-spacing:-1px;
-      line-height:1.1;
-    }
-    .hero p{
-      margin:14px 0 0;
-      font-size:16px;
-      color:rgba(255,255,255,0.85);
-      line-height:1.6;
-      max-width:52ch;
-    }
-    .hero-actions{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap}
-    .pill{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:16px;
-      border-radius:18px;
-      background: rgba(255,255,255,0.12);
-      border:1px solid rgba(255,255,255,0.18);
-    }
-    .pill strong{font-size:14px}
-    .pill span{font-size:13px; color:rgba(255,255,255,0.8)}
-    .stats{
-      display:grid;
-      gap:12px;
-    }
-    .stat{
-      padding:18px;
-      border-radius:18px;
-      background: rgba(255,255,255,0.10);
-      border:1px solid rgba(255,255,255,0.18);
-    }
-    .stat .k{font-size:12px; color:rgba(255,255,255,0.75)}
-    .stat .v{font-size:20px; font-weight:900; margin-top:6px}
-
-    /* Sections */
-    section{padding:56px 0}
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:18px;
-    }
-    .section-head h2{
-      margin:0;
-      font-size:22px;
-      letter-spacing:-0.4px;
-    }
-    .section-head p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
-    }
-
-    .grid-4{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:14px;
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow: var(--shadow);
-      padding:18px;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .card:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(15,23,42,0.12);
-    }
-    .tag{
-      display:inline-flex;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:700;
-      background:#eef2ff;
-      color:#334155;
-      border:1px solid #dde3ff;
-    }
-    .card h3{margin:12px 0 6px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:13px; line-height:1.55}
-
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    .list{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .item{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px 16px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
-    }
-    .item .left{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-      min-width:0;
-    }
-    .item .title{
-      font-weight:800;
-      font-size:14px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .item .meta{
-      font-size:12px;
-      color:var(--muted);
-    }
-    .badge{
-      font-size:12px;
-      font-weight:800;
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:#f8fafc;
-      color:#334155;
-      white-space:nowrap;
-    }
-
-    /* Contact */
-    .contact{
-      background: #ffffff;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    form{
-      background: var(--bg);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-      box-shadow: var(--shadow);
-    }
-    .form-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    label{font-size:12px; font-weight:800; color:#334155}
-    input, textarea{
-      width:100%;
-      margin-top:6px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      outline:none;
-      font-size:14px;
-      background:#fff;
-    }
-    textarea{min-height:110px; resize:vertical}
-    .full{grid-column: 1 / -1}
-    .form-actions{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
-
-    /* Footer */
-    footer{
-      padding:26px 0;
-      color:rgba(255,255,255,0.85);
-      background: linear-gradient(135deg, var(--navy), var(--navy-2));
-    }
-    footer .fgrid{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    footer small{color:rgba(255,255,255,0.7)}
-
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid-4{grid-template-columns: repeat(2, 1fr)}
-      .grid-2{grid-template-columns:1fr}
-      .form-grid{grid-template-columns:1fr}
-      .nav{display:none;} /* 모바일에서는 메뉴 숨김(원하면 햄버거로 확장 가능) */
-    }
-    @media (max-width: 520px){
-      .hero h1{font-size:34px}
-      .grid-4{grid-template-columns:1fr}
-    }
-  </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
   <!-- Header -->
-  <div class="topbar">
+  <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="#top">
+      <a class="brand" href="index.html" aria-label="집현전21 홈">
         <span class="logo" aria-hidden="true"></span>
-        <span>집현전21</span>
+        <span class="brand-name">집현전21</span>
       </a>
 
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="#about">기관소개</a>
-        <a href="#work">주요활동</a>
-        <a href="#news">공지</a>
-        <a href="#report">발간물</a>
-        <a href="#contact">문의</a>
+        <a class="nav-link" href="about.html">기관소개</a>
+        <a class="nav-link" href="research.html">주요활동</a>
+        <a class="nav-link" href="publication.html">공지</a>
+        <a class="nav-link" href="publication.html">발간물</a>
+        <a class="nav-link" href="contact.html">문의</a>
       </nav>
 
-      <div class="cta">
-        <a class="btn" href="#contact">회원/협력 문의</a>
-        <a class="btn primary" href="#work">활동 보기</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <header id="top" class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="pill">
-          <strong>공익·연구·교육</strong>
-          <span>지식과 실천으로 사회에 기여합니다</span>
-        </div>
-        <h1 style="margin-top:16px;">집현전21</h1>
-        <p>
-          연구·세미나·프로젝트·연대를 통해 공동체의 지속가능한 발전을 지원하는 공익 공동체입니다.
-          (문구는 언제든 주인님 스타일로 다듬어드릴게요.)
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">참여/후원 문의</a>
-          <a class="btn" href="#about">단체 소개 보기</a>
-        </div>
-      </div>
-
-      <div class="stats" aria-label="요약 정보">
-        <div class="stat">
-          <div class="k">핵심 가치</div>
-          <div class="v">공공성 · 신뢰 · 실행</div>
-        </div>
-        <div class="stat">
-          <div class="k">활동 축</div>
-          <div class="v">연구 · 교육 · 프로젝트</div>
-        </div>
-        <div class="stat">
-          <div class="k">협력</div>
-          <div class="v">기관 · 기업 · 시민</div>
-        </div>
+      <div class="topbar-cta">
+        <a class="btn btn-ghost" href="contact.html">회원/협력 문의</a>
+        <a class="btn btn-primary" href="research.html">활동 보기</a>
       </div>
     </div>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <div class="section-head">
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <h2>기관소개</h2>
-          <p>집현전21은 사회 문제를 “연구”하고 “실행”으로 연결합니다.</p>
-        </div>
-        <p>필요하시면 “인사말/연혁/조직도” 섹션도 추가해드리겠습니다.</p>
-      </div>
+          <div class="pill">
+            <strong>공익·연구·교육</strong>
+            <span>지식과 실천으로 사회에 기여합니다</span>
+          </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <span class="tag">미션</span>
-          <h3>지식과 실천의 연결</h3>
-          <p>현장 문제를 조사하고, 실행 가능한 대안을 만들며, 협력 네트워크로 확산합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">운영 원칙</span>
-          <h3>투명성과 공공성</h3>
-          <p>활동 기록·보고·자료 공유를 통해 신뢰 가능한 공익 플랫폼을 지향합니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <h1 style="margin-top:16px;">집현전21</h1>
 
-  <!-- Work -->
-  <section id="work">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>주요활동</h2>
-          <p>연구기관 홈페이지처럼 “카드형 핵심 사업” 구조로 정리했습니다.</p>
-        </div>
-        <p>카드 문구는 주인님 사업 내용에 맞춰 더 강하게 다듬을 수 있습니다.</p>
-      </div>
+          <p>
+            연구·세미나·프로젝트·연대를 통해 공동체의 지속가능한 발전을 지원하는 공익 공동체입니다.
+            (문구는 언제든 주인님 스타일로 다듬어드릴게요.)
+          </p>
 
-      <div class="grid-4">
-        <div class="card">
-          <span class="tag">Research</span>
-          <h3>연구 활동</h3>
-          <p>정책·사회·지역 현안을 분석하고, 근거 기반 제안을 도출합니다.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">참여/후원 문의</a>
+            <a class="btn btn-ghost" href="about.html">단체 소개 보기</a>
+          </div>
         </div>
-        <div class="card">
-          <span class="tag">Education</span>
-          <h3>교육·세미나</h3>
-          <p>전문가/시민 대상 세미나와 교육 프로그램을 기획·운영합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">Public</span>
-          <h3>공익 프로젝트</h3>
-          <p>현장 실행형 프로젝트로 사회적 가치를 만들어냅니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">Network</span>
-          <h3>협력·연대</h3>
-          <p>기관·기업·시민과 협력하여 지속 가능한 연대 모델을 구축합니다.</p>
+
+        <div class="stats" aria-label="요약 정보">
+          <div class="stat">
+            <div class="k">핵심 가치</div>
+            <div class="v">공공성 · 신뢰 · 실행</div>
+          </div>
+          <div class="stat">
+            <div class="k">활동 축</div>
+            <div class="v">연구 · 교육 · 프로젝트</div>
+          </div>
+          <div class="stat">
+            <div class="k">협력</div>
+            <div class="v">기관 · 기업 · 시민</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- News / Report -->
-  <section id="news">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>공지</h2>
-          <p>공지사항은 “기관 신뢰”를 만들기 가장 좋은 섹션입니다.</p>
+    <!-- Quick Sections (홈 요약) -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>기관소개</h2>
+            <p>집현전21은 사회 문제를 “연구”하고 “실행”으로 연결합니다.</p>
+          </div>
+          <a class="btn btn-ghost" href="about.html">자세히 보기</a>
         </div>
-        <p>원하시면 게시판(데이터) 형태로 업그레이드도 가능합니다.</p>
-      </div>
 
-      <div class="grid-2">
+        <div class="grid-2">
+          <div class="card">
+            <span class="tag">미션</span>
+            <h3>지식과 실천의 연결</h3>
+            <p>현장 문제를 조사하고, 실행 가능한 대안을 만들며, 협력 네트워크로 확산합니다.</p>
+          </div>
+          <div class="card">
+            <span class="tag">운영 원칙</span>
+            <h3>투명성과 공공성</h3>
+            <p>활동 기록·보고·자료 공유를 통해 신뢰 가능한 공익 플랫폼을 지향합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>주요활동</h2>
+            <p>연구기관 홈페이지처럼 “카드형 핵심 사업” 구조로 정리했습니다.</p>
+          </div>
+          <a class="btn btn-ghost" href="research.html">전체 보기</a>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <span class="tag">Research</span>
+            <h3>연구 활동</h3>
+            <p>정책·사회·지역 현안을 분석하고, 근거 기반 제안을 도출합니다.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Education</span>
+            <h3>교육·세미나</h3>
+            <p>전문가/시민 대상 세미나와 교육 프로그램을 기획·운영합니다.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Public</span>
+            <h3>공익 프로젝트</h3>
+            <p>현장 실행형 프로젝트로 사회적 가치를 만들어냅니다.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Network</span>
+            <h3>협력·연대</h3>
+            <p>기관·기업·시민과 협력하여 지속 가능한 연대 모델을 구축합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>문의</h2>
+            <p>회원가입/후원/협력 문의를 받습니다.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">문의하기</a>
+        </div>
+
         <div class="list">
           <div class="item">
             <div class="left">
-              <div class="title">[공지] 집현전21 홈페이지 오픈</div>
-              <div class="meta">2026-03-04 · 운영</div>
+              <div class="title">회원/협력 문의</div>
+              <div class="meta">참여 방법, 협력 제안, 후원 관련 문의</div>
             </div>
-            <div class="badge">NEW</div>
-          </div>
-          <div class="item">
-            <div class="left">
-              <div class="title">[안내] 회원 모집 및 참여 방법</div>
-              <div class="meta">예정 · 운영</div>
-            </div>
-            <div class="badge">준비중</div>
-          </div>
-        </div>
-
-        <div id="report" class="list">
-          <div class="item">
-            <div class="left">
-              <div class="title">[발간물] 활동 보고서(샘플)</div>
-              <div class="meta">PDF/자료 · 예시</div>
-            </div>
-            <div class="badge">자료</div>
-          </div>
-          <div class="item">
-            <div class="left">
-              <div class="title">[연구] 이슈 브리프(샘플)</div>
-              <div class="meta">리서치 · 예시</div>
-            </div>
-            <div class="badge">브리프</div>
+            <div class="badge">Contact</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>문의</h2>
-          <p>회원가입/후원/협력 문의를 한 곳에서 받도록 구성했습니다.</p>
-        </div>
-        <p>※ GitHub Pages에서는 폼 전송이 바로 안 되므로, 이메일 링크 방식으로 처리합니다.</p>
-      </div>
-
-      <form onsubmit="return sendMail();">
-        <div class="form-grid">
-          <div>
-            <label>이름</label>
-            <input id="name" placeholder="예: 홍길동" required />
-          </div>
-          <div>
-            <label>연락처/이메일</label>
-            <input id="contactInfo" placeholder="예: 010-0000-0000 / email@example.com" required />
-          </div>
-          <div class="full">
-            <label>문의 내용</label>
-            <textarea id="message" placeholder="회원 가입, 후원, 협력 제안 등 문의 내용을 적어주세요." required></textarea>
-          </div>
-        </div>
-        <div class="form-actions">
-          <button class="btn primary" type="submit">이메일로 문의 보내기</button>
-          <a class="btn" href="#top">위로</a>
-        </div>
-      </form>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -527,30 +164,14 @@
         <small>지식과 실천으로 사회에 기여하는 공익 공동체</small>
       </div>
       <div>
-        <small>© 2026 집현전21 · All rights reserved</small><br/>
-        <small>문의: (이메일 주소를 여기에 넣으시면 됩니다)</small>
+        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br/>
+        <small>문의: contact@jhj21.kr (나중에 실제 주소로 변경)</small>
       </div>
     </div>
   </footer>
 
   <script>
-    function sendMail(){
-      const name = document.getElementById('name').value.trim();
-      const contactInfo = document.getElementById('contactInfo').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      // TODO: 주인님 이메일로 바꿔주세요
-      const to = "wmcprpr@gmail.com";
-      const subject = encodeURIComponent("[집현전21 문의] " + name);
-      const body = encodeURIComponent(
-        "이름: " + name + "\n" +
-        "연락처/이메일: " + contactInfo + "\n\n" +
-        "문의 내용:\n" + message + "\n"
-      );
-
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      return false;
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
