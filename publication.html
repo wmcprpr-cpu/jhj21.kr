@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>발간물 | 집현전21</title>
+  <meta name="description" content="집현전21 발간물" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="집현전21 홈">
+        <span class="logo"></span>
+        <span class="brand-name">집현전21</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="about.html">기관소개</a>
+        <a class="nav-link" href="research.html">주요활동</a>
+        <a class="nav-link" href="education.html">교육·세미나</a>
+        <a class="nav-link active" href="publication.html">발간물</a>
+        <a class="nav-link" href="contact.html">문의</a>
+      </nav>
+
+      <div class="topbar-cta">
+        <a class="btn btn-ghost" href="contact.html">회원/협력 문의</a>
+        <a class="btn btn-primary" href="research.html">활동 보기</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-box">
+        <p class="badge">Publications</p>
+        <h1 class="page-title">발간물</h1>
+        <p class="page-subtitle">보고서·자료집·세미나 자료 등을 정리합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="page">
+    <div class="container">
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">최근 발간물</h2>
+          <p class="section-desc">PDF 업로드 후 링크를 연결하시면 됩니다.</p>
+        </div>
+
+        <div class="list">
+          <div class="list-item">
+            <div>
+              <strong>2026 정책보고서 (예시)</strong>
+              <p class="muted">요약 문구를 여기에 작성하세요.</p>
+            </div>
+            <a class="btn btn-ghost" href="#" onclick="return false;">준비중</a>
+          </div>
+
+          <div class="list-item">
+            <div>
+              <strong>2025 연구보고서 (예시)</strong>
+              <p class="muted">요약 문구를 여기에 작성하세요.</p>
+            </div>
+            <a class="btn btn-ghost" href="#" onclick="return false;">준비중</a>
+          </div>
+
+          <div class="list-item">
+            <div>
+              <strong>세미나 자료집 (예시)</strong>
+              <p class="muted">요약 문구를 여기에 작성하세요.</p>
+            </div>
+            <a class="btn btn-ghost" href="#" onclick="return false;">준비중</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> 집현전21</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
