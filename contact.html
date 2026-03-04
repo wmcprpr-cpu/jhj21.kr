@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>문의 | 집현전21</title>
-  <meta name="description" content="집현전21 회원·후원·협력 문의 페이지" />
+  <meta name="description" content="집현전21 문의 — 회원가입/후원/협력/프로젝트 제안 접수" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
@@ -18,15 +18,16 @@
 
       <nav class="nav" aria-label="주요 메뉴">
         <a href="about.html">기관소개</a>
-        <a href="research.html">주요활동</a>
+        <a href="research.html">사업</a>
+        <a href="education.html">지식교류</a>
+        <a href="publication.html">발간</a>
         <a href="notice.html">공지</a>
-        <a href="publication.html">발간물</a>
         <a class="active" href="contact.html">문의</a>
       </nav>
 
       <div class="cta">
-        <a class="btn" href="contact.html">회원/협력 문의</a>
-        <a class="btn primary" href="research.html">활동 보기</a>
+        <a class="btn" href="contact.html">회원/협력</a>
+        <a class="btn primary" href="research.html">사업 보기</a>
       </div>
     </div>
   </div>
@@ -34,47 +35,79 @@
   <div class="container page-title">
     <h1>문의</h1>
     <p>
-      회원 가입, 후원, 협력 제안 및 연구·교육 참여에 관한 문의를 접수합니다.
-      접수된 내용은 내부 검토 후 담당자가 순차적으로 회신드립니다.
+      회원 가입(정회원/일반회원/후원회원), 협력 제안, 프로젝트 제안, 발간물 제보 등
+      집현전21에 관한 모든 문의를 접수합니다.
+      GitHub Pages 환경에서는 서버 전송이 어려워 <b>이메일(mailto)</b> 방식으로 연결됩니다.
     </p>
   </div>
 
   <section>
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>문의 접수</h2>
-          <p>GitHub Pages는 서버가 없어 “메일 전송” 방식으로 처리합니다.</p>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag">Membership</span>
+          <h3>회원 안내(정관 근거)</h3>
+          <p>
+            회원은 정회원·일반회원·후원회원으로 구분합니다(정관 제5조).
+            정회원은 총회의결권이 부여되며, 회비 납부 및 규정 준수 의무가 있습니다(제6조).
+          </p>
+          <div class="hr"></div>
+          <div class="item">
+            <div>
+              <div class="title">정회원</div>
+              <div class="meta">이사회 승인 · 회비 납부 · 정기 활동 참여 · 의결권</div>
+            </div>
+            <div class="badge">Voting</div>
+          </div>
+          <div style="height:10px"></div>
+          <div class="item">
+            <div>
+              <div class="title">일반회원 / 후원회원</div>
+              <div class="meta">후원·참여 중심(의결권 없음)</div>
+            </div>
+            <div class="badge">Support</div>
+          </div>
         </div>
-      </div>
 
-      <form onsubmit="return sendMail();">
-        <div class="form-grid">
-          <div>
-            <label>이름</label>
-            <input id="name" placeholder="예: 홍길동" required />
-          </div>
-          <div>
-            <label>연락처/이메일</label>
-            <input id="contactInfo" placeholder="예: 010-0000-0000 / email@example.com" required />
-          </div>
-          <div class="full">
-            <label>문의 분류</label>
-            <input id="category" placeholder="예: 회원 가입 / 후원 / 협력 제안 / 세미나 참여" required />
-          </div>
-          <div class="full">
-            <label>문의 내용</label>
-            <textarea id="message" placeholder="문의 내용을 구체적으로 적어주시면 검토에 도움이 됩니다." required></textarea>
-          </div>
-        </div>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="btn primary" type="submit">이메일로 문의 보내기</button>
-          <a class="btn" href="index.html">홈으로</a>
-        </div>
-      </form>
+        <div class="card">
+          <span class="tag">Contact</span>
+          <h3>문의 양식</h3>
+          <p>아래 내용을 작성하시면, 메일 앱이 열리며 자동으로 문의 메일이 작성됩니다.</p>
 
-      <div class="note" style="margin-top:18px;">
-        ※ 향후 “폼 자동 접수(구글폼/노션폼/메일서버)”로 업그레이드도 가능합니다.
+          <div class="hr"></div>
+
+          <form onsubmit="return sendMail();">
+            <div class="form-grid">
+              <div>
+                <label>이름</label>
+                <input id="name" placeholder="예: 홍길동" required />
+              </div>
+              <div>
+                <label>연락처/이메일</label>
+                <input id="contactInfo" placeholder="예: 010-0000-0000 / email@example.com" required />
+              </div>
+              <div class="full">
+                <label>문의 유형</label>
+                <input id="topic" placeholder="예: 정회원 가입 / 협력 제안 / 프로젝트 제안 / 후원 문의" required />
+              </div>
+              <div class="full">
+                <label>문의 내용</label>
+                <textarea id="message" placeholder="구체적인 내용을 적어주세요. (목적/배경/원하시는 방향/기한 등)" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">이메일로 보내기</button>
+              <a class="btn" href="index.html">홈으로</a>
+            </div>
+          </form>
+
+          <div class="hr"></div>
+          <div class="note">
+            <b>안내:</b> 추후 도메인 연결 및 서버(또는 폼 서비스)를 붙이면
+            “웹에서 바로 접수 → 자동 저장(구글시트/DB)”까지 확장 가능합니다.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -83,7 +116,7 @@
     <div class="container fgrid">
       <div>
         <div style="font-weight:900; font-size:16px;">집현전21</div>
-        <small>문의와 제안은 기록으로 남겨 검토합니다.</small>
+        <small>회원과 협력의 힘으로 연구와 실천을 연결합니다</small>
       </div>
       <div>
         <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
@@ -98,15 +131,15 @@
     function sendMail(){
       const name = document.getElementById('name').value.trim();
       const contactInfo = document.getElementById('contactInfo').value.trim();
-      const category = document.getElementById('category').value.trim();
+      const topic = document.getElementById('topic').value.trim();
       const message = document.getElementById('message').value.trim();
 
       const to = "wmcprpr@gmail.com";
-      const subject = encodeURIComponent(`[집현전21 문의] ${category} / ${name}`);
+      const subject = encodeURIComponent(`[집현전21 문의] ${topic} / ${name}`);
       const body = encodeURIComponent(
         `이름: ${name}\n` +
         `연락처/이메일: ${contactInfo}\n` +
-        `문의 분류: ${category}\n\n` +
+        `문의 유형: ${topic}\n\n` +
         `문의 내용:\n${message}\n`
       );
 
