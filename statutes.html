@@ -2,23 +2,60 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정관 | 집현전21</title>
   <link rel="stylesheet" href="assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
-    .statute-card { background: #fff; border: 1px solid var(--line); padding: 35px; border-radius: 12px; }
+    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
+    .statute-section { margin-bottom: 60px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; margin-top: 30px; }
+    .statute-card { background: #fff; border: 1px solid var(--line); padding: 40px; border-radius: 15px; box-shadow: var(--shadow); }
+    .statute-card h3 { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 20px; }
+    .statute-card p { font-size: 19px; line-height: 1.8; margin-bottom: 15px; }
   </style>
 </head>
 <body>
   <header id="header-include"></header>
-  <main class="container" style="padding: 60px 0;">
-    <h1 class="section-title">제2장 회원 및 임원</h1>
-    <div class="grid-2">
-      <div class="statute-card"><h3>회원 구분</h3><p>정회원, 일반회원, 후원회원으로 구성됩니다.</p></div>
-      <div class="statute-card"><h3>임원 구성</h3><p>회장, 이사(5~10인), 감사를 둡니다.</p></div>
+
+  <section class="page-hero" style="background: var(--navy); color: white; padding: 60px 0; text-align: center;">
+    <h1 style="font-size: 42px; color: var(--gold); margin: 0;">조직 정관</h1>
+    <p style="opacity: 0.8; margin-top: 10px; font-size: 18px;">집현전21의 모든 활동은 원칙과 신뢰를 바탕으로 운영됩니다.</p>
+  </section>
+
+  <main class="container" style="padding: 80px 20px;">
+    <div class="statute-section">
+      <h2 class="section-title" style="text-align: left;">제1장 총칙</h2>
+      <div class="statute-card" style="width: 100%;">
+        <p><strong>제1조 (명칭)</strong> 본 단체는 "집현전21"이라 칭한다.</p>
+        <p><strong>제2조 (목적)</strong> 본 단체는 과거의 지혜를 계승하여 인류공영의 번영과 국가 부흥을 위한 정책적 대안을 연구하며, 사회 갈등 해소와 K-문화 가치 보존을 목적으로 한다.</p>
+        <p><strong>제3조 (사업)</strong> 본 단체는 목적 달성을 위해 다음의 사업을 수행한다.<br>
+          1. 사회문제 개선 및 국민화합을 위한 정책 연구<br>
+          2. 국민 삶의 질 향상을 위한 지식교류 및 문화 홍보 사업<br>
+          3. 환경 및 건강에 관한 정책 연구 및 실천 활동
+        </p>
+      </div>
+    </div>
+
+    <div class="statute-section">
+      <h2 class="section-title" style="text-align: left;">제2장 회원 및 임원</h2>
+      <div class="grid-2">
+        <div class="statute-card">
+          <h3>회원 구성 (제5조)</h3>
+          <p><strong>1. 정회원:</strong> 본 단체의 취지에 찬동하고 정관에 따른 회비를 납부하며 운영에 직접 참여하는 자.</p>
+          <p><strong>2. 일반회원:</strong> 본 단체의 활동에 관심을 갖고 정기적 또는 비정기적 후원에 동참하는 자.</p>
+          <p><strong>3. 특별회원:</strong> 본 단체의 발전에 공로가 크거나 학술적 전문성을 갖춘 국내외 인사.</p>
+        </div>
+        <div class="statute-card">
+          <h3>임원 선임 (제8조)</h3>
+          <p><strong>1. 회장 (1인):</strong> 단체를 대표하고 사무 전반을 총괄하며 이사회의 의장이 된다.</p>
+          <p><strong>2. 이사 (5인 이상 10인 이하):</strong> 단체의 주요 의사결정 사항을 심의하고 의결한다.</p>
+          <p><strong>3. 감사 (1인 이상):</strong> 단체의 회계 및 사무 집행 사항을 감사하고 보고한다.</p>
+        </div>
+      </div>
     </div>
   </main>
+
   <footer id="footer-include"></footer>
   <script>
     async function loadInclude() {
