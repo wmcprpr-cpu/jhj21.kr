@@ -1,119 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>기관소개 | 집현전21</title>
-  <meta name="description" content="집현전21의 설립 취지, 목적, 사업 방향을 소개합니다." />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>집현전21 | About</title>
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header id="header-include"></header>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="badge">About</span>
+      <p class="topbar__text">집현전 정신을 현대적으로 계승하여 지식을 공공의 가치로 확산합니다.</p>
+      <a class="topbar__cta" href="contact.html">문의</a>
+    </div>
+  </div>
 
-  <header class="hero">
-    <div class="container">
-      <div class="pill">
-        <span class="dot" aria-hidden="true"></span>
-        <strong>기관소개</strong>
-        <span>정체성과 방향을 명확히 합니다</span>
-      </div>
-      <h1>집현전21의 비전</h1>
-      <p>
-        집현전21은 역사 속 현인들의 지성을 오늘의 언어로 재구성하여,
-        21세기 대한민국의 국가 부흥과 문화적 창의 가치 확산에 기여하는 공익·연구 공동체입니다.
-        연구는 실행을 위해 존재하며, 실행은 다시 지식으로 환류되어 사회적 신뢰를 축적합니다.
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href="statutes.html">정체성/원칙</a>
-        <a class="btn" href="fields.html">연구분야</a>
-        <a class="btn" href="contact.html">협력 문의</a>
-      </div>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="./logo.png" alt="집현전21 로고" />
+        <div><strong class="brand__name">집현전21</strong><span class="brand__tag">Jiphyeonjeon21 Think Tank</span></div>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggle-line"></span><span class="nav__toggle-line"></span><span class="nav__toggle-line"></span>
+          <span class="sr-only">메뉴</span>
+        </button>
+        <ul id="navMenu" class="nav__menu">
+          <li><a data-page="index.html" href="index.html">Home</a></li>
+          <li><a data-page="about.html" href="about.html">About</a></li>
+          <li><a data-page="research.html" href="research.html">Research</a></li>
+          <li><a data-page="publication.html" href="publication.html">Publications</a></li>
+          <li><a data-page="notice.html" href="notice.html">News</a></li>
+          <li><a class="nav__button" data-page="contact.html" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>핵심 목적</h2>
-          <p>
-            공공성과 국민화합, 그리고 K-문화의 창의적 가치 보존·홍보를 위한 연구 및 활동을 전개합니다.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <span class="tag">지성의 계승</span>
-          <h3>역사의 지혜를 오늘의 과제로</h3>
-          <p>전통의 자산을 현대 사회문제 해결 프레임으로 재해석하여, 공익의 언어로 제시합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">실행의 책임</span>
-          <h3>연구 → 실천 → 확산</h3>
-          <p>근거 기반 제안과 실행 프로젝트를 병행하며, 협력 네트워크로 성과를 확산합니다.</p>
-        </div>
-      </div>
+  <main class="container">
+    <div class="pagehead">
+      <h1 class="h2">About</h1>
+      <p>집현전21은 연구·포럼·발간물을 통해 “문제 정의 → 분석 → 실행 가능한 대안”을 제시하는 싱크탱크형 조직을 지향합니다.</p>
     </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>운영 철학</h2>
-          <p>
-            “작게 시작하되, 오래 지속되는 구조”를 목표로 합니다.
-            기록과 공개, 검증과 개선의 루프를 통해 공익기관으로서의 신뢰를 축적합니다.
-          </p>
+    <section class="section section--alt">
+      <div class="grid grid--3">
+        <div class="card">
+          <span class="pill pill--gold">Purpose</span>
+          <h3 class="h3">설립 취지</h3>
+          <p>복잡한 사회 문제를 단편적 대응이 아닌, 구조적 이해와 협력 모델로 해결합니다.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill--gold">Method</span>
+          <h3 class="h3">운영 방식</h3>
+          <p>연구(근거)–포럼(합의)–발간(확산) 3단 구조로 성과를 축적합니다.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill--gold">Principles</span>
+          <h3 class="h3">핵심 원칙</h3>
+          <p>공공성 · 전문성 · 투명성 · 지속가능성을 기반으로 열린 협력 네트워크를 구축합니다.</p>
         </div>
       </div>
+    </section>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="tag">공공성</span>
-          <h3>사회적 가치 최우선</h3>
-          <p>사업의 기준을 공익성과 사회적 효용에 두고, 특정 이해관계에 종속되지 않도록 설계합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">투명성</span>
-          <h3>기록·공개·보고</h3>
-          <p>활동 기록과 성과 보고를 정례화하여, 외부 검증이 가능한 운영을 지향합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">협력</span>
-          <h3>기관·기업·시민 연대</h3>
-          <p>전문성과 실행력을 결합하기 위해 다양한 주체와 협력 모델을 구축합니다.</p>
-        </div>
+    <section class="section">
+      <div class="pagehead">
+        <h2 class="h2">조직이 하는 일 (3)</h2>
+        <p>연구소급 인상을 만드는 핵심은 “무엇을, 어떤 형태로, 얼마나 꾸준히” 하는지가 한눈에 보이게 하는 것입니다.</p>
       </div>
+      <div class="grid grid--3">
+        <div class="card"><span class="pill">1</span><h3 class="h3">정책/사회 의제 연구</h3><p>현장 데이터와 사례 비교로 정책 옵션을 설계합니다.</p></div>
+        <div class="card"><span class="pill">2</span><h3 class="h3">포럼/라운드테이블</h3><p>전문가 논의를 실행 과제로 전환하는 공론장을 운영합니다.</p></div>
+        <div class="card"><span class="pill">3</span><h3 class="h3">발간/교육 콘텐츠</h3><p>브리프·리포트·세미나로 지식을 확산합니다.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img class="footer__logo" src="./logo.png" alt="" aria-hidden="true" />
+          <div><strong>집현전21</strong><p class="muted">지혜로 미래를 여는 지식 공동체</p></div>
+        </div>
+        <p class="muted">© <span id="year"></span> Jiphyeonjeon21.</p>
+      </div>
+      <div class="footer__links">
+        <a href="research.html">Research</a>
+        <a href="publication.html">Publications</a>
+        <a href="notice.html">News</a>
+      </div>
+      <div class="muted"><div>Navy #0b1736</div><div>Gold #BA9F65</div></div>
     </div>
-  </section>
+  </footer>
 
-  <footer id="footer-include"></footer>
-
-  <script>
-    async function loadInclude() {
-      try {
-        const headerRes = await fetch('assets/header.html');
-        if (headerRes.ok) {
-          document.getElementById('header-include').innerHTML = await headerRes.text();
-          const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-          document.querySelectorAll('.nav a').forEach(a => {
-            if ((a.getAttribute('href') || '').toLowerCase() === current) a.classList.add('active');
-          });
-        }
-
-        const footerRes = await fetch('assets/footer.html');
-        if (footerRes.ok) {
-          document.getElementById('footer-include').innerHTML = await footerRes.text();
-          const y = document.getElementById('year');
-          if (y) y.textContent = new Date().getFullYear();
-        }
-      } catch (e) {
-        console.error('Include load failed:', e);
-      }
-    }
-    window.addEventListener('DOMContentLoaded', loadInclude);
-  </script>
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
+  <script src="./script.js"></script>
 </body>
 </html>
