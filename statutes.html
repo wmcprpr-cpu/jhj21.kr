@@ -4,136 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정관 | 집현전21</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --navy: #0b1736;
-            --gold: #BA9F65;
-            --cream: #fdfcf9;
-            --text-dark: #1e293b;
-            --text-muted: #475569;
-            --white: #ffffff;
-            --shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #e2e8f0; font-family: 'Lato', 'Noto Sans KR', sans-serif; display: grid; gap: 40px; justify-items: center; padding: 40px 0; }
-
-        .slide-container {
-            width: 1280px; height: 720px;
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
-            position: relative;
-            display: flex; flex-direction: column;
-            padding: 60px;
-        }
-
-        .slide-container::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 10px; background: var(--gold);
-        }
-
-        h1, h2, h3 { font-family: 'Poppins', 'Noto Serif KR', serif; color: var(--navy); z-index: 1; }
-        .slide-title { font-size: 42px; font-weight: 700; margin-bottom: 30px; border-left: 8px solid var(--gold); padding-left: 20px; }
-        .subtitle { font-size: 20px; color: var(--text-muted); margin-bottom: 40px; font-weight: 400; }
-        
-        .content-area { display: flex; flex-direction: column; gap: 30px; flex-grow: 1; z-index: 1; }
-
-        /* 사진처럼 박스 높이를 맞추기 위한 설정 */
-        .grid-2 { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 30px; 
-            align-items: stretch; /* 박스 높이를 동일하게 맞춤 */
-        }
-
-        .statute-card {
-            background: var(--cream); 
-            border: 1px solid #e2e8f0; 
-            padding: 35px; 
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .statute-card h3 { font-size: 26px; margin-bottom: 20px; color: var(--gold); border-bottom: 1px solid var(--gold); display: inline-block; width: fit-content; padding-bottom: 5px; }
-        .article-num { font-weight: 700; color: var(--navy); margin-right: 10px; }
-
-        .bullet-list { list-style: none; }
-        .bullet-list li { position: relative; padding-left: 30px; margin-bottom: 12px; font-size: 19px; line-height: 1.6; }
-        .bullet-list li::before {
-            content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
-            position: absolute; left: 0; color: var(--gold); font-size: 18px;
-        }
-
-        .nav-placeholder {
-            position: absolute; bottom: 30px; left: 60px; right: 60px;
-            display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 20px;
-        }
-        .nav-links a { font-size: 16px; color: var(--text-muted); margin-right: 20px; font-weight: 700; text-decoration: none; }
-        .nav-links a:hover { color: var(--gold); }
-        .logo-small { height: 30px; opacity: 0.8; }
-
-        /* 제목 슬라이드 */
-        .title-slide { background-color: var(--navy); color: var(--white); justify-content: center; align-items: center; text-align: center; }
-        .title-slide h1 { color: var(--gold); font-size: 72px; margin-bottom: 20px; }
-        .title-slide .gold-line { width: 100px; height: 4px; background: var(--gold); margin: 30px 0; }
+        body { background-color: #e2e8f0; }
+        .slide-container { width: 1200px; background-color: #fff; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); margin: 40px auto; padding: 60px; position: relative; }
+        .slide-container::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 10px; background: var(--gold); }
+        .statute-card { background: var(--gold-pale); border: 1px solid #e2e8f0; padding: 35px; border-radius: 12px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+        .bullet-list { list-style: none; padding: 0; }
+        .bullet-list li { position: relative; padding-left: 30px; margin-bottom: 12px; font-size: 19px; }
+        .bullet-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: var(--gold); }
     </style>
 </head>
 <body>
+  <header id="header-include"></header>
 
-    <div class="slide-container title-slide">
-        <h1>집현전 21 정관</h1>
-        <div class="gold-line"></div>
-        <p style="font-size: 24px; opacity: 0.8;">Organization Statutes & Bylaws</p>
-    </div>
-
-    <div class="slide-container">
-        <h2 class="slide-title">제2장 회원 및 임원</h2>
-        <p class="subtitle">조직 구성의 원칙과 책임의 한계</p>
-        
-        <div class="content-area">
-            <div class="grid-2">
-                <div class="statute-card">
-                    <h3>회원 구분 (제5조)</h3>
-                    <ul class="bullet-list">
-                        <li><strong>정회원:</strong> 설립 취지 찬동, 회비 납부 및 총회 의결권 보유</li>
-                        <li><strong>일반회원:</strong> 정기/비정기 후원자 및 활동 참여자</li>
-                        <li><strong>후원회원:</strong> 단체의 발전을 위해 후원하는 자</li>
-                    </ul>
-                </div>
-                <div class="statute-card">
-                    <h3>임원 구성 (제8조)</h3>
-                    <ul class="bullet-list">
-                        <li><strong>회장 (1인):</strong> 단체 대표 및 총회·이사회 의장</li>
-                        <li><strong>이사 (5~10인):</strong> 주요 사항 심의 및 의결</li>
-                        <li><strong>감사 (1인 이상):</strong> 회계 및 운영 감사</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="statute-card">
-                <h3>임원의 임기 및 선임</h3>
-                <ul class="bullet-list">
-                    <li><span class="article-num">제9조</span> 임원은 총회에서 선출하며, 결원 시 2개월 이내 보선한다.</li>
-                    <li><span class="article-num">제11조</span> 임원의 임기는 3년으로 하며, 중임할 수 있다.</li>
-                </ul>
-            </div>
+  <div class="slide-container">
+    <h2 class="section-title" style="text-align: left; border-left: 8px solid var(--gold); padding-left: 20px;">제2장 회원 및 임원</h2>
+    <div class="grid-2">
+        <div class="statute-card">
+            <h3>회원 구분 (제5조)</h3>
+            <ul class="bullet-list">
+                <li><strong>정회원:</strong> 설립 취지 찬동, 회비 납부 및 총회 의결권 보유</li>
+                <li><strong>일반회원:</strong> 정기/비정기 후원자 및 활동 참여자</li>
+            </ul>
         </div>
-
-        <div class="nav-placeholder">
-            <div class="nav-links">
-                <a href="index.html">HOME</a>
-                <a href="about.html">ABOUT</a>
-                <a href="statutes.html" style="color:var(--gold)">STATUTES</a>
-            </div>
-            <img src="logo.png" alt="Logo" class="logo-small">
+        <div class="statute-card">
+            <h3>임원 구성 (제8조)</h3>
+            <ul class="bullet-list">
+                <li><strong>회장 (1인):</strong> 단체 대표 및 총회·이사회 의장</li>
+                <li><strong>이사 (5~10인):</strong> 주요 사항 심의 및 의결</li>
+            </ul>
         </div>
     </div>
+    <div class="statute-card" style="margin-top:30px;">
+        <h3>임원의 임기 및 선임</h3>
+        <p>제9조 임원은 총회에서 선출하며, 결원 시 2개월 이내 보선한다.</p>
+        <p>제11조 임원의 임기 및 중임 규정을 따릅니다.</p>
+    </div>
+  </div>
 
+  <footer id="footer-include"></footer>
+
+  <script>
+    async function loadInclude() {
+      try {
+        const h = await fetch('assets/header.html');
+        document.getElementById('header-include').innerHTML = await h.text();
+        const f = await fetch('assets/footer.html');
+        document.getElementById('footer-include').innerHTML = await f.text();
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const cp = window.location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
+      } catch (e) { console.error(e); }
+    }
+    window.onload = loadInclude;
+  </script>
 </body>
 </html>
