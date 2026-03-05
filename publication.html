@@ -1,113 +1,115 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>발간물 | 집현전21</title>
-  <meta name="description" content="이슈 브리프, 활동 보고서, 연구 자료 등 발간물 아카이브" />
-  <link rel="stylesheet" href="assets/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>발간물 | 집현전21</title>
+
+<link rel="stylesheet" href="assets/style.css">
+
+<meta name="description" content="집현전21 발간물 및 연구자료">
 </head>
+
 <body>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="집현전21 홈">
-        <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
-        <span>집현전21</span>
-      </a>
+<header id="header-include"></header>
 
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="about.html">기관소개</a>
-        <a href="research.html">사업·연구</a>
-        <a href="education.html">지식교류</a>
-        <a class="active" href="publication.html">발간물</a>
-        <a href="notice.html">공지</a>
-        <a href="contact.html">문의</a>
-      </nav>
+<section class="hero">
+<div class="container">
 
-      <div class="cta">
-        <a class="btn gold" href="research.html">연구 보기</a>
-        <a class="btn primary" href="contact.html">자료 협력</a>
-      </div>
-    </div>
-  </div>
+<h1>발간물</h1>
 
-  <div class="container page-title">
-    <h1>발간물</h1>
-    <p>
-      집현전21은 축적된 지식을 “읽히는 형태”로 제공합니다.
-      브리프(짧고 명료) → 보고서(심층) 순으로 단계적 아카이브를 구축합니다.
-    </p>
-  </div>
+<p>
+집현전21은 연구성과와 지식 공유를 위해 다양한 발간물을 제작합니다.
+보고서, 정책 브리프, 학술자료 등을 통해 공공적 가치와 지식을 확산합니다.
+</p>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>아카이브</h2>
-          <p>현재는 샘플입니다. PDF 파일을 올리고 링크만 연결하면 바로 운영됩니다.</p>
-        </div>
-      </div>
+</div>
+</section>
 
-      <div class="grid-2">
-        <div class="item">
-          <div>
-            <div class="title">이슈 브리프 (샘플)</div>
-            <div class="meta">요약·논점·제안 · PDF</div>
-          </div>
-          <div class="badge">BRIEF</div>
-        </div>
+<section>
+<div class="container">
 
-        <div class="item">
-          <div>
-            <div class="title">활동 보고서 (샘플)</div>
-            <div class="meta">사업 개요·성과·재정 요약 · PDF</div>
-          </div>
-          <div class="badge">REPORT</div>
-        </div>
+<h2 class="section-title">최근 발간물</h2>
 
-        <div class="item">
-          <div>
-            <div class="title">세미나 기록 (샘플)</div>
-            <div class="meta">발제·토론 요약 · 문서</div>
-          </div>
-          <div class="badge">NOTE</div>
-        </div>
+<div class="grid">
 
-        <div class="item">
-          <div>
-            <div class="title">연구 자료 (샘플)</div>
-            <div class="meta">데이터·참고문헌 목록 · 링크</div>
-          </div>
-          <div class="badge">DATA</div>
-        </div>
-      </div>
+<div class="card">
+<h3>정책 연구 보고서</h3>
+<p>
+사회문제 해결을 위한 정책 분석과 실행 전략을 담은 연구 보고서입니다.
+</p>
+<a class="btn btn-gold" href="#">PDF 보기</a>
+</div>
 
-      <div style="margin-top:14px" class="note">
-        <b style="color:var(--navy)">업로드 방법(간단)</b><br/>
-        GitHub에 PDF 파일을 업로드한 뒤, 이 페이지의 제목을 “파일 링크”로 바꾸면 됩니다.
-        원하시면 제가 링크형 템플릿까지 같이 세팅해드릴게요.
-      </div>
+<div class="card">
+<h3>문화 연구 브리프</h3>
+<p>
+문화예술 가치 보존 및 확산을 위한 연구자료와 분석 보고서입니다.
+</p>
+<a class="btn btn-gold" href="#">PDF 보기</a>
+</div>
 
-    </div>
-  </section>
+<div class="card">
+<h3>사회 통합 연구</h3>
+<p>
+국민화합과 사회적 신뢰 회복을 위한 연구 프로젝트 자료입니다.
+</p>
+<a class="btn btn-gold" href="#">PDF 보기</a>
+</div>
 
-  <footer>
-    <div class="container fgrid">
-      <div>
-        <div style="font-weight:900; font-size:18px;">집현전21</div>
-        <small>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</small>
-      </div>
-      <div style="text-align:right;">
-        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
-        <small>문의: wmcprpr@gmail.com</small>
-      </div>
-    </div>
-  </footer>
+</div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+</div>
+</section>
+
+<footer id="footer-include"></footer>
+
+<script>
+
+async function loadInclude(){
+
+try{
+
+const headerRes = await fetch('assets/header.html')
+
+if(headerRes.ok){
+
+document.getElementById('header-include').innerHTML = await headerRes.text()
+
+const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase()
+
+document.querySelectorAll('.nav a').forEach(a=>{
+
+if((a.getAttribute('href')||'').toLowerCase()===current) a.classList.add('active')
+
+})
+
+}
+
+const footerRes = await fetch('assets/footer.html')
+
+if(footerRes.ok){
+
+document.getElementById('footer-include').innerHTML = await footerRes.text()
+
+const y=document.getElementById('year')
+
+if(y) y.textContent=new Date().getFullYear()
+
+}
+
+}catch(e){
+
+console.error(e)
+
+}
+
+}
+
+window.addEventListener('DOMContentLoaded',loadInclude)
+
+</script>
 
 </body>
 </html>
