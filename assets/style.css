@@ -409,3 +409,48 @@ img{max-width:100%; display:block}
   .footer-meta{text-align:left}
   .footer-slogan{white-space:normal} /* 모바일은 자연 줄바꿈 */
 }
+/* ===== NAV DROPDOWN (Programs) ===== */
+.nav__dropdown { position: relative; }
+.nav__dropbtn { display:inline-flex; align-items:center; gap:8px; }
+.nav__caret { font-size: 12px; opacity:.7; }
+
+.nav__dropdownmenu{
+  position:absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 220px;
+  padding: 10px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display:none;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+.nav__dropdownmenu li a{
+  display:block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav__dropdownmenu li a:hover{
+  background: rgba(11,23,54,.06);
+}
+
+.nav__dropdown:hover .nav__dropdownmenu{ display:block; }
+
+/* 모바일(햄버거)에서는 hover가 불편하니 항상 리스트로 보이게 처리 */
+@media (max-width: 920px){
+  .nav__dropdownmenu{
+    position: static;
+    display:block;
+    box-shadow:none;
+    border-radius: 12px;
+    margin-top: 8px;
+    background: rgba(11,23,54,.03);
+  }
+}
