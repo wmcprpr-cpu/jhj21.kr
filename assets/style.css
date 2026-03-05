@@ -548,3 +548,17 @@ footer a{color:rgba(255,255,255,.90); text-decoration:underline; text-underline-
   font-size: 13px;
   line-height: 1.6;
 }
+/* ===== Hero Title: 2-line fixed (navy / gold) ===== */
+.hero-title{ margin: 0; }
+.hero-line{
+  display:block;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.hero-line--navy{ color: var(--navy); }
+.hero-line--gold{ color: var(--gold); }
+
+/* 화면이 좁을 때도 ‘줄 느낌’ 유지 (너무 깨지지 않게) */
+@media (max-width: 560px){
+  .hero-line{ line-height: 1.08; }
+}
