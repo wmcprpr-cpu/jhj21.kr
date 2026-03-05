@@ -9,62 +9,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
-    
-    /* 연구분야 전용 스타일 */
-    .field-intro { background-color: #fff; border-bottom: 1px solid var(--line); }
-    .field-list { padding: 80px 0; }
     .field-item { 
-      display: grid; 
-      grid-template-columns: 80px 1fr; 
-      gap: 30px; 
-      margin-bottom: 60px;
-      padding-bottom: 40px;
-      border-bottom: 1px dashed var(--line);
+      display: grid; grid-template-columns: 80px 1fr; gap: 30px; 
+      margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px dashed var(--line);
     }
-    .field-item:last-child { border-bottom: none; }
     .field-icon { 
-      width: 80px; height: 80px; 
-      background: var(--gold-pale); 
-      color: var(--navy); 
-      display: flex; align-items: center; justify-content: center; 
-      font-size: 32px; border-radius: 50%;
+      width: 80px; height: 80px; background: var(--gold-pale); color: var(--navy); 
+      display: flex; align-items: center; justify-content: center; font-size: 32px; border-radius: 50%;
     }
-    .field-content h3 { font-size: 28px; color: var(--navy); margin-top: 0; }
-    .field-content p { font-size: 20px; color: var(--text-gray); margin-top: 10px; }
-    .research-keyword { margin-top: 15px; }
     .research-keyword span { 
-      display: inline-block; 
-      padding: 5px 15px; 
-      background: var(--bg-gray); 
-      border: 1px solid var(--line); 
-      font-size: 16px; 
-      color: var(--navy); 
-      margin-right: 8px;
-      font-weight: 600;
+      display: inline-block; padding: 5px 15px; background: #fff; border: 1px solid var(--gold); 
+      font-size: 16px; color: var(--navy); margin-right: 8px; font-weight: 600; margin-top: 10px;
     }
   </style>
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html">
-        <img src="logo.png" alt="집현전21 로고" class="brand-logo">
-        <span>집현전21</span>
-      </a>
-      <nav class="nav">
-        <a href="about.html">소개</a>
-        <a href="statutes.html">정관</a>
-        <a href="fellows.html">연구위원</a>
-        <a href="fields.html" class="active">연구분야</a>
-        <a href="reports.html">보고서</a>
-        <a href="notice.html">공지</a>
-      </nav>
-      <div class="cta">
-        <a href="contact.html" class="btn btn-gold">협력 문의</a>
-      </div>
-    </div>
-  </header>
+  <header id="header-include"></header>
 
   <section class="page-hero" style="background: var(--gold-pale); padding: 60px 0; text-align: center;">
     <div class="container">
@@ -73,85 +33,50 @@
     </div>
   </section>
 
-  <main class="field-list">
-    <div class="container">
-      <div class="field-item">
-        <div class="field-icon"><i class="fa-solid fa-users-rays"></i></div>
-        <div class="field-content">
-          <h3>사회문제 및 국민화합</h3>
-          <p>현대 사회의 다양한 갈등 구조를 심리학적·사회학적 관점에서 진단하고, 실질적인 개선방안을 설계합니다. 국민화합을 위한 사회통합 프로그램 연구를 지향합니다.</p>
-          <div class="research-keyword">
-            <span>#갈등조정</span> <span>#사회통합</span> <span>#정책대안</span>
-          </div>
-        </div>
+  <main class="container" style="padding: 80px 20px;">
+    <div class="field-item">
+      <div class="field-icon"><i class="fa-solid fa-users-rays"></i></div>
+      <div class="field-content">
+        <h3>사회문제 및 국민화합</h3>
+        <p>현대 사회의 갈등 구조를 진단하고 실질적인 개선방안을 설계합니다. 국민화합을 위한 사회통합 프로그램 연구를 지향합니다.</p>
+        <div class="research-keyword"><span>#갈등조정</span> <span>#사회통합</span> <span>#정책대안</span></div>
       </div>
+    </div>
 
-      <div class="field-item">
-        <div class="field-icon"><i class="fa-solid fa-book-open-reader"></i></div>
-        <div class="field-content">
-          <h3>공익적 지식교류</h3>
-          <p>전문적인 지식이 상아탑에만 머물지 않고 국민의 삶에 스며들 수 있도록 지식 교류 활동을 전개합니다. 포럼과 세미나를 통해 지식의 공공성을 실현합니다.</p>
-          <div class="research-keyword">
-            <span>#시민포럼</span> <span>#실천적지성</span> <span>#학술세미나</span>
-          </div>
-        </div>
+    <div class="field-item">
+      <div class="field-icon"><i class="fa-solid fa-palette"></i></div>
+      <div class="field-content">
+        <h3>K-문화 가치 보존 및 홍보</h3>
+        <p>한국 문화의 창의적 가치를 발굴하여 기록하고, 이를 현대적 예술 가치와 결합하여 전 세계에 홍보합니다.</p>
+        <div class="research-keyword"><span>#전통의현대화</span> <span>#문화아카이빙</span> <span>#글로벌홍보</span></div>
       </div>
+    </div>
 
-      <div class="field-item">
-        <div class="field-icon"><i class="fa-solid fa-palette"></i></div>
-        <div class="field-content">
-          <h3>K-문화 가치 보존 및 홍보</h3>
-          <p>한국(K) 문화의 창의적 가치를 발굴하여 기록하고, 이를 현대적 예술 가치와 결합하여 전 세계에 홍보함으로써 국가 부흥의 문화적 기초를 다집니다.</p>
-          <div class="research-keyword">
-            <span>#전통의현대화</span> <span>#문화아카이빙</span> <span>#글로벌홍보</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="field-item">
-        <div class="field-icon"><i class="fa-solid fa-leaf"></i></div>
-        <div class="field-content">
-          <h3>환경과 건강 연구</h3>
-          <p>인간의 삶과 직결된 환경 및 건강 분야에 대한 분야별 연구를 수행합니다. 지속 가능한 생태계와 국민 건강 증진을 위한 실천적 활동 사업을 병행합니다.</p>
-          <div class="research-keyword">
-            <span>#환경정책</span> <span>#국민보건</span> <span>#생태복원</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="field-item">
-        <div class="field-icon"><i class="fa-solid fa-house-chimney-heart"></i></div>
-        <div class="field-content">
-          <h3>행복한 가족 및 사회</h3>
-          <p>사회의 최소 단위인 가족의 행복이 건강한 국가의 기초라는 믿음 아래, 가족 구조의 변화에 따른 대응 연구와 공동체 회복을 위한 활동을 전개합니다.</p>
-          <div class="research-keyword">
-            <span>#가족심리</span> <span>#공동체회복</span> <span>#사회복지연구</span>
-          </div>
-        </div>
+    <div class="field-item">
+      <div class="field-icon"><i class="fa-solid fa-house-chimney-heart"></i></div>
+      <div class="field-content">
+        <h3>행복한 가족 및 사회</h3>
+        <p>가족 구조의 변화에 따른 대응 연구와 공동체 회복을 위한 활동을 전개하여 건강한 국가의 기초를 다집니다.</p>
+        <div class="research-keyword"><span>#가족심리</span> <span>#공동체회복</span> <span>#사회복지연구</span></div>
       </div>
     </div>
   </main>
 
-  <section style="background-color: var(--navy); color: white; padding: 60px 0;">
-    <div class="container" style="text-align: center;">
-      <h2 style="color: var(--gold); margin-top: 0;">지식과 실천의 융합</h2>
-      <p style="font-size: 20px; max-width: 800px; margin: 20px auto;">
-        집현전21의 모든 연구는 현장에서 증명되는 '실천'을 전제로 합니다. <br>
-        우리는 단순한 보고서를 넘어 사회를 바꾸는 해법을 설계합니다.
-      </p>
-    </div>
-  </section>
+  <footer id="footer-include"></footer>
 
-  <footer>
-    <div class="container">
-      <h2 style="font-family: 'Noto Serif KR', serif;">집현전21</h2>
-      <p>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</p>
-      <div style="margin: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
-        <p>문의: wmcprpr@gmail.com | 도메인: www.jhj21.kr</p>
-        <p style="opacity: 0.5;">© 2026 Jiphyeonjeon21. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
+  <script>
+    async function loadInclude() {
+      try {
+        const h = await fetch('assets/header.html');
+        document.getElementById('header-include').innerHTML = await h.text();
+        const f = await fetch('assets/footer.html');
+        document.getElementById('footer-include').innerHTML = await f.text();
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const cp = window.location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
+      } catch (e) { console.error(e); }
+    }
+    window.onload = loadInclude;
+  </script>
 </body>
 </html>
