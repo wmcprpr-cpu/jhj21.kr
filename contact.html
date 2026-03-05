@@ -2,66 +2,30 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>문의 | 집현전21</title>
   <link rel="stylesheet" href="assets/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
-    .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 60px 0; }
-    input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid var(--line); font-size: 17px; }
-  </style>
 </head>
 <body>
   <header id="header-include"></header>
-
-  <section class="page-hero" style="background: var(--navy); color: white; padding: 60px 0; text-align: center;">
-    <h1 style="font-size: 42px; color: var(--gold); margin: 0;">협력 및 문의</h1>
-    <p style="opacity: 0.8; margin-top: 10px; font-size: 18px;">지혜를 모아 실천적 해법을 함께 만드실 파트너를 기다립니다.</p>
-  </section>
-
-  <main class="container contact-container">
-    <div class="info-box">
-      <h3 style="color: var(--navy);">함께하는 방법</h3>
-      <p>집현전21은 정관에 명시된 공익 목적을 달성하기 위해 기관, 기업, 전문가분들과의 협력을 환영합니다.</p>
-      <div style="margin-top: 30px; padding: 20px; background: var(--gold-pale); border-radius: 10px;">
-        <h4 style="margin: 0; color: var(--navy);">사무국 이메일</h4>
-        <p style="margin: 5px 0 0; font-weight: 700;">wmcprpr@gmail.com</p>
-      </div>
-    </div>
-
+  <main class="container" style="padding: 80px 0;">
+    <h2 class="section-title">협력 및 문의</h2>
     <form onsubmit="return sendMail();">
-      <label style="font-weight:700;">성함 / 기관명</label>
-      <input type="text" id="name" required>
-      <label style="font-weight:700;">연락처 (이메일/전화)</label>
-      <input type="text" id="contactInfo" required>
-      <label style="font-weight:700;">문의 내용</label>
-      <textarea id="message" style="height:150px;" required></textarea>
-      <button type="submit" class="btn btn-gold" style="width:100%;">문의 보내기</button>
+      <input type="text" id="name" placeholder="성함 / 기관명" required style="width:100%; padding:15px; margin-bottom:20px;">
+      <textarea id="message" placeholder="문의 내용" style="width:100%; height:200px; padding:15px;"></textarea>
+      <button type="submit" class="btn btn-gold" style="width:100%;">문의 메일 보내기</button>
     </form>
   </main>
-
   <footer id="footer-include"></footer>
-
   <script>
     function sendMail(){
       const name = document.getElementById('name').value;
-      const contact = document.getElementById('contactInfo').value;
-      const msg = document.getElementById('message').value;
       const to = "wmcprpr@gmail.com";
-      window.location.href = `mailto:${to}?subject=${encodeURIComponent("[집현전21 문의] " + name)}&body=${encodeURIComponent("성함: "+name+"\n연락처: "+contact+"\n\n내용:\n"+msg)}`;
+      window.location.href = `mailto:${to}?subject=[집현전21 문의] ${name}`;
       return false;
     }
     async function loadInclude() {
-      try {
-        const h = await fetch('assets/header.html');
-        document.getElementById('header-include').innerHTML = await h.text();
-        const f = await fetch('assets/footer.html');
-        document.getElementById('footer-include').innerHTML = await f.text();
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const cp = window.location.pathname.split("/").pop() || "index.html";
-        document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
-      } catch (e) { console.error(e); }
+      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
+      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
     }
     window.onload = loadInclude;
   </script>
