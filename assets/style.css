@@ -600,3 +600,6 @@ footer a{color:rgba(255,255,255,.90); text-decoration:underline; text-underline-
   letter-spacing:-0.02em;
   word-break:keep-all;
 }
+.hero .h1.hero-title{
+  font-size: clamp(34px, 3.6vw, 48px) !important;
+}
