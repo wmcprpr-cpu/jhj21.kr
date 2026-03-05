@@ -615,3 +615,25 @@ footer a{color:rgba(255,255,255,.90); text-decoration:underline; text-underline-
   letter-spacing: -0.02em;
   word-break: keep-all;
 }
+.footer_brand{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.footer_title{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.footer_logo{
+width:42px;
+height:auto;
+}
+
+.footer_slogan{
+margin-left:52px;
+font-size:14px;
+color:#6b7280;
+}
