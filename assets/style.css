@@ -381,3 +381,170 @@ footer a{color:rgba(255,255,255,.90); text-decoration:underline; text-underline-
 .callout h3{margin:0 0 8px; color:#fff}
 .callout p{margin:0; color:rgba(255,255,255,.80)}
 .callout .btn{box-shadow:none}
+/* ===== Org Chart (Governance) ===== */
+.orgchart{
+  margin-top: 18px;
+  border-radius: var(--radius2);
+  border: 1px solid rgba(11,23,54,.10);
+  background: rgba(255,255,255,.80);
+  box-shadow: 0 24px 60px rgba(11,23,54,.10);
+  overflow: hidden;
+}
+
+.orgchart__head{
+  padding: 18px 18px 0;
+}
+
+.orgchart__wrap{
+  padding: 18px;
+  overflow-x: auto;
+}
+
+.org{
+  min-width: 980px; /* 화면 작아도 도표가 깨지지 않도록 */
+  padding: 10px 0 6px;
+}
+
+.org .row{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  position: relative;
+  margin: 12px 0;
+}
+
+.org .row.row--tight{ margin: 8px 0; }
+.org .row.row--wide{ gap: 18px; flex-wrap: wrap; }
+
+.org .node{
+  position: relative;
+  width: 220px;
+  padding: 14px 14px 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(11,23,54,.12);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 14px 34px rgba(11,23,54,.08);
+  text-align: center;
+}
+
+.org .node--top{
+  width: 260px;
+  background: linear-gradient(135deg, rgba(11,23,54,.92), rgba(20,42,95,.92));
+  color: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.org .node--core{
+  width: 240px;
+  background: rgba(11,23,54,.04);
+}
+
+.org .node--office{
+  width: 240px;
+  border-color: rgba(186,159,101,.30);
+  background: rgba(186,159,101,.08);
+}
+
+.org .node__title{
+  font-weight: 900;
+  color: var(--navy);
+  font-size: 16px;
+  line-height: 1.25;
+}
+.org .node--top .node__title{ color: #fff; }
+
+.org .node__desc{
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(15,23,42,.72);
+  line-height: 1.55;
+}
+.org .node--top .node__desc{ color: rgba(255,255,255,.80); }
+
+.org .node__pill{
+  display:inline-block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.92);
+}
+.org .node:not(.node--top) .node__pill{
+  border: 1px solid rgba(11,23,54,.12);
+  background: rgba(11,23,54,.03);
+  color: rgba(11,23,54,.78);
+}
+
+/* connectors: 아래로 내려가는 선 */
+.org .row.connect-down::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+  bottom:-10px;
+  width:2px;
+  height:18px;
+  background: rgba(11,23,54,.20);
+  border-radius: 2px;
+}
+
+/* core row: 가운데에서 좌우로 뻗는 선 */
+.org .row.connect-across::before{
+  content:"";
+  position:absolute;
+  left: 13%;
+  right: 13%;
+  top: -10px;
+  height: 2px;
+  background: rgba(11,23,54,.20);
+  border-radius: 2px;
+}
+
+/* 각 노드 위로 작은 선 */
+.org .row.connect-across .node::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top: -10px;
+  width:2px;
+  height:10px;
+  background: rgba(11,23,54,.20);
+  border-radius: 2px;
+}
+
+/* committee grid */
+.committee{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width:980px){
+  .committee{ grid-template-columns: 1fr; }
+  .org{ min-width: 860px; }
+}
+
+.committee .cnode{
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(11,23,54,.12);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 14px 34px rgba(11,23,54,.07);
+}
+.committee .cnode h3{
+  margin:0 0 6px;
+  font-size: 16px;
+  color: var(--navy);
+  font-weight: 900;
+}
+.committee .cnode p{
+  margin:0;
+  color: rgba(15,23,42,.72);
+  font-size: 13px;
+  line-height: 1.6;
+}
