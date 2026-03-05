@@ -25,20 +25,27 @@
           <h2 class="h3" style="margin-bottom:10px">조직도</h2>
           <p class="muted" style="margin-top:0">이사회·자문위원회·위원회·사무국의 역할이 한눈에 보이도록 구성했습니다.</p>
 
-          <!-- 조직도 도표 (SVG) -->
-          <div style="margin-top:14px; background:rgba(255,255,255,.7); border:1px solid var(--line); border-radius:22px; overflow:hidden">
-            <svg viewBox="0 0 1200 720" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="집현전21 조직도">
-              <defs>
-                <style>
-                  .box{fill:#fff;stroke:rgba(11,23,54,.18);stroke-width:2;rx:18}
-                  .title{font:700 20px ui-sans-serif,system-ui; fill:rgba(11,23,54,.95)}
-                  .sub{font:500 14px ui-sans-serif,system-ui; fill:rgba(15,23,42,.72)}
-                  .tag{font:700 12px ui-sans-serif,system-ui; fill:rgba(11,23,54,.70); letter-spacing:.08em}
-                  .gold{fill:rgba(186,159,101,.18);stroke:rgba(186,159,101,.45)}
-                  .navy{fill:rgba(11,23,54,.06);stroke:rgba(11,23,54,.18)}
-                  .line{stroke:rgba(11,23,54,.28);stroke-width:2}
-                </style>
-              </defs>
+        <!-- ✅ 변경: 조직도(SVG) 깨짐 방지 래퍼 -->
+<div class="chart-scroll" aria-label="집현전21 조직도 영역">
+  <svg class="orgchart" viewBox="0 0 1200 720" width="1200" height="720"
+       xmlns="http://www.w3.org/2000/svg" role="img" aria-label="집현전21 조직도">
+    <defs>
+      <style>
+        .box{fill:#fff;stroke:rgba(11,23,54,.18);stroke-width:2;rx:18}
+        .title{font:700 22px ui-sans-serif,system-ui;fill:rgba(11,23,54,.95)}
+        .sub{font:500 14px ui-sans-serif,system-ui;fill:rgba(15,23,42,.72)}
+        .tag{font:700 12px ui-sans-serif,system-ui;fill:rgba(11,23,54,.7);letter-spacing:.08em}
+        .gold{fill:rgba(186,159,101,.12);stroke:rgba(186,159,101,.45)}
+        .navy{fill:rgba(11,23,54,.06);stroke:rgba(11,23,54,.18)}
+        .line{stroke:rgba(11,23,54,.28);stroke-width:2}
+      </style>
+    </defs>
+
+    <!-- 여기 아래는 주인님 기존 도형(rect/text/line) 그대로 두셔도 됩니다 -->
+    <!-- (필요하면 제가 조직도 SVG를 통째로 예쁘게 다시 만들어 드릴게요) -->
+
+  </svg>
+</div>
 
               <!-- Top -->
               <rect class="box gold" x="430" y="40" width="340" height="86" rx="18"/>
