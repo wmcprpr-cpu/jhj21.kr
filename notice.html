@@ -1,97 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>공지 | 집현전21</title>
-  <meta name="description" content="집현전21 공지사항" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 | 집현전21</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
+    .notice-list { border-top: 2px solid var(--navy); margin-top: 40px; }
+    .notice-item { 
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 25px 15px; border-bottom: 1px solid var(--line);
+      transition: background 0.2s;
+    }
+    .notice-item:hover { background: #fff; }
+    .notice-info { display: flex; flex-direction: column; gap: 5px; }
+    .notice-tag { 
+      display: inline-block; width: fit-content; padding: 2px 10px; 
+      font-size: 14px; font-weight: 700; background: var(--navy); color: white; 
+      margin-bottom: 5px;
+    }
+    .notice-title { font-size: 20px; font-weight: 700; color: var(--navy); }
+    .notice-date { font-size: 16px; color: var(--text-gray); }
+  </style>
 </head>
 <body>
 
-  <div class="topbar">
+  <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="집현전21 홈">
-        <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="집현전21 로고" class="brand-logo">
         <span>집현전21</span>
       </a>
-
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="about.html">기관소개</a>
-        <a href="research.html">사업·연구</a>
-        <a href="education.html">지식교류</a>
-        <a href="publication.html">발간물</a>
-        <a class="active" href="notice.html">공지</a>
-        <a href="contact.html">문의</a>
+      <nav class="nav">
+        <a href="about.html">소개</a>
+        <a href="statutes.html">정관</a>
+        <a href="fellows.html">연구위원</a>
+        <a href="fields.html">연구분야</a>
+        <a href="reports.html">보고서</a>
+        <a href="notice.html" class="active">공지</a>
       </nav>
-
       <div class="cta">
-        <a class="btn gold" href="publication.html">자료</a>
-        <a class="btn primary" href="contact.html">문의</a>
+        <a href="contact.html" class="btn btn-gold">협력 문의</a>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="container page-title">
-    <h1>공지</h1>
-    <p>
-      공지는 단체의 신뢰를 보여주는 가장 빠른 지표입니다.
-      주요 일정과 안내를 이곳에서 업데이트합니다.
-    </p>
-  </div>
-
-  <section>
+  <section class="page-hero" style="background: var(--gold-pale); padding: 60px 0; text-align: center;">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>최근 공지</h2>
-          <p>샘플입니다. 제목/날짜만 바꿔도 바로 운영됩니다.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="item">
-          <div>
-            <div class="title">[공지] 집현전21 공식 홈페이지 개설 안내</div>
-            <div class="meta">2026-03-05 · 운영</div>
-          </div>
-          <div class="badge">NEW</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <div class="title">[안내] 연구·세미나 참여 및 협력 제안 접수</div>
-            <div class="meta">상시 · 운영</div>
-          </div>
-          <div class="badge">OPEN</div>
-        </div>
-      </div>
-
-      <div style="margin-top:14px" class="note">
-        <b style="color:var(--navy)">공지 운영 팁</b><br/>
-        공지 1건을 올릴 때 “일정(언제) · 대상(누가) · 방법(어떻게) · 문의(연락)”만 넣으면
-        매우 전문적으로 보입니다.
-      </div>
-
+      <h1 style="font-size: 42px; color: var(--navy); margin: 0;">알림마당</h1>
+      <p style="color: var(--gold-dark); font-weight: 700; margin-top: 10px;">NOTICE & PRESS</p>
     </div>
   </section>
 
-  <footer>
-    <div class="container fgrid">
-      <div>
-        <div style="font-weight:900; font-size:18px;">집현전21</div>
-        <small>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</small>
+  <main class="container" style="padding: 80px 20px;">
+    <h2 class="section-title" style="text-align: left;">새로운 소식</h2>
+    
+    <div class="notice-list">
+      <div class="notice-item">
+        <div class="notice-info">
+          <span class="notice-tag">운영</span>
+          <span class="notice-title">집현전21 공식 홈페이지 개설 및 정관 공개 안내</span>
+          <span class="notice-date">2026.03.05</span>
+        </div>
+        <i class="fa-solid fa-chevron-right" style="color:var(--line)"></i>
       </div>
-      <div style="text-align:right;">
-        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
-        <small>문의: wmcprpr@gmail.com</small>
+
+      <div class="notice-item">
+        <div class="notice-info">
+          <span class="notice-tag">연구</span>
+          <span class="notice-title">2026년 상반기 정책 연구 과제 공모 안내</span>
+          <span class="notice-date">2026.03.01</span>
+        </div>
+        <i class="fa-solid fa-chevron-right" style="color:var(--line)"></i>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <h2 style="font-family: 'Noto Serif KR', serif;">집현전21</h2>
+      <p>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</p>
+      <div style="margin: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+        <p>문의: wmcprpr@gmail.com | 도메인: www.jhj21.kr</p>
+        <p style="opacity: 0.5;">© 2026 Jiphyeonjeon21. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
