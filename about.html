@@ -24,33 +24,40 @@
 
   <main class="container" style="padding: 60px 0;">
     <h2 class="section-title" style="text-align: left;">설립 취지</h2>
-    <p>집현전21은 세종대왕 시대의 학술 연구 기관이었던 '집현전'의 정신을 현대적으로 계승합니다. 과거의 지혜를 실천적 지성으로 거듭나게 하는 것이 우리의 사명입니다.</p>
+    <p>집현전21은 세종대왕 시대의 학술 연구 기관이었던 '집현전'의 정신을 현대적으로 계승합니다. 과거의 지혜가 단순히 박물관에 머물지 않고, 21세기의 복잡한 사회 문제를 해결하는 실천적 지성으로 거듭나게 하는 것이 우리의 사명입니다.</p>
 
     <div class="vision-box">
       <h3 style="color: var(--gold); margin-top: 0;">미션 (Mission)</h3>
-      <p style="font-size: 22px; line-height: 1.6;">"지식의 깊이와 실천의 책임을 결합하여, 인류공영과 국가 부흥에 기여하는 공익 연구 플랫폼"</p>
+      <p style="font-size: 22px; line-height: 1.6;">"지식의 깊이와 실천의 책임을 결합하여,<br>인류공영과 국가 부흥에 기여하는 공익 연구 플랫폼"</p>
     </div>
 
     <h2 class="section-title" style="text-align: left; margin-top: 80px;">핵심 가치</h2>
     <div class="philosophy-grid">
-      <div><h3>공공성</h3><p>특정 이익에 치우치지 않고 공동체 전체의 이익을 최우선으로 생각합니다.</p></div>
-      <div><h3>전문성</h3><p>최고의 연구진과 함께 근거 기반의 정밀한 조사와 분석을 수행합니다.</p></div>
+      <div>
+        <h3 style="color: var(--navy);">공공성 (Publicness)</h3>
+        <p>특정 이익에 치우치지 않고 공동체 전체의 이익을 최우선으로 생각하며, 연구의 결과물을 사회와 공평하게 나눕니다.</p>
+      </div>
+      <div>
+        <h3 style="color: var(--navy);">전문성 (Professionalism)</h3>
+        <p>각 분야 최고의 박사급 연구위원들과 함께 근거 기반(Evidence-based)의 정밀한 조사와 분석을 수행합니다.</p>
+      </div>
+      <div>
+        <h3 style="color: var(--navy);">투명성 (Transparency)</h3>
+        <p>모든 운영과 연구 과정은 정관에 명시된 원칙에 따라 투명하게 관리되며, 기록을 중시합니다.</p>
+      </div>
+      <div>
+        <h3 style="color: var(--navy);">연대 (Solidarity)</h3>
+        <p>기관, 기업, 그리고 깨어있는 시민들과의 네트워크를 통해 연구 성과를 실제 사회 변화로 연결합니다.</p>
+      </div>
     </div>
   </main>
 
   <footer id="footer-include"></footer>
-
   <script>
     async function loadInclude() {
-      try {
-        const h = await fetch('assets/header.html');
-        document.getElementById('header-include').innerHTML = await h.text();
-        const f = await fetch('assets/footer.html');
-        document.getElementById('footer-include').innerHTML = await f.text();
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const cp = window.location.pathname.split("/").pop() || "index.html";
-        document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
-      } catch (e) { console.error(e); }
+      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
+      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
+      document.getElementById("year").textContent = new Date().getFullYear();
     }
     window.onload = loadInclude;
   </script>
