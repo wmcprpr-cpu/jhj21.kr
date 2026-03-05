@@ -1,79 +1,117 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>공지사항 | 집현전21</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
-    .notice-list { border-top: 2px solid var(--navy); margin-top: 40px; }
-    .notice-item { 
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 30px 20px; border-bottom: 1px solid var(--line); transition: 0.3s;
-    }
-    .notice-item:hover { background: var(--bg-gray); cursor: pointer; }
-    .notice-tag { 
-      display: inline-block; padding: 4px 12px; font-size: 14px; font-weight: 700; 
-      background: var(--navy); color: white; margin-bottom: 10px; border-radius: 3px;
-    }
-    .notice-title { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .notice-date { font-size: 17px; color: var(--text-gray); }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>공지사항 | 집현전21</title>
+
+<link rel="stylesheet" href="assets/style.css">
+
+<meta name="description" content="집현전21 공지사항">
+
 </head>
+
 <body>
-  <header id="header-include"></header>
 
-  <section class="page-hero" style="background: var(--gold-pale); padding: 60px 0; text-align: center;">
-    <div class="container">
-      <h1 style="font-size: 42px; color: var(--navy); margin: 0;">알림마당</h1>
-      <p style="color: var(--gold-dark); font-weight: 700; margin-top: 10px;">NOTICE & PRESS</p>
-    </div>
-  </section>
+<header id="header-include"></header>
 
-  <main class="container" style="padding: 80px 20px;">
-    <h2 class="section-title" style="text-align: left;">새로운 소식</h2>
-    
-    <div class="notice-list">
-      <div class="notice-item">
-        <div class="notice-info">
-          <span class="notice-tag">운영</span>
-          <div class="notice-title">집현전21 공식 홈페이지 개설 및 정관 공개 안내</div>
-          <div class="notice-date">2026.03.05</div>
-        </div>
-        <i class="fa-solid fa-chevron-right" style="color:var(--gold)"></i>
-      </div>
+<section class="hero">
+<div class="container">
 
-      <div class="notice-item">
-        <div class="notice-info">
-          <span class="notice-tag">연구</span>
-          <div class="notice-title">2026년 상반기 정책 연구 과제 및 객원 연구위원 공모 안내</div>
-          <div class="notice-date">2026.03.01</div>
-        </div>
-        <i class="fa-solid fa-chevron-right" style="color:var(--gold)"></i>
-      </div>
+<h1>공지사항</h1>
 
-      <div class="notice-item">
-        <div class="notice-info">
-          <span class="notice-tag">활동</span>
-          <div class="notice-title">사례 중심의 사회통합 프로그램 세미나 개최 결과 보고</div>
-          <div class="notice-date">2026.02.20</div>
-        </div>
-        <i class="fa-solid fa-chevron-right" style="color:var(--gold)"></i>
-      </div>
-    </div>
-  </main>
+<p>
+집현전21의 활동, 연구발표, 세미나 일정 등을 안내합니다.
+</p>
 
-  <footer id="footer-include"></footer>
-  <script>
-    async function loadInclude() {
-      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
-      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
-      document.getElementById("year").textContent = new Date().getFullYear();
-    }
-    window.onload = loadInclude;
-  </script>
+</div>
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">최근 공지</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>연구 세미나 개최 안내</h3>
+<p>
+집현전21 연구 세미나가 개최됩니다.
+일시와 장소는 추후 공지됩니다.
+</p>
+</div>
+
+<div class="card">
+<h3>연구위원 모집</h3>
+<p>
+집현전21 연구 활동에 참여할 연구위원을 모집합니다.
+</p>
+</div>
+
+<div class="card">
+<h3>신규 연구 프로젝트</h3>
+<p>
+사회문제 해결을 위한 신규 연구 프로젝트가 시작되었습니다.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer id="footer-include"></footer>
+
+<script>
+
+async function loadInclude(){
+
+try{
+
+const headerRes=await fetch('assets/header.html')
+
+if(headerRes.ok){
+
+document.getElementById('header-include').innerHTML=await headerRes.text()
+
+const current=(location.pathname.split('/').pop()||'index.html').toLowerCase()
+
+document.querySelectorAll('.nav a').forEach(a=>{
+
+if((a.getAttribute('href')||'').toLowerCase()===current) a.classList.add('active')
+
+})
+
+}
+
+const footerRes=await fetch('assets/footer.html')
+
+if(footerRes.ok){
+
+document.getElementById('footer-include').innerHTML=await footerRes.text()
+
+const y=document.getElementById('year')
+
+if(y) y.textContent=new Date().getFullYear()
+
+}
+
+}catch(e){
+
+console.error(e)
+
+}
+
+}
+
+window.addEventListener('DOMContentLoaded',loadInclude)
+
+</script>
+
 </body>
 </html>
