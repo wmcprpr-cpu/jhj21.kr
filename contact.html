@@ -1,87 +1,127 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>문의 | 집현전21</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
-    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 60px 0; }
-    .contact-info-card { background: var(--gold-pale); padding: 40px; border-radius: 15px; border-left: 8px solid var(--gold); }
-    .contact-info-card h3 { color: var(--navy); margin-top: 0; margin-bottom: 20px; }
-    .contact-info-card p { font-size: 18px; line-height: 1.8; margin-bottom: 20px; }
-    
-    .form-group { margin-bottom: 25px; }
-    .form-group label { display: block; font-weight: 700; color: var(--navy); margin-bottom: 10px; font-size: 18px; }
-    .form-group input, .form-group textarea { 
-      width: 100%; padding: 15px; border: 1px solid var(--line); border-radius: 5px; font-size: 17px; 
-    }
-    .form-group textarea { height: 200px; resize: vertical; }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>문의 | 집현전21</title>
+
+<link rel="stylesheet" href="assets/style.css">
+
+<meta name="description" content="집현전21 문의 페이지">
+
 </head>
+
 <body>
-  <header id="header-include"></header>
 
-  <section class="page-hero" style="background: var(--navy); color: white; padding: 80px 0; text-align: center;">
-    <div class="container">
-      <h1 style="font-size: 42px; color: var(--gold); margin: 0;">협력 및 문의</h1>
-      <p style="opacity: 0.8; margin-top: 15px; font-size: 20px;">집현전21과 함께 시대의 해법을 모색할 파트너를 기다립니다.</p>
-    </div>
-  </section>
+<header id="header-include"></header>
 
-  <main class="container">
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <div class="contact-info-card">
-          <h3>사무국 안내</h3>
-          <p>집현전21은 정관 제2조 및 제3조에 의거하여 인류공영과 국가 부흥을 위한 연구를 수행합니다. 학술적 교류, 정책 제안, 후원 및 회원 가입 등 모든 문의에 대해 정중히 답변해 드립니다.</p>
-          <div style="margin-top: 30px;">
-            <p><strong>이메일:</strong> wmcprpr@gmail.com</p>
-            <p><strong>도메인:</strong> www.jhj21.kr</p>
-          </div>
-        </div>
-      </div>
+<section class="hero">
 
-      <div class="contact-form">
-        <form onsubmit="return sendMail();">
-          <div class="form-group">
-            <label for="name">성함 / 기관명</label>
-            <input type="text" id="name" placeholder="문의하시는 분의 성함 혹은 소속 기관명을 입력하세요" required>
-          </div>
-          <div class="form-group">
-            <label for="contactInfo">연락처 (이메일 혹은 전화번호)</label>
-            <input type="text" id="contactInfo" placeholder="회신받으실 연락처를 입력하세요" required>
-          </div>
-          <div class="form-group">
-            <label for="message">문의 및 협력 내용</label>
-            <textarea id="message" placeholder="상세한 문의 내용을 입력해 주세요. (예: 연구 협력 제안, 회원 가입 문의 등)" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 20px; padding: 20px;">문의 메일 발송하기</button>
-        </form>
-      </div>
-    </div>
-  </main>
+<div class="container">
 
-  <footer id="footer-include"></footer>
-  <script>
-    function sendMail(){
-      const name = document.getElementById('name').value;
-      const contact = document.getElementById('contactInfo').value;
-      const msg = document.getElementById('message').value;
-      const to = "wmcprpr@gmail.com";
-      const subject = encodeURIComponent("[집현전21 문의] " + name + "님으로부터의 메시지");
-      const body = encodeURIComponent("보낸이: " + name + "\n연락처: " + contact + "\n\n문의 내용:\n" + msg);
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      return false;
-    }
-    async function loadInclude() {
-      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
-      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
-      document.getElementById("year").textContent = new Date().getFullYear();
-    }
-    window.onload = loadInclude;
-  </script>
+<h1>문의</h1>
+
+<p>
+집현전21 연구 협력, 세미나, 자료 제공 등에 관한 문의를 환영합니다.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">연락처</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>이메일</h3>
+
+<p>
+wmcprpr@gmail.com
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>연구 협력</h3>
+
+<p>
+연구 협력 및 프로젝트 제안은 이메일로 문의해 주시기 바랍니다.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>기관 문의</h3>
+
+<p>
+집현전21 활동 및 연구 관련 문의를 받습니다.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer id="footer-include"></footer>
+
+<script>
+
+async function loadInclude(){
+
+try{
+
+const headerRes=await fetch('assets/header.html')
+
+if(headerRes.ok){
+
+document.getElementById('header-include').innerHTML=await headerRes.text()
+
+const current=(location.pathname.split('/').pop()||'index.html').toLowerCase()
+
+document.querySelectorAll('.nav a').forEach(a=>{
+
+if((a.getAttribute('href')||'').toLowerCase()===current) a.classList.add('active')
+
+})
+
+}
+
+const footerRes=await fetch('assets/footer.html')
+
+if(footerRes.ok){
+
+document.getElementById('footer-include').innerHTML=await footerRes.text()
+
+const y=document.getElementById('year')
+
+if(y) y.textContent=new Date().getFullYear()
+
+}
+
+}catch(e){
+
+console.error(e)
+
+}
+
+}
+
+window.addEventListener('DOMContentLoaded',loadInclude)
+
+</script>
+
 </body>
 </html>
