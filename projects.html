@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>집현전21 | Projects</title>
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="badge">Projects</span>
+      <p class="topbar__text">연구를 실행 가능한 과제로 전환하는 프로젝트 트랙</p>
+      <a class="topbar__cta" href="contact.html">협력 문의</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="./logo.png" alt="집현전21 로고" />
+        <div><strong class="brand__name">집현전21</strong><span class="brand__tag">Jiphyeonjeon21 Think Tank</span></div>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggle-line"></span><span class="nav__toggle-line"></span><span class="nav__toggle-line"></span>
+          <span class="sr-only">메뉴</span>
+        </button>
+        <ul id="navMenu" class="nav__menu">
+          <li><a data-page="index.html" href="index.html">Home</a></li>
+          <li><a data-page="about.html" href="about.html">About</a></li>
+          <li><a data-page="research.html" href="research.html">Research</a></li>
+          <li><a data-page="projects.html" href="projects.html">Projects</a></li>
+          <li><a data-page="forum.html" href="forum.html">Forum</a></li>
+          <li><a data-page="publication.html" href="publication.html">Publications</a></li>
+          <li><a data-page="notice.html" href="notice.html">News</a></li>
+          <li><a class="nav__button" data-page="join.html" href="join.html">Join</a></li>
+          <li><a class="nav__button" data-page="contact.html" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="pagehead">
+      <h1 class="h2">Projects</h1>
+      <p>프로젝트는 “연구 → 파일럿 → 확산”으로 이어지는 실행 단위입니다. </p>
+    </div>
+
+    <section class="section section--alt">
+      <div class="grid grid--3">
+        <div class="card">
+          <span class="pill pill--gold">PJT 01</span>
+          <h3 class="h3">현장 기반 파일럿(예정)</h3>
+          <p>연구 결과를 적용 가능한 과제로 전환하고 성과를 측정합니다.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill--gold">PJT 02</span>
+          <h3 class="h3">정책 협력 모델(예정)</h3>
+          <p>지자체·기관·민간 협력을 통해 실행 로드맵을 구축합니다.</p>
+        </div>
+        <div class="card">
+          <span class="pill pill--gold">PJT 03</span>
+          <h3 class="h3">지식 확산 패키지(예정)</h3>
+          <p>브리프·세미나·교육 콘텐츠로 결과를 확산합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="pagehead">
+        <h2 class="h2">프로젝트 운영 방식</h2>
+        <p>프로젝트는 “목표–지표–산출물”이 명확할수록 연구소로 보입니다.</p>
+      </div>
+
+      <div class="list">
+        <div class="item">
+          <div class="item__meta">GOAL</div>
+          <div class="item__body">
+            <h3>문제 정의와 목표</h3>
+            <p>누구의 어떤 문제를 무엇으로 개선하는지 한 문장으로 고정합니다.</p>
+            <div class="item__tags"><span class="tag">Problem</span><span class="tag">Goal</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__meta">KPI</div>
+          <div class="item__body">
+            <h3>성과 지표</h3>
+            <p>정량/정성 지표를 최소 3개로 설정하고 분기 단위로 점검합니다.</p>
+            <div class="item__tags"><span class="tag">Measure</span><span class="tag">Review</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__meta">OUT</div>
+          <div class="item__body">
+            <h3>산출물</h3>
+            <p>브리프/리포트/포럼 요약/교육자료 중 최소 1개를 반드시 남깁니다.</p>
+            <div class="item__tags"><span class="tag">Brief</span><span class="tag">Report</span><span class="tag">Summary</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
+        <a class="btn btn--primary" href="join.html">참여 신청</a>
+        <a class="btn btn--ghost" href="contact.html">협력 문의</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img class="footer__logo" src="./logo.png" alt="" aria-hidden="true" />
+          <div><strong>집현전21</strong><p class="muted">Think Tank • Projects</p></div>
+        </div>
+        <p class="muted">© <span id="year"></span> Jiphyeonjeon21.</p>
+      </div>
+      <div class="footer__links">
+        <a href="research.html">Research</a>
+        <a href="forum.html">Forum</a>
+        <a href="publication.html">Publications</a>
+        <a href="join.html">Join</a>
+      </div>
+      <div class="muted"><div>Navy #0b1736</div><div>Gold #BA9F65</div></div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
+  <script src="./script.js"></script>
+</body>
+</html>
