@@ -1,15 +1,15 @@
-<!-- assets/header.html -->
+<!-- /assets/header.html -->
 <div class="topbar">
   <div class="container topbar__inner">
     <span class="badge">JHJ21</span>
     <p class="topbar__text">지혜를 공공의 가치로 확산하는 싱크탱크형 지식 공동체</p>
-    <a class="topbar__cta" href="./contact.html">협력 문의</a>
+    <a class="topbar__cta" href="contact.html">협력 문의</a>
   </div>
 </div>
 
 <header class="header">
   <div class="container header__inner">
-    <a class="brand" href="./index.html" aria-label="집현전21 홈">
+    <a class="brand" href="index.html" aria-label="집현전21 홈">
       <img class="brand__logo" src="./logo.png" alt="집현전21 로고" />
       <div>
         <strong class="brand__name">집현전21</strong>
@@ -19,24 +19,34 @@
 
     <nav class="nav" aria-label="주요 메뉴">
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
-        <span class="nav__toggle-line"></span>
-        <span class="nav__toggle-line"></span>
-        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span><span class="nav__toggle-line"></span><span class="nav__toggle-line"></span>
         <span class="sr-only">메뉴</span>
       </button>
 
       <ul id="navMenu" class="nav__menu">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./governance.html">Governance</a></li>
-        <li><a href="./strategy-2026.html">Strategy 2026</a></li>
-        <li><a href="./research.html">Research</a></li>
-        <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./forum.html">Forum</a></li>
-        <li><a href="./publication.html">Publications</a></li>
-        <li><a href="./notice.html">News</a></li>
-        <li><a class="nav__button" href="./join.html">Join</a></li>
-        <li><a class="nav__button" href="./contact.html">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+
+        <!-- ✅ 통합 메뉴 -->
+        <li class="nav__dropdown">
+          <a class="nav__dropbtn" href="programs.html" aria-haspopup="true" aria-expanded="false">
+            Programs
+            <span class="nav__caret" aria-hidden="true">▾</span>
+          </a>
+          <ul class="nav__dropdownmenu" role="menu" aria-label="Programs submenu">
+            <li><a href="research.html">Research</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="publication.html">Publications</a></li>
+          </ul>
+        </li>
+
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="strategy-2026.html">Strategy 2026</a></li>
+        <li><a href="notice.html">News</a></li>
+
+        <li><a class="nav__button" href="join.html">Join</a></li>
+        <li><a class="nav__button" href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
