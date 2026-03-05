@@ -1,149 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>보고서 | 집현전21</title>
-  <meta name="description" content="집현전21 연구보고서·성과보고·이슈브리프 게시" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1736" />
+  <title>Reports | 집현전21</title>
+  <meta name="description" content="집현전21 보고서" />
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <header id="header-include"></header>
+  <div id="siteHeader"></div>
 
-  <header class="hero">
-    <div class="container">
-      <div class="pill">
-        <span class="dot" aria-hidden="true"></span>
-        <strong>보고서</strong>
-        <span>근거 기반 연구성과를 공개합니다</span>
-      </div>
-      <h1>보고서</h1>
-      <p>
-        집현전21은 연구성과를 보고서/브리프/자료집 형태로 정리하여 공개합니다.
-        모든 성과는 “근거·검증·공개”의 원칙 아래, 재현 가능하고 검토 가능한 구조로 제시하는 것을 지향합니다.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn" href="publication.html">발간물</a>
-        <a class="btn" href="notice.html">공지</a>
-        <a class="btn" href="contact.html">자료 제공/협력</a>
-      </div>
-    </div>
-  </header>
-
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>최근 보고서(샘플)</h2>
-          <p>
-            아래 목록은 “형식 예시”입니다. 실제 PDF를 올리면 해당 카드/아이템의 링크만 바꿔주시면 됩니다.
-            (GitHub Pages에서는 PDF를 repo에 업로드 후 파일 링크로 연결하면 됩니다.)
-          </p>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="pagehead">
+          <h1 class="h2">Reports</h1>
+          <p class="muted">연구 성과를 정책보고서·성과보고서 형태로 정리합니다.</p>
         </div>
-      </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <span class="tag">연구보고서</span>
-          <h3>사회문제 개선방안 연구(샘플)</h3>
-          <p>
-            요약: 핵심 쟁점 진단, 데이터/사례 기반 분석, 정책 대안 및 실행 로드맵 제안.<br/>
-            형식: PDF · 2026
-          </p>
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#">PDF 보기(링크 교체)</a>
-            <a class="btn gold" href="#">요약 보기(링크 교체)</a>
+        <div class="list">
+          <div class="item">
+            <div class="item__meta">RPT</div>
+            <div class="item__body">
+              <h3>2026 성과보고서 (예정)</h3>
+              <p>연구성과, 재정 보고, 2027 로드맵을 포함합니다.</p>
+              <div class="item__tags"><span class="tag">Transparency</span><span class="tag">Trust</span></div>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <span class="tag">이슈 브리프</span>
-          <h3>K-문화 가치 보존·홍보 전략(샘플)</h3>
-          <p>
-            요약: 문화·예술 가치 보존의 방향과 확산 프레임, 실행 과제 제시.<br/>
-            형식: PDF · 2026
-          </p>
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#">PDF 보기(링크 교체)</a>
-            <a class="btn gold" href="#">핵심 요약(링크 교체)</a>
-          </div>
-        </div>
       </div>
+    </section>
+  </main>
 
-      <div style="height:16px;"></div>
-
-      <div class="section-head">
-        <div>
-          <h2>성과 공개 기준</h2>
-          <p>
-            보고서의 품질을 담보하기 위해, 아래 기준을 최소 요건으로 적용하는 것을 권장합니다.
-            (주인님이 내부 운영 규정으로 확정하면 매우 ‘연구기관다운 신뢰감’이 생깁니다.)
-          </p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <span class="tag">근거</span>
-          <h3>출처·데이터 명시</h3>
-          <p>핵심 주장에는 근거(문헌/통계/사례)를 명확히 첨부하여 검증 가능성을 확보합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">검증</span>
-          <h3>검토·피드백 절차</h3>
-          <p>내부/외부 검토를 거쳐 오류를 낮추고, 반론 가능성을 고려한 서술을 지향합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">공개</span>
-          <h3>재현 가능 구조</h3>
-          <p>요약–본문–부록(표/근거) 구조로 공개하여, 독자가 핵심을 빠르게 확인할 수 있게 합니다.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:18px;" class="item">
-        <div>
-          <p class="title">자료 제공/공동연구 제안</p>
-          <div class="meta">
-            기관·기업·시민이 가진 데이터/현장사례는 연구 품질을 높입니다. 공익 목적의 자료 협력 제안을 환영합니다.
-          </div>
-        </div>
-        <div class="badge">Co-Research</div>
-      </div>
-
-      <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn gold" href="contact.html">협력 문의</a>
-        <a class="btn" href="fields.html">연구분야</a>
-      </div>
-    </div>
-  </section>
-
-  <footer id="footer-include"></footer>
-
-  <script>
-    async function loadInclude() {
-      try {
-        const headerRes = await fetch('assets/header.html');
-        if (headerRes.ok) {
-          document.getElementById('header-include').innerHTML = await headerRes.text();
-
-          const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-          document.querySelectorAll('.nav a').forEach(a => {
-            if ((a.getAttribute('href') || '').toLowerCase() === current) a.classList.add('active');
-          });
-        }
-
-        const footerRes = await fetch('assets/footer.html');
-        if (footerRes.ok) {
-          document.getElementById('footer-include').innerHTML = await footerRes.text();
-          const y = document.getElementById('year');
-          if (y) y.textContent = new Date().getFullYear();
-        }
-      } catch (e) {
-        console.error('Include load failed:', e);
-      }
-    }
-    window.addEventListener('DOMContentLoaded', loadInclude);
-  </script>
+  <div id="siteFooter"></div>
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
 </body>
 </html>
