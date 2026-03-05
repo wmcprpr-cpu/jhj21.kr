@@ -2,150 +2,50 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>연구위원 | 집현전21</title>
   <link rel="stylesheet" href="assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
-    
-    /* 연구위원 리스트 전용 스타일 */
-    .fellow-section { padding: 60px 0; }
-    .fellow-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .fellow-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      border-left: 5px solid var(--navy);
-      transition: 0.3s;
-    }
-    .fellow-card:hover {
-      border-left-color: var(--gold);
-      box-shadow: var(--shadow);
-    }
-    .fellow-name {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 5px;
-    }
-    .fellow-title {
-      font-size: 18px;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-    }
-    .fellow-desc {
-      font-size: 17px;
-      color: var(--text-gray);
-      border-top: 1px solid var(--line);
-      padding-top: 15px;
-    }
-    .fellow-field {
-      margin-top: 15px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .field-tag {
-      font-size: 14px;
-      background: var(--gold-pale);
-      color: var(--navy);
-      padding: 4px 12px;
-      font-weight: 600;
-    }
+    .fellow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
+    .fellow-card { background: #fff; border-left: 5px solid var(--navy); padding: 40px; transition: 0.3s; }
+    .fellow-card:hover { border-left-color: var(--gold); box-shadow: var(--shadow); }
+    .field-tag { font-size: 14px; background: var(--gold-pale); color: var(--navy); padding: 4px 12px; font-weight: 600; margin-right: 5px; }
   </style>
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html">
-        <img src="logo.png" alt="집현전21 로고" class="brand-logo">
-        <span>집현전21</span>
-      </a>
-      <nav class="nav">
-        <a href="about.html">소개</a>
-        <a href="statutes.html">정관</a>
-        <a href="fellows.html" class="active">연구위원</a>
-        <a href="fields.html">연구분야</a>
-        <a href="reports.html">보고서</a>
-        <a href="notice.html">공지</a>
-      </nav>
-      <div class="cta">
-        <a href="contact.html" class="btn btn-gold">협력 문의</a>
-      </div>
-    </div>
-  </header>
+  <header id="header-include"></header>
 
   <section class="page-hero" style="background: var(--navy); color: white; padding: 80px 0; text-align: center;">
-    <div class="container">
-      <h1 style="font-size: 48px; color: var(--gold); margin: 0;">연구진 소개</h1>
-      <p style="opacity: 0.8; margin-top: 15px; font-size: 20px;">시대의 난제를 풀기 위해 모인 각 분야의 최고 전문가들입니다.</p>
-    </div>
+    <h1 style="color: var(--gold);">연구진 소개</h1>
+    <p>시대의 난제를 풀기 위해 모인 각 분야의 최고 전문가들입니다.</p>
   </section>
 
-  <main class="container fellow-section">
-    <h2 class="section-title" style="text-align: left;">주요 연구위원</h2>
-    <p style="margin-bottom: 40px; font-size: 20px;">집현전21은 정관 제4장에 의거하여 전문적인 자문 및 연구 수행을 위한 석·박사급 연구진을 구성하고 있습니다.</p>
-
+  <main class="container" style="padding: 60px 0;">
     <div class="fellow-grid">
       <div class="fellow-card">
-        <div class="fellow-name">이승언</div>
-        <div class="fellow-title">사회복지학 박사 / 회장</div>
-        <p class="fellow-desc">집현전21의 비전 수립 및 총괄 운영을 담당하며, 복지 정책 기반의 공동체 회복을 위한 연구와 실천을 주도합니다.</p>
-        <div class="fellow-field">
-          <span class="field-tag">#사회복지</span>
-          <span class="field-tag">#공동체회복</span>
-        </div>
+        <div style="font-size: 26px; font-weight: 700; color: var(--navy);">이승언</div>
+        <div style="color: var(--gold); font-weight: 600;">사회복지학 박사 / 회장</div>
+        <p>집현전21의 비전 수립 및 총괄 운영을 담당합니다.</p>
+        <span class="field-tag">#사회복지</span><span class="field-tag">#공동체회복</span>
       </div>
-
-      <div class="fellow-card">
-        <div class="fellow-name">홍길동 (예시)</div>
-        <div class="fellow-title">OO대학교 정책학 박사</div>
-        <p class="fellow-desc">국가 정책 수립 및 사회적 갈등 조정 분야의 권위자로, 집현전21의 정책 연구를 자문합니다.</p>
-        <div class="fellow-field">
-          <span class="field-tag">#국가정책</span>
-          <span class="field-tag">#갈등관리</span>
-        </div>
-      </div>
-
-      <div class="fellow-card">
-        <div class="fellow-name">이몽룡 (예시)</div>
-        <div class="fellow-title">문화예술학 교수</div>
-        <p class="fellow-desc">K-문화의 세계화와 전통문화의 창의적 보존을 연구하며 지식교류 사업을 지원합니다.</p>
-        <div class="fellow-field">
-          <span class="field-tag">#K-컬처</span>
-          <span class="field-tag">#문화보존</span>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 80px; padding: 40px; background: var(--gold-pale); text-align: center; border: 1px dashed var(--gold);">
-      <h3 style="color: var(--navy); margin-top: 0;">연구 협력 및 위촉 문의</h3>
-      <p>집현전21과 함께 시대의 해법을 모색할 객원 연구위원을 상시 모집합니다.</p>
-      <a href="contact.html" class="btn" style="margin-top: 20px;">전문가 등록 문의</a>
     </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <h2 style="font-family: 'Noto Serif KR', serif;">집현전21</h2>
-      <p>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</p>
-      <div style="margin: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
-        <p>문의: wmcprpr@gmail.com | 도메인: www.jhj21.kr</p>
-        <p style="opacity: 0.5;">© 2026 Jiphyeonjeon21. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <footer id="footer-include"></footer>
 
+  <script>
+    async function loadInclude() {
+      try {
+        const h = await fetch('assets/header.html');
+        document.getElementById('header-include').innerHTML = await h.text();
+        const f = await fetch('assets/footer.html');
+        document.getElementById('footer-include').innerHTML = await f.text();
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const cp = window.location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
+      } catch (e) { console.error(e); }
+    }
+    window.onload = loadInclude;
+  </script>
 </body>
 </html>
