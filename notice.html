@@ -6,15 +6,21 @@
   <title>공지사항 | 집현전21</title>
   <link rel="stylesheet" href="assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
     .notice-list { border-top: 2px solid var(--navy); margin-top: 40px; }
     .notice-item { 
       display: flex; justify-content: space-between; align-items: center;
-      padding: 25px 15px; border-bottom: 1px solid var(--line); transition: 0.2s;
+      padding: 30px 20px; border-bottom: 1px solid var(--line); transition: 0.3s;
     }
-    .notice-item:hover { background: #fff; }
-    .notice-tag { padding: 2px 10px; font-size: 14px; font-weight: 700; background: var(--navy); color: white; margin-bottom: 5px; display: inline-block; }
+    .notice-item:hover { background: var(--bg-gray); cursor: pointer; }
+    .notice-tag { 
+      display: inline-block; padding: 4px 12px; font-size: 14px; font-weight: 700; 
+      background: var(--navy); color: white; margin-bottom: 10px; border-radius: 3px;
+    }
+    .notice-title { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .notice-date { font-size: 17px; color: var(--text-gray); }
   </style>
 </head>
 <body>
@@ -28,37 +34,44 @@
   </section>
 
   <main class="container" style="padding: 80px 20px;">
+    <h2 class="section-title" style="text-align: left;">새로운 소식</h2>
+    
     <div class="notice-list">
       <div class="notice-item">
         <div class="notice-info">
           <span class="notice-tag">운영</span>
-          <div style="font-size: 20px; font-weight: 700; color: var(--navy);">집현전21 공식 홈페이지 개설 및 정관 공개 안내</div>
-          <div style="font-size: 16px; color: var(--text-gray); margin-top: 5px;">2026.03.05</div>
+          <div class="notice-title">집현전21 공식 홈페이지 개설 및 정관 공개 안내</div>
+          <div class="notice-date">2026.03.05</div>
         </div>
+        <i class="fa-solid fa-chevron-right" style="color:var(--gold)"></i>
       </div>
+
       <div class="notice-item">
         <div class="notice-info">
           <span class="notice-tag">연구</span>
-          <div style="font-size: 20px; font-weight: 700; color: var(--navy);">2026년 상반기 정책 연구 과제 공모 안내</div>
-          <div style="font-size: 16px; color: var(--text-gray); margin-top: 5px;">2026.03.01</div>
+          <div class="notice-title">2026년 상반기 정책 연구 과제 및 객원 연구위원 공모 안내</div>
+          <div class="notice-date">2026.03.01</div>
         </div>
+        <i class="fa-solid fa-chevron-right" style="color:var(--gold)"></i>
+      </div>
+
+      <div class="notice-item">
+        <div class="notice-info">
+          <span class="notice-tag">활동</span>
+          <div class="notice-title">사례 중심의 사회통합 프로그램 세미나 개최 결과 보고</div>
+          <div class="notice-date">2026.02.20</div>
+        </div>
+        <i class="fa-solid fa-chevron-right" style="color:var(--gold)"></i>
       </div>
     </div>
   </main>
 
   <footer id="footer-include"></footer>
-
   <script>
     async function loadInclude() {
-      try {
-        const h = await fetch('assets/header.html');
-        document.getElementById('header-include').innerHTML = await h.text();
-        const f = await fetch('assets/footer.html');
-        document.getElementById('footer-include').innerHTML = await f.text();
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const cp = window.location.pathname.split("/").pop() || "index.html";
-        document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
-      } catch (e) { console.error(e); }
+      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
+      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
+      document.getElementById("year").textContent = new Date().getFullYear();
     }
     window.onload = loadInclude;
   </script>
