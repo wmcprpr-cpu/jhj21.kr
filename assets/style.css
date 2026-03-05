@@ -637,3 +637,87 @@ margin-left:52px;
 font-size:14px;
 color:#6b7280;
 }
+/* Footer */
+.site-footer{
+  margin-top: 56px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(11,23,54,0.12);
+  background: #fff;
+}
+
+.footer-wrap{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.footer-brand{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.footer-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.footer-logo{
+  width:44px;
+  height:auto;
+  flex:0 0 auto;
+}
+
+.footer-name{
+  font-size:18px;
+  font-weight:800;
+  color:#0b1736;
+  line-height:1;
+}
+
+.footer-slogan{
+  margin:0;
+  margin-left:54px; /* 로고 폭(44) + gap(10) */
+  font-size:14px;
+  color: rgba(15,23,42,0.72);
+  line-height:1.6;
+  white-space: nowrap; /* 원하시면 제거 가능 */
+}
+
+.footer-meta{
+  text-align:right;
+  font-size:13px;
+  color: rgba(15,23,42,0.72);
+  line-height:1.6;
+}
+
+.footer-copy,
+.footer-contact{
+  margin:0;
+}
+
+.footer-contact a{
+  color:#0b1736;
+  text-decoration:none;
+  border-bottom: 1px solid rgba(11,23,54,0.25);
+}
+
+.footer-contact a:hover{
+  border-bottom-color: rgba(11,23,54,0.6);
+}
+
+/* Mobile */
+@media (max-width: 860px){
+  .footer-wrap{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .footer-meta{
+    text-align:left;
+  }
+  .footer-slogan{
+    white-space: normal; /* 모바일에서는 자연스럽게 줄바꿈 */
+  }
+}
