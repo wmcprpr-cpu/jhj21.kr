@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정관 | 집현전21</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. 디자인 코어 설정 */
+        :root {
+            --navy: #0b1736;
+            --gold: #BA9F65;
+            --cream: #fdfcf9;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --white: #ffffff;
+            --shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #e2e8f0; font-family: 'Lato', 'Noto Sans KR', sans-serif; display: grid; gap: 40px; justify-items: center; padding: 40px 0; }
+
+        /* 2. 슬라이드 컨테이너 (1280x720 고정) */
+        .slide-container {
+            width: 1280px; height: 720px;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+            display: flex; flex-direction: column;
+            padding: 60px;
+        }
+
+        /* 3. 배경 디자인 요소 */
+        .slide-container::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 10px; background: var(--gold);
+        }
+        .bg-gradient {
+            position: absolute; top: 0; right: 0; width: 400px; height: 100%;
+            background: linear-gradient(135deg, rgba(186, 159, 101, 0.05) 0%, rgba(11, 23, 54, 0.03) 100%);
+            z-index: 0;
+        }
+
+        /* 4. 타이틀 및 텍스트 스타일 */
+        h1, h2, h3 { font-family: 'Poppins', 'Noto Serif KR', serif; color: var(--navy); z-index: 1; }
+        .slide-title { font-size: 42px; font-weight: 700; margin-bottom: 40px; border-left: 8px solid var(--gold); padding-left: 20px; }
+        .subtitle { font-size: 20px; color: var(--text-muted); margin-top: -30px; margin-bottom: 40px; font-weight: 400; }
+        p, li { font-size: 19px; line-height: 1.6; color: var(--text-dark); z-index: 1; }
+
+        /* 5. 레이아웃 컴포넌트 */
+        .content-area { display: flex; flex-direction: column; flex-grow: 1; justify-content: flex-start; z-index: 1; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .statute-card {
+            background: var(--cream); border: 1px solid #e2e8f0; padding: 30px; border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .statute-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--gold); border-bottom: 1px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        .article-num { font-weight: 700; color: var(--navy); margin-right: 10px; }
+
+        .bullet-list { list-style: none; }
+        .bullet-list li { position: relative; padding-left: 30px; margin-bottom: 15px; }
+        .bullet-list li::before {
+            content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            position: absolute; left: 0; color: var(--gold); font-size: 18px;
+        }
+
+        /* 6. 내비게이션 바 (홈페이지 연결용) */
+        .nav-placeholder {
+            position: absolute; bottom: 30px; left: 60px; right: 60px;
+            display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 20px;
+        }
+        .nav-links a { font-size: 16px; color: var(--text-muted); margin-right: 20px; font-weight: 700; }
+        .nav-links a:hover { color: var(--gold); }
+        .logo-small { height: 30px; opacity: 0.8; }
+
+        /* 7. 제목 슬라이드 전용 스타일 */
+        .title-slide { background-color: var(--navy); color: var(--white); justify-content: center; align-items: center; text-align: center; }
+        .title-slide h1 { color: var(--gold); font-size: 72px; margin-bottom: 20px; }
+        .title-slide p { color: var(--white); opacity: 0.8; font-size: 24px; }
+        .title-slide .gold-line { width: 100px; height: 4px; background: var(--gold); margin: 30px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container title-slide" id="statutes-cover">
+        <h1>집현전 21 정관</h1>
+        <div class="gold-line"></div>
+        <p>Organization Statutes & Bylaws</p>
+        <p style="margin-top: 40px; font-size: 18px; letter-spacing: 2px;">지식의 깊이와 실천의 책임을 규정하는 근간</p>
+    </div>
+
+    <div class="slide-container">
+        <div class="bg-gradient"></div>
+        <h2 class="slide-title">제1장 총칙</h2>
+        <p class="subtitle">단체의 명칭, 목적 및 주요 사업 범위</p>
+        
+        <div class="content-area">
+            <div class="grid-2">
+                <div class="statute-card">
+                    <h3>명칭 및 사무소</h3>
+                    <p><span class="article-num">제1조</span>본 단체는 ‘집현전 21’이라 칭한다.</p>
+                    <p style="margin-top:10px;"><span class="article-num">제4조</span>주사무소는 서울특별시에 두며, 국내외 지부를 설치할 수 있다.</p>
+                </div>
+                <div class="statute-card">
+                    <h3>설립 목적</h3>
+                    <p><span class="article-num">제2조</span>역사적 현인의 지성을 바탕으로 인류공영과 국민화합을 지향하며, 대한민국의 국가 부흥과 K-문화의 가치 보존을 목적으로 한다.</p>
+                </div>
+            </div>
+            
+            <div class="statute-card" style="margin-top: 30px;">
+                <h3>제3조 주요 사업</h3>
+                <div class="grid-2" style="margin-top: 15px;">
+                    <ul class="bullet-list">
+                        <li>사회문제 개선방안 연구 및 국민화합</li>
+                        <li>국민의 삶을 위한 지식교류 활동</li>
+                        <li>K-문화 및 예술 가치 보존·홍보</li>
+                    </ul>
+                    <ul class="bullet-list">
+                        <li>환경과 건강 분야별 연구 및 실천</li>
+                        <li>행복한 가족·사회를 위한 연구 활동</li>
+                        <li>기타 단체의 목적 달성에 필요한 사업</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="nav-placeholder">
+            <div class="nav-links"><a href="index.html">HOME</a><a href="about.html">ABOUT</a><a href="statutes.html" style="color:var(--gold)">STATUTES</a></div>
+            <img src="logo.png" alt="Logo" class="logo-small">
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <div class="bg-gradient"></div>
+        <h2 class="slide-title">제2장 회원 및 임원</h2>
+        <p class="subtitle">조직 구성의 원칙과 책임의 한계</p>
+        
+        <div class="content-area">
+            <div class="grid-2">
+                <div class="statute-card">
+                    <h3>회원 구분 (제5조)</h3>
+                    <ul class="bullet-list" style="font-size: 17px;">
+                        <li><strong>정회원:</strong> 설립 취지 찬동, 회비 납부 및 총회 의결권 보유</li>
+                        <li><strong>일반회원:</strong> 정기/비정기 후원자 및 활동 참여자</li>
+                        <li><strong>후원회원:</strong> 단체의 발전을 위해 후원하는 자</li>
+                    </ul>
+                </div>
+                <div class="statute-card">
+                    <h3>임원 구성 (제8조)</h3>
+                    <ul class="bullet-list" style="font-size: 17px;">
+                        <li><strong>회장 (1인):</strong> 단체 대표 및 총회·이사회 의장</li>
+                        <li><strong>이사 (5~10인):</strong> 주요 사항 심의 및 의결</li>
+                        <li><strong>감사 (1인 이상):</strong> 회계 및 운영 감사</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="statute-card" style="margin-top: 30px;">
+                <h3>임원의 임기 및 선임</h3>
+                <p><span class="article-num">제9조</span>임원은 총회에서 선출하며, 결원 시 2개월 이내 보선한다.</p>
+                <p><span class="article-num">제11조</span>임원의 임기는 3년으로 하며, 중임할 수 있다.</p>
+            </div>
+        </div>
+        <div class="nav-placeholder">
+            <div class="nav-links"><a href="index.html">HOME</a><a href="about.html">ABOUT</a><a href="statutes.html" style="color:var(--gold)">STATUTES</a></div>
+            <img src="logo.png" alt="Logo" class="logo-small">
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <div class="bg-gradient"></div>
+        <h2 class="slide-title">제3~4장 의사결정 체계</h2>
+        <p class="subtitle">이사회, 총회 및 자문위원회의 전문적 운영</p>
+        
+        <div class="content-area">
+            <div class="grid-2">
+                <div class="statute-card">
+                    <h3>총회 및 이사회</h3>
+                    <p style="font-size: 17px; margin-bottom: 10px;">총회는 최고 의결기관으로서 임원 선출, 정관 변경, 예산·결산을 승인합니다.</p>
+                    <p style="font-size: 17px;">이사회는 재적이사 과반수 출석으로 개의하며 사업 계획 수립 등을 의결합니다.</p>
+                </div>
+                <div class="statute-card">
+                    <h3>자문위원회 (제21조)</h3>
+                    <p style="font-size: 17px;">전문가, 수혜자 대표 등 7인 이내로 구성하며 사업 계획 및 실적에 대한 전문적 의견을 채택하여 운영에 반영합니다.</p>
+                </div>
+            </div>
+            <div class="statute-card" style="margin-top: 30px; border-top: 4px solid var(--navy);">
+                <h3>운영의 투명성 (제19조/제28조)</h3>
+                <p>모든 의결 사항은 <strong>회의록</strong>으로 작성하여 기명날인 후 보존하며, 회계연도 종료 후 1개월 이내에 전년도 사업 실적 및 결산을 총회에 보고합니다.</p>
+            </div>
+        </div>
+        <div class="nav-placeholder">
+            <div class="nav-links"><a href="index.html">HOME</a><a href="about.html">ABOUT</a><a href="statutes.html" style="color:var(--gold)">STATUTES</a></div>
+            <img src="logo.png" alt="Logo" class="logo-small">
+        </div>
+    </div>
+
+</body>
+</html>
