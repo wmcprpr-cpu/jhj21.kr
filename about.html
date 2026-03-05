@@ -3,109 +3,91 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>집현전21 | About</title>
+  <meta name="theme-color" content="#0b1736" />
+  <title>About | 집현전21</title>
+  <meta name="description" content="집현전21 소개" />
   <link rel="icon" href="./logo.png" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <span class="badge">About</span>
-      <p class="topbar__text">집현전 정신을 현대적으로 계승하여 지식을 공공의 가치로 확산합니다.</p>
-      <a class="topbar__cta" href="contact.html">문의</a>
-    </div>
-  </div>
+  <div id="siteHeader"></div>
 
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html">
-        <img class="brand__logo" src="./logo.png" alt="집현전21 로고" />
-        <div><strong class="brand__name">집현전21</strong><span class="brand__tag">Jiphyeonjeon21 Think Tank</span></div>
-      </a>
-
-      <nav class="nav" aria-label="주요 메뉴">
-  <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
-    <span class="nav__toggle-line"></span><span class="nav__toggle-line"></span><span class="nav__toggle-line"></span>
-    <span class="sr-only">메뉴</span>
-  </button>
-  <ul id="navMenu" class="nav__menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="governance.html">Governance</a></li>
-    <li><a href="strategy-2026.html">Strategy 2026</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="forum.html">Forum</a></li>
-    <li><a href="publication.html">Publications</a></li>
-    <li><a href="notice.html">News</a></li>
-    <li><a class="nav__button" href="join.html">Join</a></li>
-    <li><a class="nav__button" href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <div class="pagehead">
-      <h1 class="h2">About</h1>
-      <p>집현전21은 연구·포럼·발간물을 통해 “문제 정의 → 분석 → 실행 가능한 대안”을 제시하는 싱크탱크형 조직을 지향합니다.</p>
-    </div>
-
-    <section class="section section--alt">
-      <div class="grid grid--3">
-        <div class="card">
-          <span class="pill pill--gold">Purpose</span>
-          <h3 class="h3">설립 취지</h3>
-          <p>복잡한 사회 문제를 단편적 대응이 아닌, 구조적 이해와 협력 모델로 해결합니다.</p>
-        </div>
-        <div class="card">
-          <span class="pill pill--gold">Method</span>
-          <h3 class="h3">운영 방식</h3>
-          <p>연구(근거)–포럼(합의)–발간(확산) 3단 구조로 성과를 축적합니다.</p>
-        </div>
-        <div class="card">
-          <span class="pill pill--gold">Principles</span>
-          <h3 class="h3">핵심 원칙</h3>
-          <p>공공성 · 전문성 · 투명성 · 지속가능성을 기반으로 열린 협력 네트워크를 구축합니다.</p>
-        </div>
-      </div>
-    </section>
-
+  <main>
     <section class="section">
-      <div class="pagehead">
-        <h2 class="h2">조직이 하는 일 </h2>
-        <p>연구소급 인상을 만드는 핵심은 “무엇을, 어떤 형태로, 얼마나 꾸준히” 하는지가 한눈에 보이게 하는 것입니다.</p>
-      </div>
-      <div class="grid grid--3">
-        <div class="card"><span class="pill">1</span><h3 class="h3">정책/사회 의제 연구</h3><p>현장 데이터와 사례 비교로 정책 옵션을 설계합니다.</p></div>
-        <div class="card"><span class="pill">2</span><h3 class="h3">포럼/라운드테이블</h3><p>전문가 논의를 실행 과제로 전환하는 공론장을 운영합니다.</p></div>
-        <div class="card"><span class="pill">3</span><h3 class="h3">발간/교육 콘텐츠</h3><p>브리프·리포트·세미나로 지식을 확산합니다.</p></div>
+      <div class="container">
+        <div class="pagehead">
+          <h1 class="h2">About</h1>
+          <p class="muted">집현전21은 지식·정책·교육을 연결해 공공의 가치를 확산하는 싱크탱크형 지식 공동체입니다.</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns:1.1fr .9fr">
+          <div class="card">
+            <h3 class="h3">Mission</h3>
+            <p class="muted">학문과 정책, 산업과 시민사회를 연결하여 시대의 과제를 연구하고 실행 가능한 대안을 제안합니다.</p>
+
+            <div style="height:12px"></div>
+
+            <h3 class="h3">Principles</h3>
+            <div class="list">
+              <div class="item">
+                <div class="item__meta">01</div>
+                <div class="item__body">
+                  <h3>Evidence</h3>
+                  <p>데이터·사례·비교분석 기반으로 문제를 정의합니다.</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item__meta">02</div>
+                <div class="item__body">
+                  <h3>Consensus</h3>
+                  <p>포럼·라운드테이블로 전문 담론을 사회적 합의로 전환합니다.</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="item__meta">03</div>
+                <div class="item__body">
+                  <h3>Impact</h3>
+                  <p>브리프·리포트·세미나로 지식을 공공의 자산으로 확산합니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="net">
+            <div class="net__title">
+              <strong>At a glance</strong>
+              <span>Think Tank</span>
+            </div>
+            <div class="svg-wrap">
+              <div class="kpi" style="grid-template-columns:1fr; gap:10px">
+                <div class="kpi__item">
+                  <div class="kpi__label">Network</div>
+                  <div class="kpi__value">Fellows & Partners</div>
+                </div>
+                <div class="kpi__item">
+                  <div class="kpi__label">Outputs</div>
+                  <div class="kpi__value">Brief / Report / Journal</div>
+                </div>
+                <div class="kpi__item">
+                  <div class="kpi__label">Forum</div>
+                  <div class="kpi__value">Roundtable / Seminar</div>
+                </div>
+              </div>
+            </div>
+            <div class="pills">
+              <span class="pill">Navy</span>
+              <span class="pill">Gold</span>
+              <span class="pill">Academic Minimal</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
 
- <!-- Footer -->
-<footer class="footer">
-  <div class="container footer__grid">
-    <div>
-     <div class="footer__brand">
-
-<img class="footer__logo" src="./logo.png" alt="집현전21 로고">
-
-<div>
-<strong>집현전21</strong>
-
-<p class="muted" style="white-space:nowrap;">
-지혜를 공공의 가치로 확산하는 싱크탱크형 지식 공동체
-</p>
-
-</div>
-</div>
-      <p class="muted">© <span id="year"></span> Jiphyeonjeon21. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+  <div id="siteFooter"></div>
   <button class="to-top" type="button" aria-label="맨 위로">↑</button>
-  <script src="./script.js"></script>
 </body>
 </html>
