@@ -1,279 +1,101 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>집현전21</title>
-  <meta name="description" content="지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체, 집현전21" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>집현전21 | 공익 연구 공동체</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    h1, h2, h3 { font-family: 'Noto Serif KR', serif; } /* 제목에만 품격있는 명조체 적용 */
+  </style>
 </head>
 <body>
 
-  <!-- Topbar -->
-  <div class="topbar">
+  <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="집현전21 홈">
-        <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="집현전21 로고" class="brand-logo">
         <span>집현전21</span>
       </a>
-
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="about.html">기관소개</a>
-        <a href="research.html">사업·연구</a>
-        <a href="education.html">지식교류</a>
-        <a href="publication.html">발간물</a>
+      <nav class="nav">
+        <a href="about.html">소개</a>
+        <a href="statutes.html">정관</a>
+        <a href="fellows.html">연구위원</a>
+        <a href="fields.html">연구분야</a>
+        <a href="reports.html">보고서</a>
         <a href="notice.html">공지</a>
-        <a href="contact.html">문의</a>
       </nav>
-
       <div class="cta">
-        <a class="btn gold" href="about.html">설립 취지</a>
-        <a class="btn primary" href="contact.html">참여/협력</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="kicker">
-          <i aria-hidden="true"></i>
-          <b>공익 · 연구 · 문화</b>
-          <span style="opacity:.85;">지식과 실천으로 시대의 질문에 답합니다</span>
-        </div>
-
-        <h1>집현전21</h1>
-
-        <p>
-          집현전21은 지난 역사의 위대한 현인들의 지성을 바탕으로,
-          21세기 새 시대의 과제를 “연구”하고 “실행”으로 연결하는 공익 공동체입니다.
-          <br/>
-          대한민국의 국가 부흥과 K-문화의 창의적 가치 보존·홍보를 위한 연구 및 활동을 전개합니다.
-        </p>
-
-       <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
-  <a class="btn primary" href="research.html">핵심 사업 보기</a>
-  <a class="btn primary" href="publication.html">발간물 보기</a>
-  <a class="btn primary" href="about.html">정체성/원칙</a>
-</div>
-      </div>
-
-      <div class="panel" aria-label="핵심 요약">
-        <h3>지향점</h3>
-        <p>
-          인류공영의 번영과 국민화합을 기반으로,
-          근거와 품격을 갖춘 연구·교육·프로젝트를 축적합니다.
-        </p>
-        <div class="badge-row">
-          <span class="mbadge">공공성</span>
-          <span class="mbadge">신뢰</span>
-          <span class="mbadge">실행</span>
-          <span class="mbadge">K-문화</span>
-        </div>
-
-        <div class="hr"></div>
-
-        <h3 style="margin-top:16px;">핵심 활동 축</h3>
-        <p style="margin-top:10px;">
-          사회문제 개선방안 연구 · 지식교류 · 문화/예술 가치 보존 ·
-          환경/건강 · 행복한 가족/사회
-        </p>
+        <a href="contact.html" class="btn btn-gold">협력 문의</a>
       </div>
     </div>
   </header>
 
-  <!-- Section: Mission & Principles -->
+  <section class="hero">
+    <div class="container">
+      <h1>과거의 지혜로 미래의 해법을 설계합니다</h1>
+      <p>지난 역사의 위대한 현인들의 지성을 계승하는 공익 연구 공동체</p>
+      <div style="margin-top: 40px;">
+        <a href="reports.html" class="btn btn-gold">최신 연구보고서 보기</a>
+        <a href="about.html" class="btn" style="margin-left:15px; background:transparent; border-color:white;">설립 취지 읽기</a>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>미션과 운영 원칙</h2>
-          <p>정관의 정신은 “문구”가 아니라 “운영의 기준”이 되어야 한다고 믿습니다.</p>
-        </div>
-        <p><a class="btn" href="about.html">기관소개 전체</a></p>
-      </div>
-
-      <div class="grid-2">
+      <h2 class="section-title">집현전21의 지향점</h2>
+      <div class="grid">
         <div class="card">
-          <span class="tag">미션</span>
-          <h3>지성의 축적 → 공익의 실천</h3>
-          <p>
-            깊이 있는 조사·분석을 바탕으로 실행 가능한 대안을 제시하고,
-            협력 네트워크를 통해 사회적 효용을 확산합니다.
-          </p>
-          <ul>
-            <li>현안의 구조를 읽는 연구</li>
-            <li>대안을 설계하는 정책 제안</li>
-            <li>현장에서 검증되는 프로젝트</li>
+          <h3>인류공영의 번영</h3>
+          <p>새 시대의 글로벌 현안을 연구하고 지속 가능한 인류의 발전을 위한 정책적 대안을 모색합니다.</p>
+        </div>
+        <div class="card">
+          <h3>국민화합과 국가부흥</h3>
+          <p>사회적 갈등의 구조적 해법을 제시하고 대한민국이 다시 도약할 수 있는 국가 전략을 연구합니다.</p>
+        </div>
+        <div class="card">
+          <h3>K-문화의 창의적 보존</h3>
+          <p>한국 문화의 고유한 가치를 학술적으로 정립하고 전 세계에 홍보하는 사업을 전개합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background-color: #fff;">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr 1fr;">
+        <div>
+          <h2 style="text-align:left; color:var(--navy);">주요 연구 분야</h2>
+          <p>집현전21은 정관 제3조에 의거하여 다음과 같은 분야에서 실천적 연구를 수행합니다.</p>
+          <ul style="list-style: none; padding:0; margin-top:20px;">
+            <li style="margin-bottom:15px;">• 사회문제 개선 및 국민화합 연구</li>
+            <li style="margin-bottom:15px;">• 국민 삶의 질 향상을 위한 지식교류</li>
+            <li style="margin-bottom:15px;">• 창의적 문화·예술 가치 보존 사업</li>
+            <li style="margin-bottom:15px;">• 환경과 건강에 관한 정책 연구</li>
           </ul>
         </div>
-
-        <div class="card">
-          <span class="tag">원칙</span>
-          <h3>공공성 · 투명성 · 책임성</h3>
-          <p>
-            사업의 전 과정에서 기록·공유·보고를 기본으로 하며,
-            윤리와 책임을 기반으로 신뢰 가능한 운영을 지향합니다.
-          </p>
-          <ul>
-            <li>절차의 명료함</li>
-            <li>재정/성과의 투명한 공개</li>
-            <li>협력기관과의 상호 신뢰</li>
-          </ul>
+        <div style="background: var(--gold-pale); padding: 30px; border-left: 5px solid var(--gold);">
+          <h3 style="margin-top:0;">알림마당</h3>
+          <p style="font-size:16px;">[공지] 집현전21 공식 홈페이지 개설</p>
+          <p style="font-size:16px;">[모집] 2026년 상반기 객원 연구위원</p>
+          <a href="notice.html" style="font-size:16px; color:var(--gold); font-weight:700;">전체보기 →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Core Areas -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>핵심 사업 영역</h2>
-          <p>각 영역은 “학술적 근거”와 “실행 가능성”을 동시에 요구합니다.</p>
-        </div>
-        <p><a class="btn" href="research.html">사업·연구 전체</a></p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <span class="tag">사회·국민화합</span>
-          <h3>사회문제 개선방안 연구</h3>
-          <p>
-            사회적 갈등과 구조적 문제를 진단하고,
-            국민의 삶을 실질적으로 개선하는 정책·프로그램을 연구합니다.
-          </p>
-        </div>
-        <div class="card">
-          <span class="tag">지식교류</span>
-          <h3>지식의 순환과 확산</h3>
-          <p>
-            전문가·시민·기관이 함께 배우고 토론하는 장을 만들며,
-            공익적 지식이 사회로 흘러가도록 돕습니다.
-          </p>
-        </div>
-        <div class="card">
-          <span class="tag">문화·예술</span>
-          <h3>K-문화 가치 보존·홍보</h3>
-          <p>
-            창의적 문화·예술 가치를 보존하고 기록하며,
-            미래 세대가 이어받을 수 있는 기반을 축적합니다.
-          </p>
-        </div>
-        <div class="card">
-          <span class="tag">환경·건강</span>
-          <h3>지속가능성과 웰빙</h3>
-          <p>
-            환경과 건강은 분리되지 않습니다.
-            데이터 기반 연구와 실천 사업으로 지속가능한 모델을 제시합니다.
-          </p>
-        </div>
-        <div class="card">
-          <span class="tag">가족·사회</span>
-          <h3>행복한 가족, 건강한 사회</h3>
-          <p>
-            공동체의 회복 탄력성을 높이는 연구·교육·실천 프로그램을 기획합니다.
-          </p>
-        </div>
-        <div class="card">
-          <span class="tag">연대</span>
-          <h3>기관·기업·시민 협력</h3>
-          <p>
-            단일 해법이 아닌 협력의 구조를 설계합니다.
-            공동의 목표를 위한 실행 연대를 구축합니다.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Latest -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>공지 · 발간물</h2>
-          <p>신뢰는 ‘업데이트’에서 시작됩니다. 공지와 자료를 정기적으로 축적합니다.</p>
-        </div>
-        <p style="display:flex; gap:10px; flex-wrap:wrap; margin:0;">
-          <a class="btn" href="notice.html">공지 보기</a>
-          <a class="btn" href="publication.html">발간물 보기</a>
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <span class="tag">공지</span>
-          <h3>홈페이지 운영 안내</h3>
-          <p>
-            집현전21은 공익 활동의 기록을 남깁니다.
-            공지사항에서 일정·모집·결과를 투명하게 공유합니다.
-          </p>
-          <div style="margin-top:12px;">
-            <a class="btn" href="notice.html">공지 더보기</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="tag">발간물</span>
-          <h3>이슈 브리프 · 활동 보고서</h3>
-          <p>
-            짧고 명료한 브리프부터, 심층 보고서까지 단계적으로 축적합니다.
-            (PDF 업로드 기반으로 운영 가능)
-          </p>
-          <div style="margin-top:12px;">
-            <a class="btn" href="publication.html">발간물 보기</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Join -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>참여 · 협력</h2>
-          <p>연구·세미나·프로젝트는 ‘함께’할 때 더 깊어집니다.</p>
-        </div>
-        <p><a class="btn primary" href="contact.html">문의하기</a></p>
-      </div>
-
-      <div class="split">
-        <div class="note">
-          <b style="color:var(--navy)">정회원/일반/후원 참여</b><br/>
-          운영과 의사결정에 참여하거나, 활동에 동참하거나, 후원으로 함께할 수 있습니다.
-          (세부 기준은 기관소개 페이지에서 정리합니다.)
-        </div>
-        <div class="note">
-          <b style="color:var(--navy)">기관·기업·학계 협력</b><br/>
-          공동연구, 세미나 공동 개최, 공익 프로젝트 협력 등
-          파트너십 제안을 환영합니다.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <div class="container fgrid">
-      <div>
-        <div style="font-weight:900; font-size:18px;">집현전21</div>
-        <small>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</small>
-      </div>
-      <div style="text-align:right;">
-        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
-        <small>문의: wmcprpr@gmail.com</small>
+    <div class="container">
+      <h2>집현전21</h2>
+      <p>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</p>
+      <div style="margin: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+        <p>문의: wmcprpr@gmail.com | 도메인: www.jhj21.kr</p>
+        <p style="opacity: 0.5;">© 2026 Jiphyeonjeon21. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
