@@ -14,7 +14,7 @@
 
   <header id="header-include"></header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="container">
         <h1>과거의 지혜로 미래의 해법을 설계합니다</h1>
@@ -74,19 +74,22 @@
 
   <script>
     async function loadInclude() {
-      // 헤더 불러오기
-      const headerRes = await fetch('assets/header.html');
-      document.getElementById('header-include').innerHTML = await headerRes.text();
-      
-      // 푸터 불러오기
-      const footerRes = await fetch('assets/footer.html');
-      document.getElementById('footer-include').innerHTML = await footerRes.text();
-
-      // 현재 날짜 푸터 자동 업데이트
-      document.getElementById("year").textContent = new Date().getFullYear();
+      try {
+        const headerRes = await fetch('assets/header.html');
+        if (headerRes.ok) document.getElementById('header-include').innerHTML = await headerRes.text();
+        const footerRes = await fetch('assets/footer.html');
+        if (footerRes.ok) document.getElementById('footer-include').innerHTML = await footerRes.text();
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+        
+        // 현재 메뉴 활성화
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('.nav a').forEach(link => {
+          if (link.getAttribute('href') === currentPage) link.classList.add('active');
+        });
+      } catch (e) { console.error(e); }
     }
-    loadInclude();
+    window.onload = loadInclude;
   </script>
-
 </body>
 </html>
