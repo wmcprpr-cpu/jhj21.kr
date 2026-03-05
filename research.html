@@ -1,147 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>사업·연구 | 집현전21</title>
-  <meta name="description" content="사회문제, 문화, 환경/건강, 가족/사회 등 집현전21의 연구·사업 영역" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>집현전21 | Research</title>
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-
   <div class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="집현전21 홈">
-        <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
-        <span>집현전21</span>
+    <div class="container topbar__inner">
+      <span class="badge">Research</span>
+      <p class="topbar__text">연구 축을 3개로 명확히 하면 “기관 신뢰감”이 즉시 올라갑니다.</p>
+      <a class="topbar__cta" href="contact.html">연구 협력</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="./logo.png" alt="집현전21 로고" />
+        <div><strong class="brand__name">집현전21</strong><span class="brand__tag">Jiphyeonjeon21 Think Tank</span></div>
       </a>
 
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="about.html">기관소개</a>
-        <a class="active" href="research.html">사업·연구</a>
-        <a href="education.html">지식교류</a>
-        <a href="publication.html">발간물</a>
-        <a href="notice.html">공지</a>
-        <a href="contact.html">문의</a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggle-line"></span><span class="nav__toggle-line"></span><span class="nav__toggle-line"></span>
+          <span class="sr-only">메뉴</span>
+        </button>
+        <ul id="navMenu" class="nav__menu">
+          <li><a data-page="index.html" href="index.html">Home</a></li>
+          <li><a data-page="about.html" href="about.html">About</a></li>
+          <li><a data-page="research.html" href="research.html">Research</a></li>
+          <li><a data-page="publication.html" href="publication.html">Publications</a></li>
+          <li><a data-page="notice.html" href="notice.html">News</a></li>
+          <li><a class="nav__button" data-page="contact.html" href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-
-      <div class="cta">
-        <a class="btn gold" href="publication.html">발간물</a>
-        <a class="btn primary" href="contact.html">협력 제안</a>
-      </div>
     </div>
-  </div>
+  </header>
 
-  <div class="container page-title">
-    <h1>사업·연구</h1>
-    <p>
-      집현전21의 모든 사업은 “연구 → 설계 → 실행 → 평가”의 흐름을 따릅니다.
-      분야별 전문성과 협업 구조를 통해 실질적 변화를 만들어냅니다.
-    </p>
-  </div>
-
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>사업 영역</h2>
-          <p>정관의 사업 범위를 바탕으로, 시대 과제에 맞게 확장 가능한 구조로 설계했습니다.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <span class="tag">사회문제</span>
-          <h3>개선방안 연구 및 국민화합</h3>
-          <p>갈등의 구조를 분석하고, 합리적 협력 모델과 정책 대안을 제시합니다.</p>
-          <ul>
-            <li>현안 진단 및 정책 제안</li>
-            <li>사회통합 프로그램 설계</li>
-            <li>시민사회 협력 모델 연구</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="tag">지식교류</span>
-          <h3>지식의 순환과 확산</h3>
-          <p>세미나·포럼·워크숍을 통해 공익 지식이 사회로 흐르도록 돕습니다.</p>
-          <ul>
-            <li>전문가/시민 공동 세미나</li>
-            <li>현장 문제 해결형 워크숍</li>
-            <li>성과 공유 및 교육 콘텐츠화</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="tag">문화·예술</span>
-          <h3>가치 보존·홍보</h3>
-          <p>K-문화의 창의적 가치를 기록하고 보존하며, 공공적 홍보 모델을 구축합니다.</p>
-          <ul>
-            <li>자료화·아카이빙</li>
-            <li>전시/프로그램 기획</li>
-            <li>교육/홍보 콘텐츠 개발</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="tag">환경·건강</span>
-          <h3>지속가능성 연구</h3>
-          <p>환경과 건강의 연결지점을 연구하고, 실천 사업으로 검증합니다.</p>
-          <ul>
-            <li>지역 기반 환경 과제 연구</li>
-            <li>건강/생활 연구 및 캠페인</li>
-            <li>데이터 기반 정책 제안</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="tag">가족·사회</span>
-          <h3>행복한 공동체</h3>
-          <p>가족과 지역사회의 회복력 증진을 위한 연구·교육·프로젝트를 추진합니다.</p>
-          <ul>
-            <li>가족 기능 강화 프로그램</li>
-            <li>청소년/중장년 지원 연구</li>
-            <li>지역 커뮤니티 프로젝트</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="tag">확장</span>
-          <h3>필요 사업의 추가</h3>
-          <p>목적 달성에 필요한 신규 사업은 연구·심의 후 단계적으로 확장합니다.</p>
-          <ul>
-            <li>신규 의제 발굴</li>
-            <li>시범사업 → 평가 → 확산</li>
-            <li>협력기관 매칭</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="margin-top:14px" class="note">
-        <b style="color:var(--navy)">협력 제안 안내</b><br/>
-        공동연구, 데이터/현장 협력, 세미나 공동 개최, 공익 프로젝트 제안을 환영합니다.
-        제안서는 간단한 개요(목표/기간/참여기관/예산 범위)만으로도 충분합니다.
-      </div>
-
+  <main class="container">
+    <div class="pagehead">
+      <h1 class="h2">Research</h1>
+      <p>아래 연구 축(예시 3개)은 주인님 조직의 실제 의제로 언제든 교체 가능합니다. 구조가 핵심입니다.</p>
     </div>
-  </section>
 
-  <footer>
-    <div class="container fgrid">
+    <section class="section section--alt">
+      <div class="grid grid--3">
+        <div class="card">
+          <span class="pill">Track 1</span>
+          <h3 class="h3">디지털 거버넌스</h3>
+          <p>디지털 전환 시대의 공공 서비스·행정 혁신 모델을 연구합니다.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Track 2</span>
+          <h3 class="h3">지역사회 혁신</h3>
+          <p>복지·교육·문화·일자리 영역에서 지역 기반 해결 모델을 설계합니다.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Track 3</span>
+          <h3 class="h3">윤리·신뢰 기반 AI</h3>
+          <p>AI 확산에 따른 신뢰·윤리·제도적 안전장치를 제안합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="pagehead">
+        <h2 class="h2">연구 산출물 형태 (3)</h2>
+        <p>연구소 사이트는 “무엇이 결과물인지”가 선명해야 합니다.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card"><span class="pill pill--gold">Output</span><h3 class="h3">Policy Brief</h3><p>핵심 데이터 + 권고안 + 실행 옵션을 2~6p로 요약합니다.</p></div>
+        <div class="card"><span class="pill pill--gold">Output</span><h3 class="h3">Insight Report</h3><p>문제 구조·사례 비교·프레임워크 기반 심층 분석을 제공합니다.</p></div>
+        <div class="card"><span class="pill pill--gold">Output</span><h3 class="h3">Forum Summary</h3><p>포럼 논의를 실행 과제로 정리해 이해관계자 협력을 연결합니다.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
       <div>
-        <div style="font-weight:900; font-size:18px;">집현전21</div>
-        <small>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</small>
+        <div class="footer__brand">
+          <img class="footer__logo" src="./logo.png" alt="" aria-hidden="true" />
+          <div><strong>집현전21</strong><p class="muted">지혜로 미래를 여는 지식 공동체</p></div>
+        </div>
+        <p class="muted">© <span id="year"></span> Jiphyeonjeon21.</p>
       </div>
-      <div style="text-align:right;">
-        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
-        <small>문의: wmcprpr@gmail.com</small>
+      <div class="footer__links">
+        <a href="publication.html">Publications</a>
+        <a href="notice.html">News</a>
+        <a href="contact.html">Contact</a>
       </div>
+      <div class="muted"><div>Navy #0b1736</div><div>Gold #BA9F65</div></div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
+  <script src="./script.js"></script>
 </body>
 </html>
