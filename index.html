@@ -6,15 +6,11 @@
   <title>집현전21 | 공익 연구 공동체</title>
   <link rel="stylesheet" href="assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
-  </style>
+  <style>h1, h2, h3 { font-family: 'Noto Serif KR', serif; }</style>
 </head>
 <body>
-
   <header id="header-include"></header>
-
-  <main id="main">
+  <main>
     <section class="hero">
       <div class="container">
         <h1>과거의 지혜로 미래의 해법을 설계합니다</h1>
@@ -25,69 +21,25 @@
         </div>
       </div>
     </section>
-
     <section>
       <div class="container">
         <h2 class="section-title">집현전21의 지향점</h2>
         <div class="grid">
-          <div class="card">
-            <h3>인류공영의 번영</h3>
-            <p>새 시대의 글로벌 현안을 연구하고 지속 가능한 인류의 발전을 위한 정책적 대안을 모색합니다.</p>
-          </div>
-          <div class="card">
-            <h3>국민화합과 국가부흥</h3>
-            <p>사회적 갈등의 구조적 해법을 제시하고 대한민국이 다시 도약할 수 있는 국가 전략을 연구합니다.</p>
-          </div>
-          <div class="card">
-            <h3>K-문화의 창의적 보존</h3>
-            <p>한국 문화의 고유한 가치를 학술적으로 정립하고 전 세계에 홍보하는 사업을 전개합니다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="background-color: #fff;">
-      <div class="container">
-        <div class="grid" style="grid-template-columns: 2fr 1fr;">
-          <div>
-            <h2 style="text-align:left; color:var(--navy);">주요 연구 분야</h2>
-            <p>집현전21은 정관 제3조에 의거하여 다음과 같은 분야에서 실천적 연구를 수행합니다.</p>
-            <ul style="list-style: none; padding:0; margin-top:20px;">
-              <li style="margin-bottom:15px;">• 사회문제 개선 및 국민화합 연구</li>
-              <li style="margin-bottom:15px;">• 국민 삶의 질 향상을 위한 지식교류</li>
-              <li style="margin-bottom:15px;">• 창의적 문화·예술 가치 보존 사업</li>
-              <li style="margin-bottom:15px;">• 환경과 건강에 관한 정책 연구</li>
-            </ul>
-          </div>
-          <div style="background: var(--gold-pale); padding: 30px; border-left: 5px solid var(--gold);">
-            <h3 style="margin-top:0;">알림마당</h3>
-            <p style="font-size:16px;">[공지] 집현전21 공식 홈페이지 개설</p>
-            <p style="font-size:16px;">[모집] 2026년 상반기 객원 연구위원</p>
-            <a href="notice.html" style="font-size:16px; color:var(--gold); font-weight:700;">전체보기 →</a>
-          </div>
+          <div class="card"><h3>인류공영의 번영</h3><p>글로벌 현안을 연구하고 지속 가능한 발전을 위한 정책적 대안을 모색합니다.</p></div>
+          <div class="card"><h3>국민화합과 국가부흥</h3><p>사회적 갈등의 구조적 해법을 제시하고 국가 전략을 연구합니다.</p></div>
+          <div class="card"><h3>K-문화의 창의적 보존</h3><p>한국 문화의 고유한 가치를 학술적으로 정립하고 홍보합니다.</p></div>
         </div>
       </div>
     </section>
   </main>
-
   <footer id="footer-include"></footer>
-
   <script>
     async function loadInclude() {
-      try {
-        const headerRes = await fetch('assets/header.html');
-        if (headerRes.ok) document.getElementById('header-include').innerHTML = await headerRes.text();
-        const footerRes = await fetch('assets/footer.html');
-        if (footerRes.ok) document.getElementById('footer-include').innerHTML = await footerRes.text();
-        const yearEl = document.getElementById("year");
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
-        
-        // 현재 메뉴 활성화
-        const currentPage = window.location.pathname.split("/").pop() || "index.html";
-        document.querySelectorAll('.nav a').forEach(link => {
-          if (link.getAttribute('href') === currentPage) link.classList.add('active');
-        });
-      } catch (e) { console.error(e); }
+      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
+      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const cp = window.location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
     }
     window.onload = loadInclude;
   </script>
