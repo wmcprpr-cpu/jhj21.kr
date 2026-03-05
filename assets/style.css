@@ -566,3 +566,25 @@ footer a{color:rgba(255,255,255,.90); text-decoration:underline; text-underline-
 .hero-line{ display:block; line-height: 1.05; letter-spacing: -0.02em; }
 .hero-line--navy{ color: var(--navy); }
 .hero-line--gold{ color: var(--gold); }
+/* ===== HERO TITLE 2줄 고정 ===== */
+
+.hero-title{
+  margin:0;
+  font-size: clamp(42px, 4.5vw, 64px);
+  font-weight:900;
+}
+
+.hero-line{
+  display:block;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  word-break:keep-all;   /* 한글 줄깨짐 방지 */
+}
+
+.hero-line--navy{
+  color:var(--navy);
+}
+
+.hero-line--gold{
+  color:var(--gold);
+}
