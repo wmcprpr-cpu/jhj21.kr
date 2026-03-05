@@ -1,64 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정관 | 집현전21</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { background-color: #e2e8f0; }
-        .slide-container { width: 1200px; background-color: #fff; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); margin: 40px auto; padding: 60px; position: relative; }
-        .slide-container::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 10px; background: var(--gold); }
-        .statute-card { background: var(--gold-pale); border: 1px solid #e2e8f0; padding: 35px; border-radius: 12px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
-        .bullet-list { list-style: none; padding: 0; }
-        .bullet-list li { position: relative; padding-left: 30px; margin-bottom: 12px; font-size: 19px; }
-        .bullet-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: var(--gold); }
-    </style>
+  <meta charset="UTF-8">
+  <title>정관 | 집현전21</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+    .statute-card { background: #fff; border: 1px solid var(--line); padding: 35px; border-radius: 12px; }
+  </style>
 </head>
 <body>
   <header id="header-include"></header>
-
-  <div class="slide-container">
-    <h2 class="section-title" style="text-align: left; border-left: 8px solid var(--gold); padding-left: 20px;">제2장 회원 및 임원</h2>
+  <main class="container" style="padding: 60px 0;">
+    <h1 class="section-title">제2장 회원 및 임원</h1>
     <div class="grid-2">
-        <div class="statute-card">
-            <h3>회원 구분 (제5조)</h3>
-            <ul class="bullet-list">
-                <li><strong>정회원:</strong> 설립 취지 찬동, 회비 납부 및 총회 의결권 보유</li>
-                <li><strong>일반회원:</strong> 정기/비정기 후원자 및 활동 참여자</li>
-            </ul>
-        </div>
-        <div class="statute-card">
-            <h3>임원 구성 (제8조)</h3>
-            <ul class="bullet-list">
-                <li><strong>회장 (1인):</strong> 단체 대표 및 총회·이사회 의장</li>
-                <li><strong>이사 (5~10인):</strong> 주요 사항 심의 및 의결</li>
-            </ul>
-        </div>
+      <div class="statute-card"><h3>회원 구분</h3><p>정회원, 일반회원, 후원회원으로 구성됩니다.</p></div>
+      <div class="statute-card"><h3>임원 구성</h3><p>회장, 이사(5~10인), 감사를 둡니다.</p></div>
     </div>
-    <div class="statute-card" style="margin-top:30px;">
-        <h3>임원의 임기 및 선임</h3>
-        <p>제9조 임원은 총회에서 선출하며, 결원 시 2개월 이내 보선한다.</p>
-        <p>제11조 임원의 임기 및 중임 규정을 따릅니다.</p>
-    </div>
-  </div>
-
+  </main>
   <footer id="footer-include"></footer>
-
   <script>
     async function loadInclude() {
-      try {
-        const h = await fetch('assets/header.html');
-        document.getElementById('header-include').innerHTML = await h.text();
-        const f = await fetch('assets/footer.html');
-        document.getElementById('footer-include').innerHTML = await f.text();
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const cp = window.location.pathname.split("/").pop() || "index.html";
-        document.querySelectorAll('.nav a').forEach(l => { if (l.getAttribute('href') === cp) l.classList.add('active'); });
-      } catch (e) { console.error(e); }
+      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
+      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
+      document.getElementById("year").textContent = new Date().getFullYear();
     }
     window.onload = loadInclude;
   </script>
