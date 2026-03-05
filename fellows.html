@@ -1,67 +1,147 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>연구위원 | 집현전21</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    h1, h2, h3 { font-family: 'Noto Serif KR', serif; }
-    .fellow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 40px; margin-top: 50px; }
-    .fellow-card { background: #fff; border-left: 8px solid var(--navy); padding: 50px; border-radius: 10px; box-shadow: var(--shadow); transition: 0.3s; }
-    .fellow-card:hover { border-left-color: var(--gold); transform: translateY(-5px); }
-    .fellow-name { font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
-    .fellow-title { font-size: 20px; color: var(--gold-dark); font-weight: 700; margin-bottom: 25px; }
-    .fellow-bio { font-size: 18px; line-height: 1.8; color: var(--text-gray); }
-    .field-tag { display: inline-block; padding: 4px 12px; background: var(--gold-pale); color: var(--navy); font-size: 14px; font-weight: 700; border-radius: 4px; margin-right: 5px; margin-top: 20px; }
-  </style>
+  <meta name="description" content="집현전21 연구위원(자문/연구/협력) 소개 페이지" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
   <header id="header-include"></header>
 
-  <section class="page-hero" style="background: var(--gold-pale); padding: 80px 0; text-align: center;">
+  <header class="hero">
     <div class="container">
-      <h1 style="font-size: 42px; color: var(--navy); margin: 0;">연구진 소개</h1>
-      <p style="color: var(--gold-dark); font-weight: 700; margin-top: 10px; font-size: 18px;">FELLOWS & RESEARCHERS</p>
+      <div class="pill">
+        <span class="dot" aria-hidden="true"></span>
+        <strong>연구위원</strong>
+        <span>전문성과 공공성을 연결하는 협력 네트워크</span>
+      </div>
+      <h1>연구위원(예시)</h1>
+      <p>
+        본 페이지는 연구위원/자문위원 소개를 위한 기본 틀입니다.
+        실제 성함, 소속, 전공, 주요 연구, 연락처 공개 범위는 주인님 기준으로 교체해 넣으시면 됩니다.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="fields.html">연구분야</a>
+        <a class="btn" href="reports.html">보고서</a>
+        <a class="btn" href="contact.html">참여/협력 문의</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>위원 구성 원칙</h2>
+          <p>
+            연구위원은 학술적 엄밀성과 현장 실천력을 함께 갖춘 분들을 중심으로 구성합니다.
+            또한 공익기관으로서의 책무를 위해 이해상충 관리, 윤리 기준, 공개 가능 범위를 명확히 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag">학술</span>
+          <h3>학문적 엄밀성</h3>
+          <p>근거(데이터/문헌/사례) 기반으로 문제를 정의하고, 검증 가능한 논증을 구축합니다.</p>
+        </div>
+        <div class="card">
+          <span class="tag">현장</span>
+          <h3>실행 경험</h3>
+          <p>정책·기관·프로젝트 운영 등 실행 경험을 토대로 현실 적용 가능한 대안을 설계합니다.</p>
+        </div>
+        <div class="card">
+          <span class="tag">공익</span>
+          <h3>공공성과 윤리</h3>
+          <p>공익기관의 책임을 우선하며, 투명성·윤리·책임의 기준을 준수합니다.</p>
+        </div>
+      </div>
+
+      <div style="height:16px;"></div>
+
+      <div class="section-head">
+        <div>
+          <h2>연구위원 목록(샘플)</h2>
+          <p>아래는 “형식 예시”입니다. 주인님이 이름/약력/전공을 교체하여 사용하시면 됩니다.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag">사회 · 통합</span>
+          <h3>홍길동 박사</h3>
+          <p>
+            전공: 사회정책 / 갈등관리<br/>
+            주요: 국민화합, 지역·세대 갈등, 사회신뢰 회복
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="tag">문화 · 창의</span>
+          <h3>김지혜 박사</h3>
+          <p>
+            전공: 문화정책 / 문화콘텐츠<br/>
+            주요: K-문화 확산 전략, 문화·예술 가치 보존
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="tag">환경 · 건강</span>
+          <h3>이준호 박사</h3>
+          <p>
+            전공: 환경보건 / 공중보건<br/>
+            주요: 환경·건강 리스크, 예방 중심 건강정책
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;" class="item">
+        <div>
+          <p class="title">위원 참여 방식(안)</p>
+          <div class="meta">
+            정기 세미나(분기) · 이슈 브리프 검토 · 보고서 자문 · 프로젝트 참여(선택) · 윤리/이해상충 확인
+          </div>
+        </div>
+        <div class="badge">Participation</div>
+      </div>
+
+      <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn gold" href="contact.html">위원/자문 참여 문의</a>
+        <a class="btn" href="fields.html">연구분야 보기</a>
+      </div>
     </div>
   </section>
 
-  <main class="container" style="padding: 80px 20px;">
-    <h2 class="section-title" style="text-align: left;">상임 연구진</h2>
-    
-    <div class="fellow-grid">
-      <div class="fellow-card">
-        <div class="fellow-name">이승언</div>
-        <div class="fellow-title">사회복지학 박사 / 집현전21 회장</div>
-        <div class="fellow-bio">
-          "지식은 실천될 때 비로소 가치를 지닙니다."<br><br>
-          집현전21의 설립을 주도하였으며, 현대 사회의 갈등 구조와 공동체 회복을 위한 사회복지 정책 연구를 총괄하고 있습니다. 인류공영과 국가 부흥을 위한 실천적 지성 네트워크를 구축하는 데 전념하고 있습니다.
-        </div>
-        <div class="field-tags">
-          <span class="field-tag">#사회복지정책</span>
-          <span class="field-tag">#공동체회복</span>
-          <span class="field-tag">#실천지성</span>
-        </div>
-      </div>
-
-      <div class="fellow-card" style="border-left-style: dashed; background: var(--bg-gray);">
-        <div class="fellow-name" style="font-size: 24px; color: var(--text-gray);">연구위원 초빙</div>
-        <div class="fellow-title" style="color: var(--text-gray);">학술 및 정책 전문가</div>
-        <div class="fellow-bio">
-          집현전21은 정관 제5조에 의거하여 학술적 전문성을 갖춘 국내외 연구위원을 상시 초빙하고 있습니다. 인류와 국가의 미래를 위해 함께 고민하실 전문가분들의 동참을 기다립니다.
-        </div>
-        <a href="contact.html" style="display:inline-block; margin-top:20px; color:var(--navy); font-weight:700;">초빙 문의 안내 →</a>
-      </div>
-    </div>
-  </main>
-
   <footer id="footer-include"></footer>
+
   <script>
     async function loadInclude() {
-      const h = await fetch('assets/header.html'); document.getElementById('header-include').innerHTML = await h.text();
-      const f = await fetch('assets/footer.html'); document.getElementById('footer-include').innerHTML = await f.text();
+      try {
+        const headerRes = await fetch('assets/header.html');
+        if (headerRes.ok) {
+          document.getElementById('header-include').innerHTML = await headerRes.text();
+
+          const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+          document.querySelectorAll('.nav a').forEach(a => {
+            if ((a.getAttribute('href') || '').toLowerCase() === current) a.classList.add('active');
+          });
+        }
+
+        const footerRes = await fetch('assets/footer.html');
+        if (footerRes.ok) {
+          document.getElementById('footer-include').innerHTML = await footerRes.text();
+          const y = document.getElementById('year');
+          if (y) y.textContent = new Date().getFullYear();
+        }
+      } catch (e) {
+        console.error('Include load failed:', e);
+      }
     }
-    window.onload = loadInclude;
+    window.addEventListener('DOMContentLoaded', loadInclude);
   </script>
 </body>
 </html>
