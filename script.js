@@ -1,69 +1,94 @@
-// script.js
-(function () {
-  const inject = async (id, url) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const res = await fetch(url, { cache: "no-store" });
-    el.innerHTML = await res.text();
-  };
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadCommonLayout();
+  initMobileMenu();
+  initActiveMenu();
+  initScrollTopButton();
+});
 
-  const setActiveNav = () => {
-    const path = location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll("#navMenu a").forEach(a => {
-      const href = (a.getAttribute("href") || "").replace("./", "");
-      if (href === path) a.setAttribute("aria-current", "page");
-      else a.removeAttribute("aria-current");
-    });
-  };
+/* =========================
+   공통 Header / Footer 로드
+========================= */
+async function loadCommonLayout() {
+  const headerTarget = document.getElementById("siteHeader");
+  const footerTarget = document.getElementById("siteFooter");
 
-  const bindNavToggle = () => {
-    const btn = document.querySelector(".nav__toggle");
-    const menu = document.getElementById("navMenu");
-    if (!btn || !menu) return;
+  try {
+    if (headerTarget) {
+      const headerRes = await fetch("./assets/header.html");
+      const headerHtml = await headerRes.text();
+      headerTarget.innerHTML = headerHtml;
+    }
 
-    btn.addEventListener("click", () => {
-      const open = menu.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
+    if (footerTarget) {
+      const footerRes = await fetch("./assets/footer.html");
+      const footerHtml = await footerRes.text();
+      footerTarget.innerHTML = footerHtml;
+    }
+  } catch (error) {
+    console.error("Header/Footer 로드 중 오류:", error);
+  }
+}
 
-    // 바깥 클릭 시 닫기
-    document.addEventListener("click", (e) => {
-      if (!menu.classList.contains("open")) return;
-      const within = menu.contains(e.target) || btn.contains(e.target);
-      if (!within) {
-        menu.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
-    });
-  };
+/* =========================
+   모바일 메뉴 토글
+========================= */
+function initMobileMenu() {
+  const toggleBtn = document.querySelector(".nav__toggle");
+  const navMenu = document.querySelector(".nav__menu");
 
-  const bindTopButton = () => {
-    const btn = document.querySelector(".to-top");
-    if (!btn) return;
+  if (!toggleBtn || !navMenu) return;
 
-    const onScroll = () => {
-      if (window.scrollY > 500) btn.classList.add("show");
-      else btn.classList.remove("show");
-    };
-    window.addEventListener("scroll", onScroll);
-    onScroll();
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = navMenu.classList.contains("open");
 
-    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-  };
-
-  const setYear = () => {
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
-  };
-
-  // ---- bootstrap ----
-  document.addEventListener("DOMContentLoaded", async () => {
-    await inject("siteHeader", "./assets/header.html");
-    await inject("siteFooter", "./assets/footer.html");
-
-    setActiveNav();
-    bindNavToggle();
-    bindTopButton();
-    setYear();
+    if (isOpen) {
+      navMenu.classList.remove("open");
+      toggleBtn.setAttribute("aria-expanded", "false");
+    } else {
+      navMenu.classList.add("open");
+      toggleBtn.setAttribute("aria-expanded", "true");
+    }
   });
-})();
+}
+
+/* =========================
+   현재 페이지 메뉴 활성화
+========================= */
+function initActiveMenu() {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll(".nav__menu a");
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    const fileName = href.replace("./", "");
+
+    if (fileName === currentPath) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+}
+
+/* =========================
+   맨 위로 버튼
+========================= */
+function initScrollTopButton() {
+  const topBtn = document.querySelector(".to-top");
+  if (!topBtn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
+    }
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
