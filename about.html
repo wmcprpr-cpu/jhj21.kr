@@ -11,653 +11,109 @@
   <script src="./script.js" defer></script>
 
   <style>
-    .about-hero{
-      padding:56px 0 20px;
-    }
+    .about-hero{padding:56px 0 20px;}
+    .about-hero__title{margin:0 0 12px;font-size:48px;line-height:1.15;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .about-hero__desc{margin:0;max-width:920px;font-size:19px;line-height:1.85;color:var(--muted);}
+    .about-pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+    .about-pill{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:14px;font-weight:700;}
 
-    .about-hero__title{
-      margin:0 0 12px;
-      font-size:48px;
-      line-height:1.15;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:var(--navy);
-    }
+    .about-section{padding:64px 0;}
+    .about-section--soft{background:#eef1f6;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+    .about-section__head{margin-bottom:24px;}
+    .about-section__title{margin:0 0 8px;font-size:38px;line-height:1.2;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .about-section__desc{margin:0;font-size:18px;line-height:1.75;color:var(--muted);}
 
-    .about-hero__desc{
-      margin:0;
-      max-width:920px;
-      font-size:19px;
-      line-height:1.85;
-      color:var(--muted);
-    }
-
-    .about-pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:20px;
-    }
-
-    .about-pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:40px;
-      padding:0 14px;
-      border-radius:999px;
-      background:#f7f2e8;
-      border:1px solid #e5d7b7;
-      color:var(--navy);
-      font-size:14px;
-      font-weight:700;
-    }
-
-    .about-section{
-      padding:64px 0;
-    }
-
-    .about-section--soft{
-      background:#eef1f6;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .about-section__head{
-      margin-bottom:24px;
-    }
-
-    .about-section__title{
-      margin:0 0 8px;
-      font-size:38px;
-      line-height:1.2;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:var(--navy);
-    }
-
-    .about-section__desc{
-      margin:0;
-      font-size:18px;
-      line-height:1.75;
-      color:var(--muted);
-    }
-
-    /* 회장 인사말 */
-    .greeting-card{
-      display:grid;
-      grid-template-columns:220px 1fr;
-      gap:26px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--shadow);
-    }
-
-    .greeting-profile{
-      text-align:center;
-    }
-
+    .greeting-card{display:grid;grid-template-columns:220px 1fr;gap:26px;background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);}
+    .greeting-profile{text-align:center;}
     .greeting-photo{
-      width:180px;
-      height:220px;
-      margin:0 auto 14px;
-      border-radius:22px;
-      border:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
-        repeating-linear-gradient(
-          45deg,
-          rgba(186,159,101,.10),
-          rgba(186,159,101,.10) 8px,
-          rgba(11,23,54,.03) 8px,
-          rgba(11,23,54,.03) 16px
-        );
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
+      width:180px;height:220px;margin:0 auto 14px;border-radius:22px;border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
+      repeating-linear-gradient(45deg, rgba(186,159,101,.10), rgba(186,159,101,.10) 8px, rgba(11,23,54,.03) 8px, rgba(11,23,54,.03) 16px);
+      display:flex;align-items:center;justify-content:center;overflow:hidden;
     }
+    .greeting-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .greeting-placeholder{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.80);border:1px solid rgba(11,23,54,.12);position:relative;}
+    .greeting-placeholder::before{content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:rgba(11,23,54,.18);}
+    .greeting-placeholder::after{content:"";position:absolute;left:50%;bottom:9px;transform:translateX(-50%);width:34px;height:16px;border-radius:16px 16px 10px 10px;background:rgba(11,23,54,.18);}
+    .greeting-name{margin:0;font-size:28px;line-height:1.3;font-weight:800;color:var(--navy);letter-spacing:-0.02em;}
+    .greeting-role{margin:6px 0 0;font-size:16px;line-height:1.6;color:var(--muted);font-weight:700;}
+    .greeting-message{display:flex;flex-direction:column;justify-content:center;}
+    .greeting-badge{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:14px;font-weight:700;width:max-content;margin-bottom:16px;}
+    .greeting-title{margin:0 0 14px;font-size:32px;line-height:1.3;font-weight:800;color:var(--navy);letter-spacing:-0.02em;}
+    .greeting-text{margin:0;font-size:18px;line-height:1.95;color:var(--text);white-space:pre-line;}
 
-    .greeting-photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;}
+    .about-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow);height:100%;}
+    .about-card__badge{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:14px;font-weight:700;margin-bottom:18px;}
+    .about-card__title{margin:0 0 14px;font-size:32px;line-height:1.3;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .about-card__text{margin:0;font-size:18px;line-height:1.9;color:var(--muted);}
 
-    .greeting-placeholder{
-      width:62px;
-      height:62px;
-      border-radius:50%;
-      background:rgba(255,255,255,.80);
-      border:1px solid rgba(11,23,54,.12);
-      position:relative;
-    }
+    .about-highlight{background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);color:#fff;border-radius:28px;padding:30px;box-shadow:var(--shadow);}
+    .about-highlight__eyebrow{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);font-size:14px;font-weight:700;margin-bottom:18px;}
+    .about-highlight__title{margin:0 0 14px;font-size:34px;line-height:1.25;font-weight:800;letter-spacing:-0.02em;color:#fff;}
+    .about-highlight__text{margin:0;font-size:18px;line-height:1.9;color:rgba(255,255,255,.88);}
 
-    .greeting-placeholder::before{
-      content:"";
-      position:absolute;
-      top:11px;
-      left:50%;
-      transform:translateX(-50%);
-      width:20px;
-      height:20px;
-      border-radius:50%;
-      background:rgba(11,23,54,.18);
-    }
+    .about-principles{display:grid;grid-template-columns:repeat(2, 1fr);gap:16px;}
+    .principle-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);}
+    .principle-card__badge{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 12px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:13px;font-weight:700;margin-bottom:14px;}
+    .principle-card__title{margin:0 0 10px;font-size:24px;line-height:1.3;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .principle-card__text{margin:0;font-size:17px;line-height:1.8;color:var(--muted);}
 
-    .greeting-placeholder::after{
-      content:"";
-      position:absolute;
-      left:50%;
-      bottom:9px;
-      transform:translateX(-50%);
-      width:34px;
-      height:16px;
-      border-radius:16px 16px 10px 10px;
-      background:rgba(11,23,54,.18);
-    }
+    .about-flow{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-top:18px;}
+    .flow-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);text-align:center;}
+    .flow-card__step{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;font-size:16px;font-weight:800;margin-bottom:14px;}
+    .flow-card__title{margin:0 0 10px;font-size:24px;line-height:1.3;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .flow-card__text{margin:0;font-size:17px;line-height:1.8;color:var(--muted);}
 
-    .greeting-name{
-      margin:0;
-      font-size:28px;
-      line-height:1.3;
-      font-weight:800;
-      color:var(--navy);
-      letter-spacing:-0.02em;
-    }
-
-    .greeting-role{
-      margin:6px 0 0;
-      font-size:16px;
-      line-height:1.6;
-      color:var(--muted);
-      font-weight:700;
-    }
-
-    .greeting-message{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .greeting-badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:38px;
-      padding:0 14px;
-      border-radius:999px;
-      background:#f7f2e8;
-      border:1px solid #e5d7b7;
-      color:var(--navy);
-      font-size:14px;
-      font-weight:700;
-      width:max-content;
-      margin-bottom:16px;
-    }
-
-    .greeting-title{
-      margin:0 0 14px;
-      font-size:32px;
-      line-height:1.3;
-      font-weight:800;
-      color:var(--navy);
-      letter-spacing:-0.02em;
-    }
-
-    .greeting-text{
-      margin:0;
-      font-size:18px;
-      line-height:1.95;
-      color:var(--text);
-      white-space:pre-line;
-    }
-
-    /* 기관소개 */
-    .about-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:18px;
-    }
-
-    .about-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:26px;
-      box-shadow:var(--shadow);
-      height:100%;
-    }
-
-    .about-card__badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:38px;
-      padding:0 14px;
-      border-radius:999px;
-      background:#f7f2e8;
-      border:1px solid #e5d7b7;
-      color:var(--navy);
-      font-size:14px;
-      font-weight:700;
-      margin-bottom:18px;
-    }
-
-    .about-card__title{
-      margin:0 0 14px;
-      font-size:32px;
-      line-height:1.3;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:var(--navy);
-    }
-
-    .about-card__text{
-      margin:0;
-      font-size:18px;
-      line-height:1.9;
-      color:var(--muted);
-    }
-
-    .about-highlight{
-      background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      color:#fff;
-      border-radius:28px;
-      padding:30px;
-      box-shadow:var(--shadow);
-    }
-
-    .about-highlight__eyebrow{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:40px;
-      padding:0 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
-      font-size:14px;
-      font-weight:700;
-      margin-bottom:18px;
-    }
-
-    .about-highlight__title{
-      margin:0 0 14px;
-      font-size:34px;
-      line-height:1.25;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:#fff;
-    }
-
-    .about-highlight__text{
-      margin:0;
-      font-size:18px;
-      line-height:1.9;
-      color:rgba(255,255,255,.88);
-    }
-
-    /* 정체성 */
-    .about-principles{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:16px;
-    }
-
-    .principle-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .principle-card__badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:36px;
-      padding:0 12px;
-      border-radius:999px;
-      background:#f7f2e8;
-      border:1px solid #e5d7b7;
-      color:var(--navy);
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:14px;
-    }
-
-    .principle-card__title{
-      margin:0 0 10px;
-      font-size:24px;
-      line-height:1.3;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:var(--navy);
-    }
-
-    .principle-card__text{
-      margin:0;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted);
-    }
-
-    /* 활동 방식 */
-    .about-flow{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-      margin-top:18px;
-    }
-
-    .flow-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:22px;
-      box-shadow:var(--shadow);
-      text-align:center;
-    }
-
-    .flow-card__step{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      background:var(--gold);
-      color:#fff;
-      font-size:16px;
-      font-weight:800;
-      margin-bottom:14px;
-    }
-
-    .flow-card__title{
-      margin:0 0 10px;
-      font-size:24px;
-      line-height:1.3;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:var(--navy);
-    }
-
-    .flow-card__text{
-      margin:0;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted);
-    }
-
-    /* 연구위원 */
-    .fellows-wrap{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .fellows-wrap::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(186,159,101,.10), transparent 18%),
-        radial-gradient(circle at 90% 16%, rgba(11,23,54,.05), transparent 16%);
-      pointer-events:none;
-    }
-
-    .fellows-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:22px 18px;
-    }
-
-    .fellow-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:22px 18px;
-      text-align:center;
-      box-shadow:0 8px 24px rgba(11,23,54,.06);
-      height:100%;
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-
-    .fellow-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 14px 28px rgba(11,23,54,.10);
-    }
-
+    .fellows-wrap{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+    .fellows-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 18%, rgba(186,159,101,.10), transparent 18%),radial-gradient(circle at 90% 16%, rgba(11,23,54,.05), transparent 16%);pointer-events:none;}
+    .fellows-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4, 1fr);gap:22px 18px;}
+    .fellow-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 18px;text-align:center;box-shadow:0 8px 24px rgba(11,23,54,.06);height:100%;transition:transform .2s ease, box-shadow .2s ease;}
+    .fellow-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(11,23,54,.10);}
     .fellow-photo{
-      width:132px;
-      height:165px;
-      margin:0 auto 14px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
-        repeating-linear-gradient(
-          45deg,
-          rgba(186,159,101,.10),
-          rgba(186,159,101,.10) 8px,
-          rgba(11,23,54,.03) 8px,
-          rgba(11,23,54,.03) 16px
-        );
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
+      width:132px;height:165px;margin:0 auto 14px;border-radius:18px;border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
+      repeating-linear-gradient(45deg, rgba(186,159,101,.10), rgba(186,159,101,.10) 8px, rgba(11,23,54,.03) 8px, rgba(11,23,54,.03) 16px);
+      display:flex;align-items:center;justify-content:center;overflow:hidden;
     }
-
-    .fellow-photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .fellow-photo__placeholder{
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(11,23,54,.12);
-      position:relative;
-    }
-
-    .fellow-photo__placeholder::before{
-      content:"";
-      position:absolute;
-      top:10px;
-      left:50%;
-      transform:translateX(-50%);
-      width:18px;
-      height:18px;
-      border-radius:50%;
-      background:rgba(11,23,54,.18);
-    }
-
-    .fellow-photo__placeholder::after{
-      content:"";
-      position:absolute;
-      left:50%;
-      bottom:8px;
-      transform:translateX(-50%);
-      width:30px;
-      height:16px;
-      border-radius:16px 16px 10px 10px;
-      background:rgba(11,23,54,.18);
-    }
-
-    .fellow-role{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:32px;
-      padding:0 12px;
-      border-radius:999px;
-      background:#f7f2e8;
-      border:1px solid #e5d7b7;
-      color:var(--navy);
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:10px;
-    }
-
-    .fellow-name{
-      margin:0;
-      font-size:22px;
-      line-height:1.35;
-      font-weight:800;
-      color:var(--navy);
-      letter-spacing:-0.02em;
-    }
-
-    .fellow-title{
-      margin:8px 0 0;
-      font-size:16px;
-      line-height:1.6;
-      color:var(--text);
-      font-weight:700;
-    }
-
-    .fellow-field{
-      margin:6px 0 0;
-      font-size:15px;
-      line-height:1.65;
-      color:var(--muted);
-    }
-
-    .fellows-note{
-      margin-top:18px;
-      padding:18px 20px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      position:relative;
-      z-index:2;
-    }
-
-    .fellows-note__title{
-      margin:0 0 8px;
-      font-size:22px;
-      font-weight:800;
-      color:var(--navy);
-    }
-
-    .fellows-note__text{
-      margin:0;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted);
-    }
+    .fellow-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .fellow-photo__placeholder{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.78);border:1px solid rgba(11,23,54,.12);position:relative;}
+    .fellow-photo__placeholder::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:rgba(11,23,54,.18);}
+    .fellow-photo__placeholder::after{content:"";position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:30px;height:16px;border-radius:16px 16px 10px 10px;background:rgba(11,23,54,.18);}
+    .fellow-role{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:0 12px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:13px;font-weight:700;margin-bottom:10px;}
+    .fellow-name{margin:0;font-size:22px;line-height:1.35;font-weight:800;color:var(--navy);letter-spacing:-0.02em;}
+    .fellow-title{margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--text);font-weight:700;}
+    .fellow-field{margin:6px 0 0;font-size:15px;line-height:1.65;color:var(--muted);}
+    .fellows-note{margin-top:18px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);position:relative;z-index:2;}
+    .fellows-note__title{margin:0 0 8px;font-size:22px;font-weight:800;color:var(--navy);}
+    .fellows-note__text{margin:0;font-size:17px;line-height:1.8;color:var(--muted);}
 
     @media (max-width:1100px){
-      .fellows-grid{
-        grid-template-columns:repeat(3, 1fr);
-      }
+      .fellows-grid{grid-template-columns:repeat(3, 1fr);}
     }
-
     @media (max-width:980px){
-      .about-hero__title{
-        font-size:40px;
-      }
-
-      .greeting-card,
-      .about-grid{
-        grid-template-columns:1fr;
-      }
-
-      .about-principles,
-      .about-flow{
-        grid-template-columns:1fr;
-      }
-
-      .fellows-grid{
-        grid-template-columns:repeat(2, 1fr);
-      }
+      .about-hero__title{font-size:40px;}
+      .greeting-card,.about-grid{grid-template-columns:1fr;}
+      .about-principles,.about-flow{grid-template-columns:1fr;}
+      .fellows-grid{grid-template-columns:repeat(2, 1fr);}
     }
-
     @media (max-width:640px){
-      .about-hero{
-        padding:44px 0 16px;
-      }
-
-      .about-hero__title{
-        font-size:34px;
-      }
-
-      .about-hero__desc,
-      .about-section__desc,
-      .about-card__text,
-      .principle-card__text,
-      .about-highlight__text,
-      .flow-card__text,
-      .greeting-text,
-      .fellows-note__text{
-        font-size:16px;
-      }
-
-      .about-section{
-        padding:52px 0;
-      }
-
-      .about-section__title{
-        font-size:30px;
-      }
-
-      .greeting-title,
-      .about-card__title,
-      .about-highlight__title{
-        font-size:28px;
-      }
-
-      .principle-card__title,
-      .flow-card__title{
-        font-size:22px;
-      }
-
-      .greeting-photo{
-        width:150px;
-        height:190px;
-      }
-
-      .greeting-name{
-        font-size:24px;
-      }
-
-      .fellows-wrap{
-        padding:20px;
-      }
-
-      .fellows-grid{
-        grid-template-columns:1fr;
-      }
-
-      .fellow-photo{
-        width:120px;
-        height:150px;
-      }
-
-      .fellow-name{
-        font-size:20px;
-      }
+      .about-hero{padding:44px 0 16px;}
+      .about-hero__title{font-size:34px;}
+      .about-hero__desc,.about-section__desc,.about-card__text,.principle-card__text,.about-highlight__text,.flow-card__text,.greeting-text,.fellows-note__text{font-size:16px;}
+      .about-section{padding:52px 0;}
+      .about-section__title{font-size:30px;}
+      .greeting-title,.about-card__title,.about-highlight__title{font-size:28px;}
+      .principle-card__title,.flow-card__title{font-size:22px;}
+      .greeting-photo{width:150px;height:190px;}
+      .greeting-name{font-size:24px;}
+      .fellows-wrap{padding:20px;}
+      .fellows-grid{grid-template-columns:1fr;}
+      .fellow-photo{width:120px;height:150px;}
+      .fellow-name{font-size:20px;}
     }
   </style>
 </head>
-
 <body>
   <div id="siteHeader"></div>
 
@@ -680,7 +136,6 @@
       </div>
     </section>
 
-    <!-- 회장 인사말 -->
     <section class="about-section">
       <div class="container">
         <div class="about-section__head">
@@ -719,7 +174,6 @@
       </div>
     </section>
 
-    <!-- 기관소개 -->
     <section class="about-section about-section--soft">
       <div class="container">
         <div class="about-section__head">
@@ -756,7 +210,6 @@
       </div>
     </section>
 
-    <!-- 정체성 · 원칙 -->
     <section class="about-section" id="identity">
       <div class="container">
         <div class="about-section__head">
@@ -805,7 +258,6 @@
       </div>
     </section>
 
-    <!-- 활동 방식 -->
     <section class="about-section about-section--soft">
       <div class="container">
         <div class="about-section__head">
@@ -843,7 +295,6 @@
       </div>
     </section>
 
-    <!-- 연구위원 -->
     <section class="about-section" id="fellows">
       <div class="container">
         <div class="about-section__head">
