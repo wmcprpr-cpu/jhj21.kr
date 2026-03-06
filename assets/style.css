@@ -330,7 +330,7 @@ button{
 
 .hero__title{
   margin:0 0 24px;
-  max-width:720px;
+  max-width:900px;
 }
 
 .hero__title--2line{
@@ -339,20 +339,21 @@ button{
 
 .hero__title-line{
   display:block;
-  line-height:1.12;
-  letter-spacing:-0.04em;
+  line-height:1.15;
   font-weight:900;
+  letter-spacing:-0.03em;
   word-break:keep-all;
+  white-space:nowrap;
 }
 
 .hero__title-line--white{
   color:#ffffff;
-  font-size:clamp(40px, 4.8vw, 72px);
+  font-size:64px;
 }
 
 .hero__title-line--gold{
   color:var(--gold);
-  font-size:clamp(40px, 4.8vw, 72px);
+  font-size:64px;
 }
 
 .hero__desc{
@@ -439,7 +440,6 @@ button{
   color:#fff;
 }
 
-/* 메인 네트워크/별도 페이지에서 사용할 수 있게 추가 */
 .btn--outline-navy{
   border:1px solid rgba(11,23,54,.18);
   color:var(--navy);
@@ -734,6 +734,10 @@ button{
     background:#f8fafc;
   }
 
+  .nav__dropdownmenu.mobile-open{
+    display:block;
+  }
+
   .hero__grid{
     grid-template-columns:1fr;
     gap:40px;
@@ -741,6 +745,10 @@ button{
 
   .hero__title{
     max-width:100%;
+  }
+
+  .hero__title-line{
+    white-space:normal;
   }
 
   .card-grid--2,
