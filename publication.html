@@ -4,52 +4,447 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b1736" />
-  <title>Publications | 집현전21</title>
-  <meta name="description" content="집현전21 발간물" />
+  <title>발간물 · 활동 | 집현전21</title>
+  <meta name="description" content="집현전21의 보고서, 브리프, 포럼 자료, 최근 활동을 소개합니다." />
   <link rel="icon" href="./logo.png" />
   <link rel="stylesheet" href="./assets/style.css" />
   <script src="./script.js" defer></script>
+
+  <style>
+    .pub-hero{
+      padding:56px 0 20px;
+    }
+
+    .pub-hero__title{
+      margin:0 0 12px;
+      font-size:48px;
+      line-height:1.15;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .pub-hero__desc{
+      margin:0;
+      max-width:920px;
+      font-size:19px;
+      line-height:1.85;
+      color:var(--muted);
+    }
+
+    .pub-pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .pub-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .pub-section{
+      padding:64px 0;
+    }
+
+    .pub-section--soft{
+      background:#eef1f6;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .pub-section__head{
+      margin-bottom:24px;
+    }
+
+    .pub-section__title{
+      margin:0 0 8px;
+      font-size:38px;
+      line-height:1.2;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .pub-section__desc{
+      margin:0;
+      font-size:18px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .pub-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .pub-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .pub-card__badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:16px;
+      width:max-content;
+    }
+
+    .pub-card__title{
+      margin:0 0 10px;
+      font-size:26px;
+      line-height:1.35;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .pub-card__meta{
+      margin:0 0 12px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .pub-card__text{
+      margin:0;
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+      flex:1;
+    }
+
+    .pub-card__actions{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pub-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--navy);
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .pub-btn:hover{
+      background:#f8fafc;
+    }
+
+    .pub-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .pub-item{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:18px;
+      align-items:start;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px 22px;
+      box-shadow:var(--shadow);
+    }
+
+    .pub-item__meta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:800;
+      width:max-content;
+    }
+
+    .pub-item__title{
+      margin:0 0 8px;
+      font-size:24px;
+      line-height:1.35;
+      font-weight:800;
+      color:var(--navy);
+      letter-spacing:-0.02em;
+    }
+
+    .pub-item__text{
+      margin:0;
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    .pub-note{
+      margin-top:18px;
+      padding:18px 20px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .pub-note__title{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:800;
+      color:var(--navy);
+    }
+
+    .pub-note__text{
+      margin:0;
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    @media (max-width: 980px){
+      .pub-hero__title{
+        font-size:40px;
+      }
+
+      .pub-grid{
+        grid-template-columns:1fr;
+      }
+
+      .pub-item{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .pub-hero{
+        padding:44px 0 16px;
+      }
+
+      .pub-hero__title{
+        font-size:34px;
+      }
+
+      .pub-hero__desc,
+      .pub-section__desc,
+      .pub-card__text,
+      .pub-item__text,
+      .pub-note__text{
+        font-size:16px;
+      }
+
+      .pub-section{
+        padding:52px 0;
+      }
+
+      .pub-section__title{
+        font-size:30px;
+      }
+
+      .pub-card__title,
+      .pub-item__title{
+        font-size:22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div id="siteHeader"></div>
 
   <main>
-    <section class="section">
+    <!-- Hero -->
+    <section class="pub-hero">
       <div class="container">
-        <div class="pagehead">
-          <h1 class="h2">Publications</h1>
-          <p class="muted">브리프·리포트·학술지로 연구 결과를 체계적으로 발간합니다.</p>
+        <h1 class="pub-hero__title">발간물 · 활동</h1>
+        <p class="pub-hero__desc">
+          집현전21은 연구 결과와 공론 활동을 보고서, 정책 브리프, 포럼 자료, 활동 기록의 형태로 축적하고 공유합니다.
+          지식은 기록될 때 신뢰를 만들고, 공유될 때 공공의 가치가 됩니다.
+        </p>
+
+        <div class="pub-pill-row" aria-label="발간물 키워드">
+          <span class="pub-pill">보고서</span>
+          <span class="pub-pill">정책 브리프</span>
+          <span class="pub-pill">포럼 자료</span>
+          <span class="pub-pill">세미나</span>
+          <span class="pub-pill">활동 기록</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 대표 발간물 -->
+    <section class="pub-section">
+      <div class="container">
+        <div class="pub-section__head">
+          <h2 class="pub-section__title">대표 발간물</h2>
+          <p class="pub-section__desc">
+            집현전21의 주요 연구 성과와 발간 체계를 소개합니다.
+          </p>
         </div>
 
-        <div class="list">
-          <div class="item">
-            <div class="item__meta">BRIEF</div>
-            <div class="item__body">
-              <h3>Policy Brief (예정)</h3>
-              <p>핵심 의제를 2~6p로 요약: 데이터, 옵션, 권고안.</p>
-              <div class="item__tags"><span class="tag">Evidence</span><span class="tag">Action</span></div>
+        <div class="pub-grid">
+          <article class="pub-card">
+            <div class="pub-card__badge">REPORT</div>
+            <h3 class="pub-card__title">연구보고서</h3>
+            <p class="pub-card__meta">Research Report Series</p>
+            <p class="pub-card__text">
+              사회, 정책, 문화, 환경, 가족과 공동체를 주제로 한 심층 연구 결과를
+              체계적인 보고서 형태로 정리합니다.
+            </p>
+            <div class="pub-card__actions">
+              <a class="pub-btn" href="./reports.html">목록 보기</a>
             </div>
-          </div>
+          </article>
 
-          <div class="item">
-            <div class="item__meta">REPORT</div>
-            <div class="item__body">
-              <h3>Insight Report (예정)</h3>
-              <p>문제 구조·사례 비교·프레임워크 기반 심층 분석 보고서.</p>
-              <div class="item__tags"><span class="tag">Framework</span><span class="tag">Comparative</span></div>
+          <article class="pub-card">
+            <div class="pub-card__badge">BRIEF</div>
+            <h3 class="pub-card__title">정책 브리프</h3>
+            <p class="pub-card__meta">Policy Brief</p>
+            <p class="pub-card__text">
+              핵심 정책 이슈를 빠르게 이해할 수 있도록 요약하고,
+              실천 가능한 방향을 제시하는 간결한 발간물입니다.
+            </p>
+            <div class="pub-card__actions">
+              <a class="pub-btn" href="./reports.html">목록 보기</a>
             </div>
-          </div>
+          </article>
 
-          <div class="item">
-            <div class="item__meta">JOURNAL</div>
-            <div class="item__body">
-              <h3>집현전21 Journal (준비)</h3>
-              <p>편집위원회 구성, 투고 공고, ISSN 신청 후 창간호 발간.</p>
-              <div class="item__tags"><span class="tag">Peer Review</span><span class="tag">Academic</span></div>
+          <article class="pub-card">
+            <div class="pub-card__badge">ARCHIVE</div>
+            <h3 class="pub-card__title">포럼 · 세미나 자료</h3>
+            <p class="pub-card__meta">Forum & Seminar Archive</p>
+            <p class="pub-card__text">
+              포럼, 세미나, 지식교류 행사에서 축적된 발표 자료와 논의 내용을 기록하고 정리합니다.
+            </p>
+            <div class="pub-card__actions">
+              <a class="pub-btn" href="./forum.html">포럼 보기</a>
             </div>
-          </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 최근 활동 -->
+    <section class="pub-section pub-section--soft">
+      <div class="container">
+        <div class="pub-section__head">
+          <h2 class="pub-section__title">최근 활동</h2>
+          <p class="pub-section__desc">
+            최근 진행 중인 발간 및 활동 흐름을 한눈에 확인하실 수 있습니다.
+          </p>
         </div>
 
+        <div class="pub-list">
+          <article class="pub-item">
+            <div class="pub-item__meta">NOTICE</div>
+            <div>
+              <h3 class="pub-item__title">창립 포럼 준비</h3>
+              <p class="pub-item__text">
+                집현전21의 설립 취지와 방향성을 공유하기 위한 창립 포럼을 준비하고 있습니다.
+              </p>
+            </div>
+          </article>
+
+          <article class="pub-item">
+            <div class="pub-item__meta">BRIEF</div>
+            <div>
+              <h3 class="pub-item__title">Policy Brief 01호 기획</h3>
+              <p class="pub-item__text">
+                사회 주요 의제를 근거 기반으로 정리하고 실행 가능한 정책 방향을 제안하는 브리프를 준비 중입니다.
+              </p>
+            </div>
+          </article>
+
+          <article class="pub-item">
+            <div class="pub-item__meta">REPORT</div>
+            <div>
+              <h3 class="pub-item__title">연구보고 체계 구축</h3>
+              <p class="pub-item__text">
+                보고서, 브리프, 활동 자료를 체계적으로 축적하고 공개할 수 있도록 발간 체계를 정비하고 있습니다.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 발간 방향 -->
+    <section class="pub-section">
+      <div class="container">
+        <div class="pub-section__head">
+          <h2 class="pub-section__title">발간 방향</h2>
+          <p class="pub-section__desc">
+            집현전21은 지식의 축적과 사회적 확산을 동시에 지향합니다.
+          </p>
+        </div>
+
+        <div class="pub-grid">
+          <article class="pub-card">
+            <div class="pub-card__badge">Depth</div>
+            <h3 class="pub-card__title">깊이 있는 연구</h3>
+            <p class="pub-card__text">
+              단순한 이슈 정리를 넘어, 사회적 문제를 구조적으로 분석하는 연구를 지향합니다.
+            </p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__badge">Accessibility</div>
+            <h3 class="pub-card__title">이해 가능한 전달</h3>
+            <p class="pub-card__text">
+              연구 성과는 누구나 이해할 수 있는 언어와 형식으로 정리되어야 한다는 원칙을 갖고 있습니다.
+            </p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__badge">Impact</div>
+            <h3 class="pub-card__title">실천으로의 연결</h3>
+            <p class="pub-card__text">
+              발간물은 기록에 그치지 않고 교육, 포럼, 프로젝트, 협력 활동으로 이어지는 구조를 지향합니다.
+            </p>
+          </article>
+        </div>
+
+        <div class="pub-note">
+          <h3 class="pub-note__title">안내</h3>
+          <p class="pub-note__text">
+            현재 발간물과 활동 자료는 홈페이지 구조 설계 기준에 맞춰 정리되어 있으며,
+            실제 보고서 및 자료는 확정된 콘텐츠 순서에 따라 추가될 예정입니다.
+          </p>
+        </div>
       </div>
     </section>
   </main>
