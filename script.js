@@ -1,94 +1,152 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadCommonLayout();
-  initMobileMenu();
-  initActiveMenu();
-  initScrollTopButton();
-});
-
-/* =========================
-   공통 Header / Footer 로드
-========================= */
-async function loadCommonLayout() {
-  const headerTarget = document.getElementById("siteHeader");
-  const footerTarget = document.getElementById("siteFooter");
+async function loadPartial(targetId, filePath) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
 
   try {
-    if (headerTarget) {
-      const headerRes = await fetch("./assets/header.html");
-      const headerHtml = await headerRes.text();
-      headerTarget.innerHTML = headerHtml;
+    const response = await fetch(filePath, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`${filePath} load failed: ${response.status}`);
     }
 
-    if (footerTarget) {
-      const footerRes = await fetch("./assets/footer.html");
-      const footerHtml = await footerRes.text();
-      footerTarget.innerHTML = footerHtml;
-    }
+    const html = await response.text();
+    target.innerHTML = html;
   } catch (error) {
-    console.error("Header/Footer 로드 중 오류:", error);
+    console.error(error);
   }
 }
 
-/* =========================
-   모바일 메뉴 토글
-========================= */
-function initMobileMenu() {
-  const toggleBtn = document.querySelector(".nav__toggle");
-  const navMenu = document.querySelector(".nav__menu");
-
-  if (!toggleBtn || !navMenu) return;
-
-  toggleBtn.addEventListener("click", () => {
-    const isOpen = navMenu.classList.contains("open");
-
-    if (isOpen) {
-      navMenu.classList.remove("open");
-      toggleBtn.setAttribute("aria-expanded", "false");
-    } else {
-      navMenu.classList.add("open");
-      toggleBtn.setAttribute("aria-expanded", "true");
-    }
-  });
+function setCurrentYear() {
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear().toString();
+  }
 }
 
-/* =========================
-   현재 페이지 메뉴 활성화
-========================= */
-function initActiveMenu() {
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
-  const navLinks = document.querySelectorAll(".nav__menu a");
+function normalizePath(pathname) {
+  const path = pathname.split("#")[0].split("?")[0];
+  if (!path || path === "/") return "/index.html";
+  return path.endsWith("/") ? `${path}index.html` : path;
+}
 
-  navLinks.forEach(link => {
+function setActiveMenu() {
+  const currentPath = normalizePath(window.location.pathname);
+  const navLinks = document.querySelectorAll(".nav__menu a[href]");
+
+  navLinks.forEach((link) => {
     const href = link.getAttribute("href");
-    if (!href) return;
+    if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
 
-    const fileName = href.replace("./", "");
+    const linkUrl = new URL(href, window.location.origin);
+    const linkPath = normalizePath(linkUrl.pathname);
 
-    if (fileName === currentPath) {
+    if (linkPath === currentPath) {
       link.setAttribute("aria-current", "page");
+
+      const dropdown = link.closest(".nav__dropdown");
+      if (dropdown) {
+        const parentBtn = dropdown.querySelector(".nav__dropbtn");
+        if (parentBtn) {
+          parentBtn.setAttribute("aria-current", "page");
+        }
+      }
     }
   });
 }
 
-/* =========================
-   맨 위로 버튼
-========================= */
-function initScrollTopButton() {
-  const topBtn = document.querySelector(".to-top");
-  if (!topBtn) return;
+function setupMobileNav() {
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      topBtn.classList.add("show");
-    } else {
-      topBtn.classList.remove("show");
+  if (!navToggle || !navMenu) return;
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const clickedInsideNav = target.closest(".nav");
+    const clickedToggle = target.closest("#navToggle");
+
+    if (!clickedInsideNav && !clickedToggle && navMenu.classList.contains("open")) {
+      navMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
     }
   });
 
-  topBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  const menuLinks = navMenu.querySelectorAll("a");
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 980) {
+        navMenu.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
     });
   });
 }
+
+function setupDropdownForMobile() {
+  const dropdownButtons = document.querySelectorAll(".nav__dropbtn");
+
+  dropdownButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      if (window.innerWidth > 980) return;
+
+      const dropdown = button.closest(".nav__dropdown");
+      const menu = dropdown?.querySelector(".nav__dropdownmenu");
+      if (!dropdown || !menu) return;
+
+      event.preventDefault();
+
+      const isOpen = menu.classList.toggle("mobile-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+}
+
+function setupToTopButton() {
+  const toTopBtn = document.querySelector(".to-top");
+  if (!toTopBtn) return;
+
+  const toggleVisibility = () => {
+    if (window.scrollY > 300) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  };
+
+  window.addEventListener("scroll", toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}
+
+function setupFooterClass() {
+  const footer = document.querySelector("footer");
+  if (footer && !footer.classList.contains("site-footer")) {
+    footer.classList.add("site-footer");
+  }
+}
+
+async function initLayout() {
+  await loadPartial("siteHeader", "./assets/header.html");
+  await loadPartial("siteFooter", "./assets/footer.html");
+
+  setupFooterClass();
+  setCurrentYear();
+  setActiveMenu();
+  setupMobileNav();
+  setupDropdownForMobile();
+  setupToTopButton();
+}
+
+document.addEventListener("DOMContentLoaded", initLayout);
