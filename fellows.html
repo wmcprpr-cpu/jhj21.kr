@@ -4,26 +4,480 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b1736" />
-  <title>Fellows | 집현전21</title>
-  <meta name="description" content="집현전21 펠로우" />
+  <title>연구위원 | 집현전21</title>
+  <meta name="description" content="집현전21 연구위원 소개" />
   <link rel="icon" href="./logo.png" />
   <link rel="stylesheet" href="./assets/style.css" />
   <script src="./script.js" defer></script>
+
+  <style>
+    .fellows-hero{
+      padding:56px 0 20px;
+    }
+
+    .fellows-hero__title{
+      margin:0 0 12px;
+      font-size:48px;
+      line-height:1.15;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .fellows-hero__desc{
+      margin:0;
+      max-width:940px;
+      font-size:19px;
+      line-height:1.85;
+      color:var(--muted);
+    }
+
+    .fellows-pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .fellows-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .fellows-section{
+      padding:64px 0;
+    }
+
+    .fellows-section--soft{
+      background:#eef1f6;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .fellows-section__head{
+      margin-bottom:24px;
+    }
+
+    .fellows-section__title{
+      margin:0 0 8px;
+      font-size:38px;
+      line-height:1.2;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .fellows-section__desc{
+      margin:0;
+      font-size:18px;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .fellows-wrap{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .fellows-grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:22px 18px;
+    }
+
+    .fellow-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px 18px;
+      text-align:center;
+      box-shadow:0 8px 24px rgba(11,23,54,.06);
+      height:100%;
+    }
+
+    .fellow-photo{
+      width:132px;
+      height:165px;
+      margin:0 auto 14px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
+        repeating-linear-gradient(
+          45deg,
+          rgba(186,159,101,.10),
+          rgba(186,159,101,.10) 8px,
+          rgba(11,23,54,.03) 8px,
+          rgba(11,23,54,.03) 16px
+        );
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .fellow-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .fellow-photo__placeholder{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(11,23,54,.12);
+      position:relative;
+    }
+
+    .fellow-photo__placeholder::before{
+      content:"";
+      position:absolute;
+      top:10px;
+      left:50%;
+      transform:translateX(-50%);
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:rgba(11,23,54,.18);
+    }
+
+    .fellow-photo__placeholder::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:8px;
+      transform:translateX(-50%);
+      width:30px;
+      height:16px;
+      border-radius:16px 16px 10px 10px;
+      background:rgba(11,23,54,.18);
+    }
+
+    .fellow-role{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:32px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .fellow-name{
+      margin:0;
+      font-size:22px;
+      line-height:1.35;
+      font-weight:800;
+      color:var(--navy);
+      letter-spacing:-0.02em;
+    }
+
+    .fellow-title{
+      margin:8px 0 0;
+      font-size:16px;
+      line-height:1.6;
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .fellow-field{
+      margin:6px 0 0;
+      font-size:15px;
+      line-height:1.65;
+      color:var(--muted);
+    }
+
+    .fellows-note{
+      margin-top:18px;
+      padding:18px 20px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .fellows-note__title{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:800;
+      color:var(--navy);
+    }
+
+    .fellows-note__text{
+      margin:0;
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    @media (max-width:1100px){
+      .fellows-grid{
+        grid-template-columns:repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width:980px){
+      .fellows-hero__title{
+        font-size:40px;
+      }
+
+      .fellows-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:640px){
+      .fellows-hero{
+        padding:44px 0 16px;
+      }
+
+      .fellows-hero__title{
+        font-size:34px;
+      }
+
+      .fellows-hero__desc,
+      .fellows-section__desc,
+      .fellows-note__text{
+        font-size:16px;
+      }
+
+      .fellows-section{
+        padding:52px 0;
+      }
+
+      .fellows-section__title{
+        font-size:30px;
+      }
+
+      .fellows-wrap{
+        padding:20px;
+      }
+
+      .fellows-grid{
+        grid-template-columns:1fr;
+      }
+
+      .fellow-photo{
+        width:120px;
+        height:150px;
+      }
+
+      .fellow-name{
+        font-size:20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div id="siteHeader"></div>
 
   <main>
-    <section class="section">
+    <!-- Hero -->
+    <section class="fellows-hero">
       <div class="container">
-        <div class="pagehead">
-          <h1 class="h2">Fellows</h1>
-          <p class="muted">전문가 네트워크는 공개 가능한 범위 내에서 단계적으로 업데이트합니다.</p>
+        <h1 class="fellows-hero__title">연구위원</h1>
+        <p class="fellows-hero__desc">
+          집현전21은 각 분야의 전문성과 현장 경험을 갖춘 연구위원들과 함께
+          공익 연구, 정책 제안, 포럼, 교육, 프로젝트를 수행합니다.
+        </p>
+
+        <div class="fellows-pill-row" aria-label="연구위원 키워드">
+          <span class="fellows-pill">12명 구성</span>
+          <span class="fellows-pill">전문가 네트워크</span>
+          <span class="fellows-pill">연구 · 정책 · 실천</span>
+          <span class="fellows-pill">공익 협력</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 연구위원 목록 -->
+    <section class="fellows-section fellows-section--soft">
+      <div class="container">
+        <div class="fellows-section__head">
+          <h2 class="fellows-section__title">연구위원 소개</h2>
+          <p class="fellows-section__desc">
+            아래 영역은 연구위원 12명의 증명사진, 이름, 직책, 전문분야를 배치할 수 있도록 설계되었습니다.
+          </p>
         </div>
 
-        <div class="card">
-          <h3 class="h3">업데이트 안내</h3>
-          <p class="muted">개인정보/초상권/소속 공개 정책에 따라, 공개 프로필과 활동 이력을 정리해 순차 반영합니다.</p>
+        <div class="fellows-wrap">
+          <div class="fellows-grid">
+
+            <!-- 1 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-01.jpg" alt="연구위원 1 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 2 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-02.jpg" alt="연구위원 2 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 3 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-03.jpg" alt="연구위원 3 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 4 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-04.jpg" alt="연구위원 4 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 5 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-05.jpg" alt="연구위원 5 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 6 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-06.jpg" alt="연구위원 6 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 7 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-07.jpg" alt="연구위원 7 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 8 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-08.jpg" alt="연구위원 8 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 9 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-09.jpg" alt="연구위원 9 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 10 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-10.jpg" alt="연구위원 10 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 11 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-11.jpg" alt="연구위원 11 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+            <!-- 12 -->
+            <article class="fellow-card">
+              <div class="fellow-photo">
+                <!-- <img src="./assets/fellows/fellow-12.jpg" alt="연구위원 12 증명사진"> -->
+                <div class="fellow-photo__placeholder" aria-hidden="true"></div>
+              </div>
+              <div class="fellow-role">연구위원</div>
+              <h3 class="fellow-name">이름 입력</h3>
+              <p class="fellow-title">직책 입력</p>
+              <p class="fellow-field">전문분야 입력</p>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="fellows-note">
+          <h3 class="fellows-note__title">안내</h3>
+          <p class="fellows-note__text">
+            현재 페이지는 연구위원 12명의 프로필을 배치할 수 있도록 설계된 구조입니다.
+            실제 사진과 이름, 직책, 전문분야는 확정 명단에 따라 순차적으로 반영하시면 됩니다.
+          </p>
         </div>
       </div>
     </section>
