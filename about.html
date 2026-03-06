@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b1736" />
   <title>기관소개 | 집현전21</title>
-  <meta name="description" content="집현전21의 기관소개, 정체성, 운영 원칙을 안내합니다." />
+  <meta name="description" content="집현전21의 기관소개, 인사말, 정체성, 운영 원칙을 안내합니다." />
   <link rel="icon" href="./logo.png" />
   <link rel="stylesheet" href="./assets/style.css" />
   <script src="./script.js" defer></script>
@@ -83,6 +83,138 @@
       color:var(--muted);
     }
 
+    .greeting-card{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:26px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .greeting-profile{
+      text-align:center;
+    }
+
+    .greeting-photo{
+      width:180px;
+      height:220px;
+      margin:0 auto 14px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
+        repeating-linear-gradient(
+          45deg,
+          rgba(186,159,101,.10),
+          rgba(186,159,101,.10) 8px,
+          rgba(11,23,54,.03) 8px,
+          rgba(11,23,54,.03) 16px
+        );
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .greeting-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .greeting-placeholder{
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      background:rgba(255,255,255,.8);
+      border:1px solid rgba(11,23,54,.12);
+      position:relative;
+    }
+
+    .greeting-placeholder::before{
+      content:"";
+      position:absolute;
+      top:11px;
+      left:50%;
+      transform:translateX(-50%);
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:rgba(11,23,54,.18);
+    }
+
+    .greeting-placeholder::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:9px;
+      transform:translateX(-50%);
+      width:34px;
+      height:16px;
+      border-radius:16px 16px 10px 10px;
+      background:rgba(11,23,54,.18);
+    }
+
+    .greeting-name{
+      margin:0;
+      font-size:28px;
+      line-height:1.3;
+      font-weight:800;
+      color:var(--navy);
+      letter-spacing:-0.02em;
+    }
+
+    .greeting-role{
+      margin:6px 0 0;
+      font-size:16px;
+      line-height:1.6;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .greeting-message{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .greeting-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:38px;
+      padding:0 14px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:14px;
+      font-weight:700;
+      width:max-content;
+      margin-bottom:16px;
+    }
+
+    .greeting-title{
+      margin:0 0 14px;
+      font-size:32px;
+      line-height:1.3;
+      font-weight:800;
+      color:var(--navy);
+      letter-spacing:-0.02em;
+    }
+
+    .greeting-text{
+      margin:0;
+      font-size:18px;
+      line-height:1.95;
+      color:var(--text);
+      white-space:pre-line;
+    }
+
     .about-grid{
       display:grid;
       grid-template-columns:1.1fr .9fr;
@@ -129,6 +261,44 @@
       color:var(--muted);
     }
 
+    .about-highlight{
+      background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-highlight__eyebrow{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .about-highlight__title{
+      margin:0 0 14px;
+      font-size:34px;
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:#fff;
+    }
+
+    .about-highlight__text{
+      margin:0;
+      font-size:18px;
+      line-height:1.9;
+      color:rgba(255,255,255,.88);
+    }
+
     .about-principles{
       display:grid;
       grid-template-columns:repeat(2, 1fr);
@@ -172,44 +342,6 @@
       font-size:17px;
       line-height:1.8;
       color:var(--muted);
-    }
-
-    .about-highlight{
-      background:linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
-      color:#fff;
-      border-radius:28px;
-      padding:30px;
-      box-shadow:var(--shadow);
-    }
-
-    .about-highlight__eyebrow{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:40px;
-      padding:0 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
-      font-size:14px;
-      font-weight:700;
-      margin-bottom:18px;
-    }
-
-    .about-highlight__title{
-      margin:0 0 14px;
-      font-size:34px;
-      line-height:1.25;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:#fff;
-    }
-
-    .about-highlight__text{
-      margin:0;
-      font-size:18px;
-      line-height:1.9;
-      color:rgba(255,255,255,.88);
     }
 
     .about-flow{
@@ -258,42 +390,17 @@
       color:var(--muted);
     }
 
-    .about-note{
-      margin-top:18px;
-      padding:18px 20px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-    }
-
-    .about-note__title{
-      margin:0 0 8px;
-      font-size:22px;
-      font-weight:800;
-      color:var(--navy);
-    }
-
-    .about-note__text{
-      margin:0;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted);
-    }
-
     @media (max-width: 980px){
       .about-hero__title{
         font-size:40px;
       }
 
+      .greeting-card,
       .about-grid{
         grid-template-columns:1fr;
       }
 
-      .about-principles{
-        grid-template-columns:1fr;
-      }
-
+      .about-principles,
       .about-flow{
         grid-template-columns:1fr;
       }
@@ -314,7 +421,7 @@
       .principle-card__text,
       .about-highlight__text,
       .flow-card__text,
-      .about-note__text{
+      .greeting-text{
         font-size:16px;
       }
 
@@ -326,6 +433,7 @@
         font-size:30px;
       }
 
+      .greeting-title,
       .about-card__title,
       .about-highlight__title{
         font-size:28px;
@@ -335,6 +443,15 @@
       .flow-card__title{
         font-size:22px;
       }
+
+      .greeting-photo{
+        width:150px;
+        height:190px;
+      }
+
+      .greeting-name{
+        font-size:24px;
+      }
     }
   </style>
 </head>
@@ -343,14 +460,12 @@
   <div id="siteHeader"></div>
 
   <main>
-    <!-- Hero -->
     <section class="about-hero">
       <div class="container">
         <h1 class="about-hero__title">기관소개</h1>
         <p class="about-hero__desc">
           집현전21은 사회의 주요 과제를 근거 기반으로 분석하고, 지식과 실천을 연결하여
-          공공의 가치로 확산하는 공익 연구 공동체입니다. 학문, 정책, 산업, 시민사회를 연결하는
-          플랫폼으로서 지속가능한 사회 발전에 기여하고자 합니다.
+          공공의 가치로 확산하는 공익 연구 공동체입니다.
         </p>
 
         <div class="about-pill-row" aria-label="기관 핵심 키워드">
@@ -363,8 +478,47 @@
       </div>
     </section>
 
-    <!-- 기관 소개 -->
+    <!-- 회장 인사말 -->
     <section class="about-section">
+      <div class="container">
+        <div class="about-section__head">
+          <h2 class="about-section__title">회장 인사말</h2>
+          <p class="about-section__desc">
+            집현전21의 비전과 설립 취지를 전하는 인사말입니다.
+          </p>
+        </div>
+
+        <div class="greeting-card">
+          <div class="greeting-profile">
+            <div class="greeting-photo">
+              <!-- <img src="./assets/chairman/lee-seung-eon.jpg" alt="이승언 회장"> -->
+              <div class="greeting-placeholder" aria-hidden="true"></div>
+            </div>
+            <h3 class="greeting-name">이승언</h3>
+            <p class="greeting-role">회장 · 사회복지학 박사</p>
+          </div>
+
+          <div class="greeting-message">
+            <div class="greeting-badge">Chairman’s Message</div>
+            <h3 class="greeting-title">지혜와 실천으로 공공의 미래를 함께 만들겠습니다.</h3>
+            <p class="greeting-text">집현전21은 지난 역사의 지혜와 오늘의 전문성을 바탕으로,
+사회가 직면한 다양한 과제를 함께 연구하고 실천 가능한 대안으로 연결하기 위해 출범하였습니다.
+
+우리는 공공성, 신뢰, 협력의 가치를 중심에 두고,
+정책과 학문, 산업과 시민사회를 연결하는 지식 공동체를 지향합니다.
+연구는 기록에 머무르지 않고 공동체의 삶을 변화시키는 실천으로 이어져야 하며,
+그 과정에서 집현전21은 책임 있는 공론장과 지속 가능한 협력의 플랫폼이 되고자 합니다.
+
+집현전21의 걸음이 사회에 희망과 통합, 그리고 미래를 향한 방향을 제시할 수 있도록
+여러분의 관심과 참여를 부탁드립니다.
+감사합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기관소개 -->
+    <section class="about-section about-section--soft">
       <div class="container">
         <div class="about-section__head">
           <h2 class="about-section__title">집현전21 소개</h2>
@@ -401,7 +555,7 @@
     </section>
 
     <!-- 정체성/원칙 -->
-    <section class="about-section about-section--soft" id="identity">
+    <section class="about-section" id="identity">
       <div class="container">
         <div class="about-section__head">
           <h2 class="about-section__title">정체성 · 원칙</h2>
@@ -434,7 +588,6 @@
             <h3 class="principle-card__title">실천</h3>
             <p class="principle-card__text">
               연구는 지식에 머무르지 않고 사회적 변화와 실행 가능한 대안으로 이어져야 합니다.
-              집현전21은 실천 가능한 연결을 중시합니다.
             </p>
           </article>
 
@@ -451,7 +604,7 @@
     </section>
 
     <!-- 활동 방식 -->
-    <section class="about-section">
+    <section class="about-section about-section--soft">
       <div class="container">
         <div class="about-section__head">
           <h2 class="about-section__title">활동 방식</h2>
@@ -484,14 +637,6 @@
               발간물, 교육, 프로젝트, 협력을 통해 연구 성과를 사회적 자산으로 확산합니다.
             </p>
           </article>
-        </div>
-
-        <div class="about-note">
-          <h3 class="about-note__title">집현전21이 지향하는 방향</h3>
-          <p class="about-note__text">
-            집현전21은 연구의 깊이와 공익적 책임을 함께 추구하며,
-            사회 각 분야의 전문가와 시민이 함께 참여하는 신뢰 가능한 공익 플랫폼이 되고자 합니다.
-          </p>
         </div>
       </div>
     </section>
