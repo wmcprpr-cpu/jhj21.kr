@@ -1,285 +1,368 @@
 <!doctype html>
 <html lang="ko">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1736" />
+  <title>공지 | 집현전21</title>
+  <meta name="description" content="집현전21의 공지사항과 행사 안내를 확인하실 수 있습니다." />
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./script.js" defer></script>
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0b1736" />
+  <style>
+    .notice-hero{
+      padding:56px 0 20px;
+    }
 
-<title>공지 및 문의 | 집현전21</title>
+    .notice-hero__title{
+      margin:0 0 12px;
+      font-size:48px;
+      line-height:1.15;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
 
-<meta name="description" content="집현전21 공지사항 및 문의 안내" />
+    .notice-hero__desc{
+      margin:0;
+      max-width:920px;
+      font-size:19px;
+      line-height:1.85;
+      color:var(--muted);
+    }
 
-<link rel="icon" href="./logo.png" />
-<link rel="stylesheet" href="./assets/style.css" />
-<script src="./script.js" defer></script>
+    .notice-pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
 
-<style>
+    .notice-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:14px;
+      font-weight:700;
+    }
 
-.notice-hero{
-padding:56px 0 20px;
-}
+    .notice-section{
+      padding:64px 0;
+    }
 
-.notice-hero__title{
-font-size:48px;
-font-weight:800;
-letter-spacing:-0.02em;
-color:var(--navy);
-margin-bottom:12px;
-}
+    .notice-section--soft{
+      background:#eef1f6;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
 
-.notice-hero__desc{
-font-size:19px;
-line-height:1.8;
-max-width:900px;
-color:var(--muted);
-}
+    .notice-section__head{
+      margin-bottom:24px;
+    }
 
-.notice-section{
-padding:64px 0;
-}
+    .notice-section__title{
+      margin:0 0 8px;
+      font-size:38px;
+      line-height:1.2;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
 
-.notice-section--soft{
-background:#eef1f6;
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
-}
+    .notice-section__desc{
+      margin:0;
+      font-size:18px;
+      line-height:1.75;
+      color:var(--muted);
+    }
 
-.notice-title{
-font-size:38px;
-font-weight:800;
-letter-spacing:-0.02em;
-color:var(--navy);
-margin-bottom:10px;
-}
+    .notice-table-wrap{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
 
-.notice-desc{
-font-size:18px;
-color:var(--muted);
-margin-bottom:24px;
-}
+    .notice-table{
+      width:100%;
+      border-collapse:collapse;
+    }
 
-.notice-table{
+    .notice-table thead th{
+      background:var(--navy);
+      color:#fff;
+      text-align:left;
+      font-size:16px;
+      font-weight:800;
+      padding:18px 20px;
+    }
 
-width:100%;
-border-collapse:collapse;
-background:#fff;
-border-radius:16px;
-overflow:hidden;
-box-shadow:var(--shadow);
+    .notice-table tbody td{
+      padding:18px 20px;
+      border-top:1px solid var(--line);
+      font-size:17px;
+      line-height:1.7;
+      color:var(--text);
+      vertical-align:middle;
+    }
 
-}
+    .notice-table tbody tr:hover{
+      background:#fbfcfe;
+    }
 
-.notice-table th{
+    .notice-col-num{
+      width:72px;
+      text-align:center;
+    }
 
-background:var(--navy);
-color:#fff;
-font-size:16px;
-padding:14px;
-text-align:center;
+    .notice-col-date{
+      width:120px;
+      text-align:center;
+      color:var(--muted);
+      white-space:nowrap;
+    }
 
-}
+    .notice-title-link{
+      display:block;
+      font-weight:700;
+      color:var(--navy);
+    }
 
-.notice-table td{
+    .notice-title-link:hover{
+      text-decoration:underline;
+    }
 
-padding:14px;
-border-bottom:1px solid var(--line);
-font-size:16px;
+    .notice-card-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+    }
 
-}
+    .notice-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      height:100%;
+    }
 
-.notice-table tr:hover{
-background:#f7f9fc;
-}
+    .notice-card__badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:14px;
+    }
 
-.notice-number{
-text-align:center;
-width:80px;
-}
+    .notice-card__title{
+      margin:0 0 10px;
+      font-size:26px;
+      line-height:1.35;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
 
-.notice-date{
-text-align:center;
-width:120px;
-color:var(--muted);
-}
+    .notice-card__text{
+      margin:0;
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+    }
 
-.contact-grid{
+    .notice-note{
+      margin-top:18px;
+      padding:18px 20px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
 
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+    .notice-note__title{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:800;
+      color:var(--navy);
+    }
 
-}
+    .notice-note__text{
+      margin:0;
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+    }
 
-.contact-card{
+    @media (max-width:980px){
+      .notice-hero__title{
+        font-size:40px;
+      }
 
-background:#fff;
-border:1px solid var(--line);
-border-radius:20px;
-padding:26px;
-box-shadow:var(--shadow);
+      .notice-card-grid{
+        grid-template-columns:1fr;
+      }
+    }
 
-}
+    @media (max-width:640px){
+      .notice-hero{
+        padding:44px 0 16px;
+      }
 
-.contact-title{
+      .notice-hero__title{
+        font-size:34px;
+      }
 
-font-size:26px;
-font-weight:800;
-color:var(--navy);
-margin-bottom:12px;
+      .notice-hero__desc,
+      .notice-section__desc,
+      .notice-card__text,
+      .notice-note__text{
+        font-size:16px;
+      }
 
-}
+      .notice-section{
+        padding:52px 0;
+      }
 
-.contact-text{
+      .notice-section__title{
+        font-size:30px;
+      }
 
-font-size:18px;
-line-height:1.8;
-color:var(--muted);
+      .notice-card__title{
+        font-size:22px;
+      }
 
-}
+      .notice-table thead th,
+      .notice-table tbody td{
+        padding:14px 12px;
+        font-size:15px;
+      }
 
-.contact-email{
+      .notice-col-num{
+        width:56px;
+      }
 
-font-size:20px;
-font-weight:700;
-color:var(--navy);
-margin-top:10px;
-
-}
-
-@media (max-width:980px){
-
-.contact-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
-
+      .notice-col-date{
+        width:92px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div id="siteHeader"></div>
 
-<div id="siteHeader"></div>
+  <main>
+    <section class="notice-hero">
+      <div class="container">
+        <h1 class="notice-hero__title">공지</h1>
+        <p class="notice-hero__desc">
+          집현전21의 공지사항과 행사, 주요 안내사항을 확인하실 수 있습니다.
+        </p>
 
-<main>
+        <div class="notice-pill-row" aria-label="공지 키워드">
+          <span class="notice-pill">공지사항</span>
+          <span class="notice-pill">행사 안내</span>
+          <span class="notice-pill">홈페이지 소식</span>
+        </div>
+      </div>
+    </section>
 
-<section class="notice-hero">
-<div class="container">
+    <section class="notice-section">
+      <div class="container">
+        <div class="notice-section__head">
+          <h2 class="notice-section__title">공지사항</h2>
+          <p class="notice-section__desc">
+            집현전21의 주요 공지와 행사 안내를 확인하실 수 있습니다.
+          </p>
+        </div>
 
-<h1 class="notice-hero__title">공지 및 문의</h1>
+        <div class="notice-table-wrap">
+          <table class="notice-table" aria-label="공지사항 목록">
+            <thead>
+              <tr>
+                <th class="notice-col-num">번호</th>
+                <th>제목</th>
+                <th class="notice-col-date">날짜</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="notice-col-num">1</td>
+                <td><a href="#" class="notice-title-link">집현전21 홈페이지 개설 안내</a></td>
+                <td class="notice-col-date">2026</td>
+              </tr>
+              <tr>
+                <td class="notice-col-num">2</td>
+                <td><a href="#" class="notice-title-link">창립 포럼 준비 안내</a></td>
+                <td class="notice-col-date">2026</td>
+              </tr>
+              <tr>
+                <td class="notice-col-num">3</td>
+                <td><a href="#" class="notice-title-link">연구위원 모집 안내</a></td>
+                <td class="notice-col-date">2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-<p class="notice-hero__desc">
-집현전21의 공지사항과 기관 문의 정보를 안내합니다.
-</p>
+    <section class="notice-section notice-section--soft">
+      <div class="container">
+        <div class="notice-section__head">
+          <h2 class="notice-section__title">안내</h2>
+          <p class="notice-section__desc">
+            공지 외에 기관 운영 및 참여와 관련된 기본 정보를 안내합니다.
+          </p>
+        </div>
 
-</div>
-</section>
+        <div class="notice-card-grid">
+          <article class="notice-card">
+            <div class="notice-card__badge">Information</div>
+            <h3 class="notice-card__title">행사 및 포럼 안내</h3>
+            <p class="notice-card__text">
+              포럼, 세미나, 학술 행사 일정은 본 공지 페이지를 통해 안내됩니다.
+              주요 행사 일정과 참가 정보는 순차적으로 업데이트됩니다.
+            </p>
+          </article>
 
+          <article class="notice-card">
+            <div class="notice-card__badge">Update</div>
+            <h3 class="notice-card__title">홈페이지 운영 안내</h3>
+            <p class="notice-card__text">
+              집현전21의 홈페이지는 기관 소개, 가버넌스, 핵심사업, 발간물, 공지, 문의 구조로 운영되며,
+              주요 콘텐츠는 단계적으로 정비 및 보완될 예정입니다.
+            </p>
+          </article>
+        </div>
 
-<section class="notice-section">
+        <div class="notice-note">
+          <h3 class="notice-note__title">참고</h3>
+          <p class="notice-note__text">
+            기관 문의와 협력 제안은 상단 메뉴의 <strong>문의</strong> 페이지를 이용해 주시기 바랍니다.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<div class="container">
-
-<h2 class="notice-title">공지사항</h2>
-
-<p class="notice-desc">
-집현전21의 주요 공지와 행사 안내를 확인할 수 있습니다.
-</p>
-
-<table class="notice-table">
-
-<thead>
-<tr>
-<th class="notice-number">번호</th>
-<th>제목</th>
-<th class="notice-date">날짜</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td class="notice-number">1</td>
-<td>집현전21 홈페이지 개설 안내</td>
-<td class="notice-date">2026</td>
-</tr>
-
-<tr>
-<td class="notice-number">2</td>
-<td>창립 포럼 준비 안내</td>
-<td class="notice-date">2026</td>
-</tr>
-
-<tr>
-<td class="notice-number">3</td>
-<td>연구위원 모집 안내</td>
-<td class="notice-date">2026</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-</section>
-
-
-<section class="notice-section notice-section--soft">
-
-<div class="container">
-
-<h2 class="notice-title">문의 안내</h2>
-
-<p class="notice-desc">
-집현전21의 연구, 협력, 포럼, 프로젝트와 관련된 문의를 환영합니다.
-</p>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-
-<h3 class="contact-title">연구 및 협력 문의</h3>
-
-<p class="contact-text">
-연구 협력, 정책 연구, 공동 프로젝트 등에 대한 문의는 아래 이메일로 연락해 주십시오.
-</p>
-
-<p class="contact-email">
-research@jiphyeonjeon21.org
-</p>
-
-</div>
-
-
-<div class="contact-card">
-
-<h3 class="contact-title">일반 문의</h3>
-
-<p class="contact-text">
-행사, 포럼, 회원, 기관 관련 문의는 아래 이메일로 연락해 주십시오.
-</p>
-
-<p class="contact-email">
-info@jiphyeonjeon21.org
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-</main>
-
-<div id="siteFooter"></div>
-
-<button class="to-top">↑</button>
-
+  <div id="siteFooter"></div>
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
 </body>
 </html>
