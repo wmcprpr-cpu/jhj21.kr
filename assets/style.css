@@ -1030,3 +1030,120 @@ button{
     font-size:14px;
   }
 }
+.install-guide{
+  position:fixed;
+  inset:0;
+  display:none;
+  z-index:9999;
+}
+
+.install-guide.show{
+  display:block;
+}
+
+.install-guide__backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(11,23,54,.55);
+  backdrop-filter:blur(4px);
+}
+
+.install-guide__panel{
+  position:relative;
+  width:min(92vw, 560px);
+  margin:8vh auto 0;
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 24px 60px rgba(11,23,54,.22);
+  padding:28px 24px 24px;
+  border:1px solid rgba(11,23,54,.10);
+}
+
+.install-guide__close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:50%;
+  background:#f5f7fb;
+  color:var(--navy);
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.install-guide__title{
+  margin:0 0 10px;
+  font-size:28px;
+  line-height:1.2;
+  color:var(--navy);
+}
+
+.install-guide__desc{
+  margin:0 0 20px;
+  font-size:17px;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.install-guide__section{
+  padding:18px 18px 16px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#fbfcff;
+}
+
+.install-guide__section + .install-guide__section{
+  margin-top:14px;
+}
+
+.install-guide__subtitle{
+  margin:0 0 10px;
+  font-size:20px;
+  color:var(--navy);
+}
+
+.install-guide__list{
+  margin:0;
+  padding-left:20px;
+  color:var(--text);
+  line-height:1.9;
+}
+
+.install-guide__note{
+  margin-top:16px;
+  padding:14px 16px;
+  border-radius:14px;
+  background:#f7f2e8;
+  border:1px solid rgba(186,159,101,.35);
+  color:var(--navy);
+  font-size:15px;
+  line-height:1.7;
+}
+
+@media (max-width:640px){
+  .install-guide__panel{
+    width:min(94vw, 560px);
+    margin:6vh auto 0;
+    padding:24px 18px 20px;
+    border-radius:20px;
+  }
+
+  .install-guide__title{
+    font-size:24px;
+  }
+
+  .install-guide__desc{
+    font-size:16px;
+  }
+
+  .install-guide__subtitle{
+    font-size:18px;
+  }
+
+  .install-guide__list{
+    font-size:15px;
+  }
+}
