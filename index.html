@@ -56,13 +56,13 @@
           </p>
 
           <div class="hero__actions">
-            <a class="btn btn--gold" href="./about.html">기관소개 보기</a>
-            <a class="btn btn--outline-light" href="./programs.html">핵심사업 보기</a>
-            <a class="btn btn--outline-light" href="./contact.html">회원 · 협력 문의</a>
-            <button id="installPwaBtn" class="btn btn--outline-light" type="button" style="display:none;">
-              앱 설치
-            </button>
-          </div>
+  <a class="btn btn--gold" href="./about.html">기관소개 보기</a>
+  <a class="btn btn--outline-light" href="./programs.html">핵심사업 보기</a>
+  <a class="btn btn--outline-light" href="./contact.html">회원 · 협력 문의</a>
+  <a class="btn btn--outline-light" href="javascript:void(0);" onclick="openInstallGuide()">
+    앱 설치 안내
+  </a>
+</div>
         </div>
 
         <div class="hero__side">
@@ -295,6 +295,40 @@
       });
     }
   </script>
+<div class="install-guide" id="installGuide" aria-hidden="true">
+  <div class="install-guide__backdrop" onclick="closeInstallGuide()"></div>
+
+  <div class="install-guide__panel" role="dialog" aria-modal="true" aria-labelledby="installGuideTitle">
+    <button class="install-guide__close" type="button" aria-label="닫기" onclick="closeInstallGuide()">×</button>
+
+    <h2 class="install-guide__title" id="installGuideTitle">집현전21 앱 설치 안내</h2>
+    <p class="install-guide__desc">
+      휴대폰에서 집현전21을 앱처럼 홈 화면에 설치할 수 있습니다.
+    </p>
+
+    <div class="install-guide__section">
+      <h3 class="install-guide__subtitle">안드로이드 (삼성 인터넷 / 크롬)</h3>
+      <ol class="install-guide__list">
+        <li>브라우저 메뉴를 엽니다.</li>
+        <li><strong>홈 화면에 추가</strong> 또는 <strong>앱 설치</strong>를 누릅니다.</li>
+        <li>이름을 확인한 뒤 추가하면 됩니다.</li>
+      </ol>
+    </div>
+
+    <div class="install-guide__section">
+      <h3 class="install-guide__subtitle">아이폰 (사파리)</h3>
+      <ol class="install-guide__list">
+        <li>하단의 <strong>공유</strong> 버튼을 누릅니다.</li>
+        <li><strong>홈 화면에 추가</strong>를 누릅니다.</li>
+        <li>이름을 확인한 뒤 추가하면 됩니다.</li>
+      </ol>
+    </div>
+
+    <div class="install-guide__note">
+      이미 설치되어 있으면 설치 항목이 보이지 않을 수 있습니다.
+    </div>
+  </div>
+</div>
 </body>
 </html>
 <script>
@@ -314,4 +348,26 @@ function installApp(){
     deferredPrompt.userChoice.then(()=>{});
   }
 }
+<script>
+  function openInstallGuide() {
+    const guide = document.getElementById("installGuide");
+    if (!guide) return;
+    guide.classList.add("show");
+    guide.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeInstallGuide() {
+    const guide = document.getElementById("installGuide");
+    if (!guide) return;
+    guide.classList.remove("show");
+    guide.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeInstallGuide();
+    }
+  });
 </script>
