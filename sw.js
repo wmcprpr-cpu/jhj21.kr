@@ -1,10 +1,16 @@
-const CACHE_NAME = "jhj21-cache-v1";
+const CACHE_NAME = "jhj21-pwa-v1";
 
-const FILES_TO_CACHE = [
+const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./assets/style.css",
+  "./about.html",
+  "./governance.html",
+  "./programs.html",
+  "./publication.html",
+  "./notice.html",
+  "./contact.html",
   "./script.js",
+  "./assets/style.css",
   "./assets/header.html",
   "./assets/footer.html",
   "./assets/icon-192.png",
@@ -14,7 +20,7 @@ const FILES_TO_CACHE = [
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS))
   );
   self.skipWaiting();
 });
@@ -27,6 +33,7 @@ self.addEventListener("activate", (event) => {
           if (key !== CACHE_NAME) {
             return caches.delete(key);
           }
+          return null;
         })
       )
     )
@@ -41,10 +48,22 @@ self.addEventListener("fetch", (event) => {
 
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
-      return (
-        cachedResponse ||
-        fetch(request).catch(() => caches.match("./index.html"))
-      );
+      if (cachedResponse) return cachedResponse;
+
+      return fetch(request)
+        .then((networkResponse) => {
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== "basic") {
+            return networkResponse;
+          }
+
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, responseClone);
+          });
+
+          return networkResponse;
+        })
+        .catch(() => caches.match("./index.html"));
     })
   );
 });
