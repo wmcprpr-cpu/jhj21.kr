@@ -18,7 +18,7 @@ async function loadPartial(targetId, filePath) {
 function setCurrentYear() {
   const yearEl = document.getElementById("year");
   if (yearEl) {
-    yearEl.textContent = new Date().getFullYear().toString();
+    yearEl.textContent = String(new Date().getFullYear());
   }
 }
 
@@ -44,29 +44,34 @@ function setActiveMenu() {
 
       const dropdown = link.closest(".nav__dropdown");
       if (dropdown) {
-        const parentBtn = dropdown.querySelector(".nav__dropbtn");
-        if (parentBtn) {
-          parentBtn.setAttribute("aria-current", "page");
+        const parentLink = dropdown.querySelector(".nav__item-row .nav__link");
+        if (parentLink) {
+          parentLink.setAttribute("aria-current", "page");
         }
       }
     }
   });
 }
 
-function closeMobileMenu() {
-  const navToggle = document.getElementById("navToggle");
-  const navMenu = document.getElementById("navMenu");
+function closeAllDropdowns() {
+  document.querySelectorAll(".nav__dropdownmenu").forEach((menu) => {
+    menu.classList.remove("mobile-open");
+  });
 
-  if (!navToggle || !navMenu) return;
+  document.querySelectorAll(".nav__dropbtn").forEach((button) => {
+    button.setAttribute("aria-expanded", "false");
+  });
+}
+
+function closeMobileMenu() {
+  const navMenu = document.getElementById("navMenu");
+  const navToggle = document.getElementById("navToggle");
+
+  if (!navMenu || !navToggle) return;
 
   navMenu.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
-
-  const dropdownMenus = navMenu.querySelectorAll(".nav__dropdownmenu");
-  const dropdownButtons = navMenu.querySelectorAll(".nav__dropbtn");
-
-  dropdownMenus.forEach((menu) => menu.classList.remove("mobile-open"));
-  dropdownButtons.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+  closeAllDropdowns();
 }
 
 function setupMobileNav() {
@@ -78,56 +83,69 @@ function setupMobileNav() {
   navToggle.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (!isOpen) {
+      closeAllDropdowns();
+    }
   });
 
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
 
-    const clickedInsideNav = target.closest(".nav");
-    const clickedToggle = target.closest("#navToggle");
+    const clickedInsideHeader = target.closest(".header");
+    const clickedTopbar = target.closest(".topbar");
 
-    if (!clickedInsideNav && !clickedToggle && navMenu.classList.contains("open")) {
+    if (!clickedInsideHeader && !clickedTopbar) {
       closeMobileMenu();
     }
   });
 
-  const menuLinks = navMenu.querySelectorAll("a");
+  // 링크 클릭 시: 이동은 막지 않고 메뉴만 닫음
+  const menuLinks = navMenu.querySelectorAll("a[href]");
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 980) {
-        closeMobileMenu();
+        // 링크 이동을 방해하지 않도록 아주 짧게 뒤에 닫기 실행
+        setTimeout(() => {
+          closeMobileMenu();
+        }, 10);
       }
     });
   });
 }
 
-function setupDropdownForMobile() {
+function setupDropdownButtons() {
   const dropdownButtons = document.querySelectorAll(".nav__dropbtn");
 
   dropdownButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
       if (window.innerWidth > 980) return;
 
       const dropdown = button.closest(".nav__dropdown");
       const menu = dropdown?.querySelector(".nav__dropdownmenu");
       if (!dropdown || !menu) return;
 
-      // 모바일에서는 상위 메뉴 클릭 시 페이지 이동은 그대로 허용
-      // 화살표나 별도 제어 없이 링크 자체를 막지 않음
-      // 드롭다운 자동 노출만 처리
-      const alreadyOpen = menu.classList.contains("mobile-open");
+      const willOpen = !menu.classList.contains("mobile-open");
 
-      document.querySelectorAll(".nav__dropdownmenu").forEach((el) => {
-        if (el !== menu) el.classList.remove("mobile-open");
+      // 다른 드롭다운은 닫기
+      document.querySelectorAll(".nav__dropdownmenu").forEach((otherMenu) => {
+        if (otherMenu !== menu) {
+          otherMenu.classList.remove("mobile-open");
+        }
       });
 
-      document.querySelectorAll(".nav__dropbtn").forEach((el) => {
-        if (el !== button) el.setAttribute("aria-expanded", "false");
+      document.querySelectorAll(".nav__dropbtn").forEach((otherButton) => {
+        if (otherButton !== button) {
+          otherButton.setAttribute("aria-expanded", "false");
+        }
       });
 
-      menu.classList.toggle("mobile-open", !alreadyOpen);
-      button.setAttribute("aria-expanded", String(!alreadyOpen));
+      menu.classList.toggle("mobile-open", willOpen);
+      button.setAttribute("aria-expanded", String(willOpen));
     });
   });
 }
@@ -155,22 +173,14 @@ function setupToTopButton() {
   });
 }
 
-function setupFooterClass() {
-  const footer = document.querySelector("footer");
-  if (footer && !footer.classList.contains("site-footer")) {
-    footer.classList.add("site-footer");
-  }
-}
-
 async function initLayout() {
   await loadPartial("siteHeader", "./assets/header.html");
   await loadPartial("siteFooter", "./assets/footer.html");
 
-  setupFooterClass();
   setCurrentYear();
   setActiveMenu();
   setupMobileNav();
-  setupDropdownForMobile();
+  setupDropdownButtons();
   setupToTopButton();
 }
 
