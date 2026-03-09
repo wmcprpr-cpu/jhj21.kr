@@ -1147,3 +1147,16 @@ button{
     font-size:15px;
   }
 }
+/* 모바일에서 CTA 영역 두께 줄이기 */
+@media (max-width:640px){
+
+  .section--cta{
+    padding-top:40px;
+    padding-bottom:40px;
+  }
+
+  .cta-box{
+    padding:20px 18px;
+  }
+
+}
