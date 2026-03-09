@@ -53,6 +53,22 @@ function setActiveMenu() {
   });
 }
 
+function closeMobileMenu() {
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  if (!navToggle || !navMenu) return;
+
+  navMenu.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+
+  const dropdownMenus = navMenu.querySelectorAll(".nav__dropdownmenu");
+  const dropdownButtons = navMenu.querySelectorAll(".nav__dropbtn");
+
+  dropdownMenus.forEach((menu) => menu.classList.remove("mobile-open"));
+  dropdownButtons.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+}
+
 function setupMobileNav() {
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
@@ -72,8 +88,7 @@ function setupMobileNav() {
     const clickedToggle = target.closest("#navToggle");
 
     if (!clickedInsideNav && !clickedToggle && navMenu.classList.contains("open")) {
-      navMenu.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
+      closeMobileMenu();
     }
   });
 
@@ -81,8 +96,7 @@ function setupMobileNav() {
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 980) {
-        navMenu.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
+        closeMobileMenu();
       }
     });
   });
@@ -99,10 +113,21 @@ function setupDropdownForMobile() {
       const menu = dropdown?.querySelector(".nav__dropdownmenu");
       if (!dropdown || !menu) return;
 
-      event.preventDefault();
+      // 모바일에서는 상위 메뉴 클릭 시 페이지 이동은 그대로 허용
+      // 화살표나 별도 제어 없이 링크 자체를 막지 않음
+      // 드롭다운 자동 노출만 처리
+      const alreadyOpen = menu.classList.contains("mobile-open");
 
-      const isOpen = menu.classList.toggle("mobile-open");
-      button.setAttribute("aria-expanded", String(isOpen));
+      document.querySelectorAll(".nav__dropdownmenu").forEach((el) => {
+        if (el !== menu) el.classList.remove("mobile-open");
+      });
+
+      document.querySelectorAll(".nav__dropbtn").forEach((el) => {
+        if (el !== button) el.setAttribute("aria-expanded", "false");
+      });
+
+      menu.classList.toggle("mobile-open", !alreadyOpen);
+      button.setAttribute("aria-expanded", String(!alreadyOpen));
     });
   });
 }
