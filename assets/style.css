@@ -1151,12 +1151,11 @@ button{
 @media (max-width:640px){
 
   .section--cta{
-    padding-top:40px;
-    padding-bottom:40px;
+    padding:36px 0;
   }
 
   .cta-box{
-    padding:20px 18px;
+    padding:18px;
   }
 
 }
