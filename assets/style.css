@@ -140,8 +140,8 @@ button{
 
 .nav__toggle{
   display:none;
-  width:58px;
-  height:58px;
+  width:64px;
+  height:64px;
   padding:0;
   border:none;
   border-radius:18px;
@@ -162,13 +162,21 @@ button{
     inset 0 0 0 1px rgba(186,159,101,.45);
 }
 
+.nav__toggle-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
 .nav__toggle-line{
   display:block;
-  width:26px;
+  width:28px;
   height:3px;
   background:var(--navy);
-  margin:6px auto;
   border-radius:999px;
+  margin:0;
 }
 
 .nav__menu{
@@ -185,7 +193,6 @@ button{
   list-style:none;
 }
 
-/* 핵심: PC에서는 desktop만, mobile은 숨김 */
 .desktop-only{
   display:flex !important;
   align-items:center;
@@ -938,10 +945,14 @@ button{
     border-radius:18px;
   }
 
+  .nav__toggle-box{
+    gap:6px;
+  }
+
   .nav__toggle-line{
-    width:26px;
+    width:28px;
     height:3px;
-    margin:4px auto;
+    margin:0;
   }
 
   .mobile-only{
