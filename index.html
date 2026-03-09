@@ -297,3 +297,21 @@
   </script>
 </body>
 </html>
+<script>
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  const btn = document.getElementById("installPwaBtn");
+  if (btn) btn.style.display = "inline-block";
+});
+
+function installApp(){
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(()=>{});
+  }
+}
+</script>
