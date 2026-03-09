@@ -2,14 +2,11 @@
   --navy:#0b1736;
   --navy2:#142a5f;
   --gold:#BA9F65;
-
   --bg:#f6f7fb;
   --card:#ffffff;
-
   --text:#0f172a;
   --muted:rgba(15,23,42,.72);
   --line:rgba(11,23,54,.12);
-
   --shadow:0 14px 34px rgba(11,23,54,.10);
   --radius:20px;
 }
@@ -188,12 +185,14 @@ button{
   list-style:none;
 }
 
+/* 핵심: PC에서는 desktop만, mobile은 숨김 */
 .desktop-only{
-  display:block;
+  display:flex !important;
+  align-items:center;
 }
 
 .mobile-only{
-  display:none;
+  display:none !important;
 }
 
 .nav__item-row{
@@ -808,11 +807,11 @@ button{
   }
 
   .desktop-only{
-    display:none;
+    display:none !important;
   }
 
   .mobile-only{
-    display:flex;
+    display:flex !important;
     width:100%;
     align-items:center;
     justify-content:flex-start;
