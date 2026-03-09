@@ -1159,3 +1159,71 @@ button{
   }
 
 }
+/* ===== CTA / FOOTER 모바일 최종 보정 ===== */
+
+/* 공지 및 문의 영역 제목/설명 색상 보정 */
+.section--cta .section__title{
+  color:#ffffff !important;
+}
+
+.section--cta .section__desc{
+  color:rgba(255,255,255,0.88) !important;
+}
+
+/* CTA 버튼 정렬 보정 */
+.section--cta .cta-box__actions{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+/* 모바일 최종 보정 */
+@media (max-width:640px){
+
+  /* 하단 파란 영역 두께 줄이기 */
+  .section--cta{
+    padding:36px 0 !important;
+  }
+
+  /* 제목/설명/버튼 간격 정리 */
+  .section--cta .cta-box{
+    gap:18px;
+  }
+
+  .section--cta .section__title{
+    font-size:30px !important;
+    line-height:1.2;
+    margin:0 0 8px;
+    color:#ffffff !important;
+  }
+
+  .section--cta .section__desc{
+    font-size:16px !important;
+    line-height:1.7;
+    margin:0;
+    color:rgba(255,255,255,0.9) !important;
+  }
+
+  .section--cta .cta-box__actions{
+    width:100%;
+    gap:12px;
+  }
+
+  .section--cta .cta-box__actions .btn{
+    width:100%;
+  }
+
+  /* 푸터 모바일 여백 정리 */
+  .site-footer{
+    padding-top:8px;
+  }
+
+  .footer-wrap{
+    gap:18px;
+    padding:20px 0 24px;
+  }
+
+  .footer-meta{
+    line-height:1.7;
+  }
+}
