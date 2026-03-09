@@ -17,22 +17,24 @@
     </a>
 
     <nav class="nav" aria-label="주요 메뉴">
-     <button
-  class="nav__toggle"
-  id="navToggle"
-  type="button"
-  aria-label="메뉴 열기"
-  aria-expanded="false"
-  aria-controls="navMenu"
->
-  <span class="nav__toggle-box">
-    <span class="nav__toggle-line"></span>
-    <span class="nav__toggle-line"></span>
-    <span class="nav__toggle-line"></span>
-  </span>
-</button>
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        type="button"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span class="nav__toggle-box">
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+        </span>
+      </button>
+
       <ul class="nav__menu" id="navMenu">
 
+        <!-- 기관소개 -->
         <li class="nav__dropdown">
           <div class="nav__item-row desktop-only">
             <a href="./about.html" class="nav__link">기관소개</a>
@@ -46,15 +48,17 @@
             </button>
           </div>
 
-          <button
-            class="nav__dropbtn mobile-only"
-            type="button"
-            aria-expanded="false"
-            aria-label="기관소개 하위메뉴 열기"
-          >
-            <span class="nav__caret">▼</span>
-            <span class="nav__droptext">기관소개</span>
-          </button>
+          <div class="mobile-only nav__mobile-row">
+            <a href="./about.html" class="nav__mobile-link">기관소개</a>
+            <button
+              class="nav__dropbtn"
+              type="button"
+              aria-expanded="false"
+              aria-label="기관소개 하위메뉴 열기"
+            >
+              <span class="nav__caret">▼</span>
+            </button>
+          </div>
 
           <ul class="nav__dropdownmenu">
             <li><a href="./about.html">기관소개</a></li>
@@ -63,6 +67,7 @@
           </ul>
         </li>
 
+        <!-- 가버넌스 -->
         <li class="nav__dropdown">
           <div class="nav__item-row desktop-only">
             <a href="./governance.html" class="nav__link">가버넌스</a>
@@ -76,15 +81,17 @@
             </button>
           </div>
 
-          <button
-            class="nav__dropbtn mobile-only"
-            type="button"
-            aria-expanded="false"
-            aria-label="가버넌스 하위메뉴 열기"
-          >
-            <span class="nav__caret">▼</span>
-            <span class="nav__droptext">가버넌스</span>
-          </button>
+          <div class="mobile-only nav__mobile-row">
+            <a href="./governance.html" class="nav__mobile-link">가버넌스</a>
+            <button
+              class="nav__dropbtn"
+              type="button"
+              aria-expanded="false"
+              aria-label="가버넌스 하위메뉴 열기"
+            >
+              <span class="nav__caret">▼</span>
+            </button>
+          </div>
 
           <ul class="nav__dropdownmenu">
             <li><a href="./governance.html#org">조직도</a></li>
@@ -92,6 +99,7 @@
           </ul>
         </li>
 
+        <!-- 핵심사업 -->
         <li class="nav__dropdown">
           <div class="nav__item-row desktop-only">
             <a href="./programs.html" class="nav__link">핵심사업</a>
@@ -105,15 +113,17 @@
             </button>
           </div>
 
-          <button
-            class="nav__dropbtn mobile-only"
-            type="button"
-            aria-expanded="false"
-            aria-label="핵심사업 하위메뉴 열기"
-          >
-            <span class="nav__caret">▼</span>
-            <span class="nav__droptext">핵심사업</span>
-          </button>
+          <div class="mobile-only nav__mobile-row">
+            <a href="./programs.html" class="nav__mobile-link">핵심사업</a>
+            <button
+              class="nav__dropbtn"
+              type="button"
+              aria-expanded="false"
+              aria-label="핵심사업 하위메뉴 열기"
+            >
+              <span class="nav__caret">▼</span>
+            </button>
+          </div>
 
           <ul class="nav__dropdownmenu">
             <li><a href="./research.html">연구</a></li>
@@ -123,6 +133,7 @@
           </ul>
         </li>
 
+        <!-- 발간물 · 활동 -->
         <li class="nav__dropdown">
           <div class="nav__item-row desktop-only">
             <a href="./publication.html" class="nav__link">발간물 · 활동</a>
@@ -136,15 +147,17 @@
             </button>
           </div>
 
-          <button
-            class="nav__dropbtn mobile-only"
-            type="button"
-            aria-expanded="false"
-            aria-label="발간물 활동 하위메뉴 열기"
-          >
-            <span class="nav__caret">▼</span>
-            <span class="nav__droptext">발간물 · 활동</span>
-          </button>
+          <div class="mobile-only nav__mobile-row">
+            <a href="./publication.html" class="nav__mobile-link">발간물 · 활동</a>
+            <button
+              class="nav__dropbtn"
+              type="button"
+              aria-expanded="false"
+              aria-label="발간물 활동 하위메뉴 열기"
+            >
+              <span class="nav__caret">▼</span>
+            </button>
+          </div>
 
           <ul class="nav__dropdownmenu">
             <li><a href="./publication.html">연구보고서</a></li>
@@ -153,10 +166,12 @@
           </ul>
         </li>
 
+        <!-- 공지 -->
         <li>
           <a href="./notice.html">공지</a>
         </li>
 
+        <!-- 문의 -->
         <li>
           <a href="./contact.html" class="nav__button">문의</a>
         </li>
