@@ -182,3 +182,15 @@ async function initLayout() {
 }
 
 document.addEventListener("DOMContentLoaded", initLayout);
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((registration) => {
+        console.log("Service Worker 등록 완료:", registration.scope);
+      })
+      .catch((error) => {
+        console.error("Service Worker 등록 실패:", error);
+      });
+  });
+}
