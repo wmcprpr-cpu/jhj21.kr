@@ -739,10 +739,13 @@ button{
 }
 
 .footer-meta{
-  text-align:right;
+  text-align:left;
   font-size:16px;
   line-height:1.8;
   color:var(--muted);
+
+  margin-left:56px;
+  width:calc(100% - 56px);
 }
 
 .footer-meta > div{
