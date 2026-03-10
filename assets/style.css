@@ -342,10 +342,30 @@ button{
 }
 
 .nav__dropdownmenu a:hover{
-  background:#f5f7fb;
+  .nav__mobile-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  gap:10px;
+}
+
+.nav__mobile-link{
+  flex:1;
+  display:flex;
+  align-items:center;
+  min-height:50px;
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:800;
   color:var(--navy);
 }
 
+.nav__mobile-link:hover{
+  background:#f5f7fb;
+}
+ 
 @media (min-width:981px){
   .nav__dropdown:hover .nav__dropdownmenu{
     display:block;
@@ -830,29 +850,28 @@ button{
   }
 
   .mobile-only{
-    display:flex !important;
-    width:100%;
-    align-items:center;
-    justify-content:flex-start;
-    gap:10px;
-    min-height:50px;
-    padding:12px 14px;
-    border:none;
-    background:transparent;
-    border-radius:12px;
-    font-size:18px;
-    font-weight:800;
-    color:var(--navy);
-    cursor:pointer;
-  }
+  display:flex !important;
+}
 
-  .mobile-only:hover{
-    background:#f5f7fb;
-  }
+.nav__mobile-row{
+  width:100%;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-height:50px;
+  padding:0;
+  border:none;
+  background:transparent;
+  border-radius:12px;
+}
 
-  .mobile-only[aria-expanded="true"]{
-    background:#f6efe0;
-  }
+.nav__mobile-row .nav__dropbtn{
+  flex:0 0 auto;
+}
+
+.nav__mobile-row .nav__dropbtn[aria-expanded="true"]{
+  background:#f6efe0;
+}
 
   .nav__dropdownmenu{
     position:static;
