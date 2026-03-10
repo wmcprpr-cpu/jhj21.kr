@@ -1227,3 +1227,54 @@ button{
     line-height:1.7;
   }
 }
+@media (max-width: 640px){
+  .footer-wrap{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .footer-brand{
+    grid-template-columns:44px 1fr;
+    column-gap:12px;
+    row-gap:4px;
+    width:100%;
+  }
+
+  .footer-logo{
+    width:44px;
+    height:44px;
+    grid-column:1;
+    grid-row:1 / span 2;
+    align-self:start;
+  }
+
+  .footer-name{
+    grid-column:2;
+    grid-row:1;
+    margin:0;
+    font-size:24px;
+    line-height:1.2;
+  }
+
+  .footer-slogan{
+    grid-column:2;
+    grid-row:2;
+    margin:0;
+    font-size:16px;
+    line-height:1.4;
+  }
+
+  .footer-meta{
+    width:100%;
+    text-align:left;
+    margin:0;
+    padding-left:56px; /* 로고 오른쪽 시작선과 맞춤 */
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  .footer-meta p{
+    margin:0 0 6px;
+  }
+}
