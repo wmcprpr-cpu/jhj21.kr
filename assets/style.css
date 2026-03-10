@@ -343,7 +343,9 @@ color:#22304f;
 
 .nav__dropdownmenu a:hover{
   background:#f5f7fb;
-  .nav__mobile-row{
+}
+
+.nav__mobile-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
