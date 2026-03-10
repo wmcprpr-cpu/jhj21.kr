@@ -342,7 +342,10 @@ button{
 }
 
 .nav__dropdownmenu a:hover{
-  .nav__mobile-row{
+  background:#f5f7fb;
+}
+
+.nav__mobile-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
