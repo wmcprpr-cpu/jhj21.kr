@@ -343,6 +343,7 @@ button{
 
 .nav__dropdownmenu a:hover{
   background:#f5f7fb;
+  color:var(--navy);
 }
 
 .nav__mobile-row{
@@ -368,7 +369,7 @@ button{
 .nav__mobile-link:hover{
   background:#f5f7fb;
 }
- 
+
 @media (min-width:981px){
   .nav__dropdown:hover .nav__dropdownmenu{
     display:block;
@@ -690,8 +691,15 @@ button{
   flex-wrap:wrap;
 }
 
-/* ===== FOOTER ===== */
+.section--cta .section__title{
+  color:#ffffff;
+}
 
+.section--cta .section__desc{
+  color:rgba(255,255,255,.88);
+}
+
+/* ===== FOOTER ===== */
 .site-footer{
   background:#fff;
   border-top:1px solid var(--line);
@@ -725,6 +733,7 @@ button{
   font-weight:800;
   color:var(--navy);
   line-height:1.15;
+  margin:0;
 }
 
 .footer-slogan{
@@ -743,32 +752,9 @@ button{
 
 .footer-meta a{
   color:inherit;
+  word-break:break-all;
 }
 
-@media (max-width:640px){
-
-  .footer-grid{
-    grid-template-columns:44px 1fr;
-  }
-
-  .footer-logo{
-    width:44px;
-    height:44px;
-  }
-
-  .footer-name{
-    font-size:24px;
-  }
-
-  .footer-slogan{
-    font-size:16px;
-  }
-
-  .footer-meta{
-    font-size:14px;
-  }
-
-}
 /* ===== TOP BUTTON ===== */
 .to-top{
   position:fixed;
@@ -862,28 +848,28 @@ button{
   }
 
   .mobile-only{
-  display:flex !important;
-}
+    display:flex !important;
+  }
 
-.nav__mobile-row{
-  width:100%;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  min-height:50px;
-  padding:0;
-  border:none;
-  background:transparent;
-  border-radius:12px;
-}
+  .nav__mobile-row{
+    width:100%;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    min-height:50px;
+    padding:0;
+    border:none;
+    background:transparent;
+    border-radius:12px;
+  }
 
-.nav__mobile-row .nav__dropbtn{
-  flex:0 0 auto;
-}
+  .nav__mobile-row .nav__dropbtn{
+    flex:0 0 auto;
+  }
 
-.nav__mobile-row .nav__dropbtn[aria-expanded="true"]{
-  background:#f6efe0;
-}
+  .nav__mobile-row .nav__dropbtn[aria-expanded="true"]{
+    background:#f6efe0;
+  }
 
   .nav__dropdownmenu{
     position:static;
@@ -940,15 +926,6 @@ button{
     align-items:flex-start;
   }
 
-  .footer-wrap{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .footer-meta{
-    text-align:left;
-  }
-
   .hero__title-line--white,
   .hero__title-line--gold{
     font-size:42px;
@@ -998,7 +975,7 @@ button{
     margin:0;
   }
 
-  .mobile-only{
+  .nav__mobile-link{
     font-size:17px;
   }
 
@@ -1052,47 +1029,32 @@ button{
     gap:12px;
   }
 
-  .footer-brand{
+  .footer-grid{
     grid-template-columns:44px 1fr;
     column-gap:12px;
-    row-gap:4px;
-    width:100%;
   }
 
   .footer-logo{
     width:44px;
     height:44px;
-    grid-column:1;
-    grid-row:1 / span 2;
-    align-self:start;
   }
 
   .footer-name{
-    grid-column:2;
-    grid-row:1;
-    margin:0;
     font-size:24px;
-    line-height:1.2;
   }
 
   .footer-slogan{
-    grid-column:2;
-    grid-row:2;
-    margin:0;
     font-size:16px;
-    line-height:1.4;
   }
 
   .footer-meta{
-    width:100%;
-    text-align:left;
-    margin:0;
-    padding-left:56px;
-    font-size:15px;
+    margin-top:8px;
+    font-size:14px;
     line-height:1.8;
   }
 }
 
+/* ===== INSTALL GUIDE ===== */
 .install-guide{
   position:fixed;
   inset:0;
@@ -1211,35 +1173,14 @@ button{
   }
 }
 
-/* 모바일에서 CTA 영역 두께 줄이기 */
+/* ===== CTA MOBILE PATCH ===== */
 @media (max-width:640px){
   .section--cta{
-    padding:36px 0;
+    padding:36px 0 !important;
   }
 
   .cta-box{
     padding:18px;
-  }
-}
-
-/* ===== CTA / FOOTER 모바일 최종 보정 ===== */
-.section--cta .section__title{
-  color:#ffffff !important;
-}
-
-.section--cta .section__desc{
-  color:rgba(255,255,255,0.88) !important;
-}
-
-.section--cta .cta-box__actions{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-@media (max-width:640px){
-  .section--cta{
-    padding:36px 0 !important;
   }
 
   .section--cta .cta-box{
@@ -1267,18 +1208,5 @@ button{
 
   .section--cta .cta-box__actions .btn{
     width:100%;
-  }
-
-  .site-footer{
-    padding-top:8px;
-  }
-
-  .footer-wrap{
-    gap:18px;
-    padding:20px 0 24px;
-  }
-
-  .footer-meta{
-    line-height:1.7;
   }
 }
