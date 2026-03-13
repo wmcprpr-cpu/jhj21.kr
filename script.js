@@ -36,7 +36,7 @@ function setActiveMenu() {
     const href = link.getAttribute("href");
     if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
 
-    const linkUrl = new URL(href, window.location.origin);
+    const linkUrl = new URL(href, window.location.origin + window.location.pathname);
     const linkPath = normalizePath(linkUrl.pathname);
 
     if (linkPath === currentPath) {
@@ -47,6 +47,11 @@ function setActiveMenu() {
         const parentLink = dropdown.querySelector(".nav__item-row .nav__link");
         if (parentLink) {
           parentLink.setAttribute("aria-current", "page");
+        }
+
+        const mobileLink = dropdown.querySelector(".nav__mobile-row .nav__mobile-link");
+        if (mobileLink) {
+          mobileLink.setAttribute("aria-current", "page");
         }
       }
     }
@@ -111,6 +116,12 @@ function setupMobileNav() {
       }
     });
   });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) {
+      closeMobileMenu();
+    }
+  });
 }
 
 function setupDropdownButtons() {
@@ -170,6 +181,21 @@ function setupToTopButton() {
   });
 }
 
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then((registration) => {
+        console.log("Service Worker 등록 완료:", registration.scope);
+      })
+      .catch((error) => {
+        console.error("Service Worker 등록 실패:", error);
+      });
+  });
+}
+
 async function initLayout() {
   await loadPartial("siteHeader", "./assets/header.html");
   await loadPartial("siteFooter", "./assets/footer.html");
@@ -179,18 +205,7 @@ async function initLayout() {
   setupMobileNav();
   setupDropdownButtons();
   setupToTopButton();
+  registerServiceWorker();
 }
 
 document.addEventListener("DOMContentLoaded", initLayout);
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/service-worker.js")
-      .then((registration) => {
-        console.log("Service Worker 등록 완료:", registration.scope);
-      })
-      .catch((error) => {
-        console.error("Service Worker 등록 실패:", error);
-      });
-  });
-}

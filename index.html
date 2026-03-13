@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
 
   <meta name="google-site-verification" content="mXC6iq8p3cXsF7c8QG7YLUCKj1hMyeRA1sL-m8CsjOM">
   <meta name="naver-site-verification" content="edc4e32cb1dcf36e829878cec04594368684b837">
@@ -257,8 +257,8 @@
           </div>
           <div class="news-home-links">
             <a class="btn btn--gold" href="./news.html">NEWS</a>
-            <a class="btn btn--outline-dark" href="./press.html">PRESS</a>
-            <a class="btn btn--outline-dark" href="./activity.html">ACTIVITY</a>
+            <a class="btn btn--outline-navy" href="./press.html">PRESS</a>
+            <a class="btn btn--outline-navy" href="./activity.html">ACTIVITY</a>
           </div>
         </div>
 
@@ -328,33 +328,7 @@
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       deferredPrompt = e;
-
-      const installBtn = document.getElementById("installPwaBtn");
-      if (installBtn) {
-        installBtn.style.display = "inline-flex";
-      }
     });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const installBtn = document.getElementById("installPwaBtn");
-      if (installBtn) {
-        installBtn.addEventListener("click", async () => {
-          if (!deferredPrompt) return;
-          deferredPrompt.prompt();
-          await deferredPrompt.userChoice;
-          deferredPrompt = null;
-          installBtn.style.display = "none";
-        });
-      }
-    });
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js").catch((err) => {
-          console.error("Service Worker registration failed:", err);
-        });
-      });
-    }
 
     function openInstallGuide() {
       const guide = document.getElementById("installGuide");
