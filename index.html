@@ -2,10 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
-
-  <meta name="google-site-verification" content="mXC6iq8p3cXsF7c8QG7YLUCKj1hMyeRA1sL-m8CsjOM" />
-  <meta name="naver-site-verification" content="edc4e32cb1dcf36e829878cec04594368684b837" />
+  <meta name="google-site-verification" content="mXC6iq8p3cXsF7c8QG7YLUCKj1hMyeRA1sL-m8CsjOM">
+  <meta name="naver-site-verification" content="edc4e32cb1dcf36e829878cec04594368684b837">
 
   <title>집현전21 | Think Tank</title>
 
@@ -26,10 +24,13 @@
   <meta name="apple-mobile-web-app-title" content="집현전21">
 
   <link rel="stylesheet" href="./assets/style.css">
+
+  <script src="./assets/news-data.js" defer></script>
+  <script src="./assets/news-pages.js" defer></script>
   <script src="./script.js" defer></script>
 </head>
 
-<body>
+<body data-page="home">
   <div id="siteHeader"></div>
 
   <main>
@@ -59,13 +60,13 @@
           </p>
 
           <div class="hero__actions">
-  <a class="btn btn--gold" href="./about.html">기관소개 보기</a>
-  <a class="btn btn--outline-light" href="./programs.html">핵심사업 보기</a>
-  <a class="btn btn--outline-light" href="./contact.html">회원 · 협력 문의</a>
-  <a class="btn btn--outline-light" href="javascript:void(0);" onclick="openInstallGuide()">
-    앱 설치 안내
-  </a>
-</div>
+            <a class="btn btn--gold" href="./about.html">기관소개 보기</a>
+            <a class="btn btn--outline-light" href="./programs.html">핵심사업 보기</a>
+            <a class="btn btn--outline-light" href="./contact.html">회원 · 협력 문의</a>
+            <a class="btn btn--outline-light" href="javascript:void(0);" onclick="openInstallGuide()">
+              앱 설치 안내
+            </a>
+          </div>
         </div>
 
         <div class="hero__side">
@@ -243,6 +244,26 @@
       </div>
     </section>
 
+    <section class="section news-home-section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2 class="section__title">최근 소식</h2>
+            <p class="section__desc">
+              집현전21의 최근 뉴스, 언론보도, 활동 소식을 한눈에 확인하실 수 있습니다.
+            </p>
+          </div>
+          <div class="news-home-links">
+            <a class="btn btn--gold" href="./news.html">NEWS</a>
+            <a class="btn btn--outline-navy" href="./press.html">PRESS</a>
+            <a class="btn btn--outline-navy" href="./activity.html">ACTIVITY</a>
+          </div>
+        </div>
+
+        <div class="news-home-grid" id="recentNewsList"></div>
+      </div>
+    </section>
+
     <section class="section section--cta">
       <div class="container cta-box">
         <div>
@@ -264,113 +285,70 @@
 
   <button class="to-top" type="button" aria-label="맨 위로">↑</button>
 
+  <div class="install-guide" id="installGuide" aria-hidden="true">
+    <div class="install-guide__backdrop" onclick="closeInstallGuide()"></div>
+
+    <div class="install-guide__panel" role="dialog" aria-modal="true" aria-labelledby="installGuideTitle">
+      <button class="install-guide__close" type="button" aria-label="닫기" onclick="closeInstallGuide()">×</button>
+
+      <h2 class="install-guide__title" id="installGuideTitle">집현전21 앱 설치 안내</h2>
+      <p class="install-guide__desc">
+        휴대폰에서 집현전21을 앱처럼 홈 화면에 설치할 수 있습니다.
+      </p>
+
+      <div class="install-guide__section">
+        <h3 class="install-guide__subtitle">안드로이드 (삼성 인터넷 / 크롬)</h3>
+        <ol class="install-guide__list">
+          <li>브라우저 메뉴를 엽니다.</li>
+          <li><strong>홈 화면에 추가</strong> 또는 <strong>앱 설치</strong>를 누릅니다.</li>
+          <li>이름을 확인한 뒤 추가하면 됩니다.</li>
+        </ol>
+      </div>
+
+      <div class="install-guide__section">
+        <h3 class="install-guide__subtitle">아이폰 (사파리)</h3>
+        <ol class="install-guide__list">
+          <li>하단의 <strong>공유</strong> 버튼을 누릅니다.</li>
+          <li><strong>홈 화면에 추가</strong>를 누릅니다.</li>
+          <li>이름을 확인한 뒤 추가하면 됩니다.</li>
+        </ol>
+      </div>
+
+      <div class="install-guide__note">
+        이미 설치되어 있으면 설치 항목이 보이지 않을 수 있습니다.
+      </div>
+    </div>
+  </div>
+
   <script>
     let deferredPrompt = null;
 
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       deferredPrompt = e;
+    });
 
-      const installBtn = document.getElementById("installPwaBtn");
-      if (installBtn) {
-        installBtn.style.display = "inline-flex";
+    function openInstallGuide() {
+      const guide = document.getElementById("installGuide");
+      if (!guide) return;
+      guide.classList.add("show");
+      guide.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeInstallGuide() {
+      const guide = document.getElementById("installGuide");
+      if (!guide) return;
+      guide.classList.remove("show");
+      guide.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeInstallGuide();
       }
     });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const installBtn = document.getElementById("installPwaBtn");
-      if (!installBtn) return;
-
-      installBtn.addEventListener("click", async () => {
-        if (!deferredPrompt) return;
-        deferredPrompt.prompt();
-        await deferredPrompt.userChoice;
-        deferredPrompt = null;
-        installBtn.style.display = "none";
-      });
-    });
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js").catch((err) => {
-          console.error("Service Worker registration failed:", err);
-        });
-      });
-    }
   </script>
-<div class="install-guide" id="installGuide" aria-hidden="true">
-  <div class="install-guide__backdrop" onclick="closeInstallGuide()"></div>
-
-  <div class="install-guide__panel" role="dialog" aria-modal="true" aria-labelledby="installGuideTitle">
-    <button class="install-guide__close" type="button" aria-label="닫기" onclick="closeInstallGuide()">×</button>
-
-    <h2 class="install-guide__title" id="installGuideTitle">집현전21 앱 설치 안내</h2>
-    <p class="install-guide__desc">
-      휴대폰에서 집현전21을 앱처럼 홈 화면에 설치할 수 있습니다.
-    </p>
-
-    <div class="install-guide__section">
-      <h3 class="install-guide__subtitle">안드로이드 (삼성 인터넷 / 크롬)</h3>
-      <ol class="install-guide__list">
-        <li>브라우저 메뉴를 엽니다.</li>
-        <li><strong>홈 화면에 추가</strong> 또는 <strong>앱 설치</strong>를 누릅니다.</li>
-        <li>이름을 확인한 뒤 추가하면 됩니다.</li>
-      </ol>
-    </div>
-
-    <div class="install-guide__section">
-      <h3 class="install-guide__subtitle">아이폰 (사파리)</h3>
-      <ol class="install-guide__list">
-        <li>하단의 <strong>공유</strong> 버튼을 누릅니다.</li>
-        <li><strong>홈 화면에 추가</strong>를 누릅니다.</li>
-        <li>이름을 확인한 뒤 추가하면 됩니다.</li>
-      </ol>
-    </div>
-
-    <div class="install-guide__note">
-      이미 설치되어 있으면 설치 항목이 보이지 않을 수 있습니다.
-    </div>
-  </div>
-</div>
 </body>
 </html>
-<script>
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  const btn = document.getElementById("installPwaBtn");
-  if (btn) btn.style.display = "inline-block";
-});
-
-function installApp(){
-  if(deferredPrompt){
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(()=>{});
-  }
-}
-<script>
-  function openInstallGuide() {
-    const guide = document.getElementById("installGuide");
-    if (!guide) return;
-    guide.classList.add("show");
-    guide.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeInstallGuide() {
-    const guide = document.getElementById("installGuide");
-    if (!guide) return;
-    guide.classList.remove("show");
-    guide.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeInstallGuide();
-    }
-  });
-</script>

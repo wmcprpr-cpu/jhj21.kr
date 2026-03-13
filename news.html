@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
+  <title>NEWS | 집현전21</title>
+  <meta name="description" content="집현전21 뉴스 목록 페이지입니다.">
+
+  <link rel="icon" type="image/png" href="./assets/icon-192.png">
+  <link rel="stylesheet" href="./assets/style.css">
+
+  <script src="./assets/news-data.js" defer></script>
+  <script src="./assets/news-pages.js" defer></script>
+  <script src="./script.js" defer></script>
+</head>
+<body data-page="news">
+  <div id="siteHeader"></div>
+
+  <main>
+    <section class="sub-hero">
+      <div class="container">
+        <p class="sub-hero__eyebrow">NEWS</p>
+        <h1 class="sub-hero__title">뉴스</h1>
+        <p class="sub-hero__desc">
+          집현전21의 주요 뉴스와 공식 소식을 모아 보여드립니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="news-page-toolbar">
+          <a class="btn btn--gold" href="./index.html">메인으로</a>
+          <a class="btn btn--outline-navy" href="./press.html">PRESS</a>
+          <a class="btn btn--outline-navy" href="./activity.html">ACTIVITY</a>
+        </div>
+        <div class="news-list-grid" id="newsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+</body>
+</html>
