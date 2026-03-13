@@ -1,119 +1,582 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
+  <meta name="theme-color" content="#0b1736" />
   <title>기관소개 | 집현전21</title>
-  <meta name="description" content="집현전21의 설립 취지, 목적, 사업 방향을 소개합니다." />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta name="description" content="집현전21의 기관소개, 회장 인사말, 정체성, 운영 원칙, 연구위원을 안내합니다." />
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./script.js" defer></script>
+
+  <style>
+    .about-hero{padding:56px 0 20px;}
+    .about-hero__title{margin:0 0 12px;font-size:48px;line-height:1.15;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .about-hero__desc{margin:0;max-width:920px;font-size:19px;line-height:1.85;color:var(--muted);}
+    .about-pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+    .about-pill{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:14px;font-weight:700;}
+
+    .about-section{padding:64px 0;}
+    .about-section--soft{background:#eef1f6;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+    .about-section__head{margin-bottom:24px;}
+    .about-section__title{margin:0 0 8px;font-size:38px;line-height:1.2;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .about-section__desc{margin:0;font-size:18px;line-height:1.75;color:var(--muted);}
+
+    .greeting-card{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:30px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .greeting-profile{text-align:center;}
+    .greeting-photo{
+      width:200px;
+      height:250px;
+      margin:0 auto 16px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
+      repeating-linear-gradient(45deg, rgba(186,159,101,.10), rgba(186,159,101,.10) 8px, rgba(11,23,54,.03) 8px, rgba(11,23,54,.03) 16px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .greeting-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .greeting-photo--blank{
+      background:#f8fafc;
+      border:1px dashed rgba(11,23,54,.14);
+    }
+
+    .greeting-placeholder{
+      width:62px;height:62px;border-radius:50%;
+      background:rgba(255,255,255,.80);
+      border:1px solid rgba(11,23,54,.12);
+      position:relative;
+    }
+    .greeting-placeholder::before{
+      content:"";
+      position:absolute;
+      top:11px;
+      left:50%;
+      transform:translateX(-50%);
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background:rgba(11,23,54,.18);
+    }
+    .greeting-placeholder::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:9px;
+      transform:translateX(-50%);
+      width:34px;
+      height:16px;
+      border-radius:16px 16px 10px 10px;
+      background:rgba(11,23,54,.18);
+    }
+
+    .greeting-name{margin:0;font-size:30px;line-height:1.3;font-weight:800;color:var(--navy);letter-spacing:-0.02em;}
+    .greeting-role{margin:6px 0 0;font-size:16px;line-height:1.6;color:var(--muted);font-weight:700;}
+    .greeting-eng{
+      margin:10px 0 14px;
+      font-size:14px;
+      line-height:1.5;
+      color:var(--muted);
+    }
+    .greeting-eng strong{
+      display:block;
+      font-size:17px;
+      color:var(--navy);
+      margin-top:2px;
+      font-weight:800;
+      letter-spacing:-0.01em;
+    }
+    .greeting-bio{
+      margin:0;
+      padding-left:18px;
+      text-align:left;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+    .greeting-bio li{margin-bottom:6px;}
+    .greeting-bio li:last-child{margin-bottom:0;}
+
+    .greeting-message{display:flex;flex-direction:column;justify-content:center;}
+    .greeting-badge{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:14px;font-weight:700;width:max-content;margin-bottom:16px;}
+    .greeting-title{margin:0 0 14px;font-size:32px;line-height:1.3;font-weight:800;color:var(--navy);letter-spacing:-0.02em;}
+    .greeting-text{margin:0;font-size:18px;line-height:1.95;color:var(--text);white-space:pre-line;}
+
+    .leaders-stack{display:flex;flex-direction:column;gap:18px;}
+    .leaders-stack__title{
+      margin:4px 0 0;
+      font-size:30px;
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+    .leader-card{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:28px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .leader-card__left{text-align:center;}
+    .leader-card__photo{
+      width:180px;
+      height:225px;
+      margin:0 auto 16px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .leader-card__photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .leader-card__photo--blank{
+      background:#f8fafc;
+      border:1px dashed rgba(11,23,54,.14);
+    }
+    .leader-card__badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .leader-card__name{
+      margin:0;
+      font-size:28px;
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+    .leader-card__role{
+      margin:6px 0 0;
+      font-size:16px;
+      line-height:1.6;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .leader-card__eng{
+      margin:10px 0 0;
+      font-size:14px;
+      line-height:1.5;
+      color:var(--muted);
+    }
+    .leader-card__eng strong{
+      display:block;
+      font-size:17px;
+      color:var(--navy);
+      margin-top:2px;
+      font-weight:800;
+      letter-spacing:-0.01em;
+    }
+    .leader-card__right{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .leader-card__bio{
+      margin:0;
+      padding-left:20px;
+      color:var(--text);
+      font-size:16px;
+      line-height:1.85;
+    }
+    .leader-card__bio li{margin-bottom:8px;color:var(--muted);}
+    .leader-card__bio li:last-child{margin-bottom:0;}
+
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;}
+    .about-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow);height:100%;}
+    .about-card__badge{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:14px;font-weight:700;margin-bottom:18px;}
+    .about-card__title{margin:0 0 14px;font-size:32px;line-height:1.3;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .about-card__text{margin:0;font-size:18px;line-height:1.9;color:var(--muted);}
+
+    .about-highlight{background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);color:#fff;border-radius:28px;padding:30px;box-shadow:var(--shadow);}
+    .about-highlight__eyebrow{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);font-size:14px;font-weight:700;margin-bottom:18px;}
+    .about-highlight__title{margin:0 0 14px;font-size:34px;line-height:1.25;font-weight:800;letter-spacing:-0.02em;color:#fff;}
+    .about-highlight__text{margin:0;font-size:18px;line-height:1.9;color:rgba(255,255,255,.88);}
+
+    .about-principles{display:grid;grid-template-columns:repeat(2, 1fr);gap:16px;}
+    .principle-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);}
+    .principle-card__badge{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 12px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:13px;font-weight:700;margin-bottom:14px;}
+    .principle-card__title{margin:0 0 10px;font-size:24px;line-height:1.3;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .principle-card__text{margin:0;font-size:17px;line-height:1.8;color:var(--muted);}
+
+    .about-flow{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-top:18px;}
+    .flow-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);text-align:center;}
+    .flow-card__step{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;font-size:16px;font-weight:800;margin-bottom:14px;}
+    .flow-card__title{margin:0 0 10px;font-size:24px;line-height:1.3;font-weight:800;letter-spacing:-0.02em;color:var(--navy);}
+    .flow-card__text{margin:0;font-size:17px;line-height:1.8;color:var(--muted);}
+
+    .fellows-wrap{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+    .fellows-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 18%, rgba(186,159,101,.10), transparent 18%),radial-gradient(circle at 90% 16%, rgba(11,23,54,.05), transparent 16%);pointer-events:none;}
+    .fellows-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4, 1fr);gap:22px 18px;}
+    .fellow-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 18px;text-align:center;box-shadow:0 8px 24px rgba(11,23,54,.06);height:100%;transition:transform .2s ease, box-shadow .2s ease;}
+    .fellow-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(11,23,54,.10);}
+    .fellow-photo{
+      width:132px;height:165px;margin:0 auto 14px;border-radius:18px;border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(11,23,54,.05), rgba(11,23,54,.02)),
+      repeating-linear-gradient(45deg, rgba(186,159,101,.10), rgba(186,159,101,.10) 8px, rgba(11,23,54,.03) 8px, rgba(11,23,54,.03) 16px);
+      display:flex;align-items:center;justify-content:center;overflow:hidden;
+    }
+    .fellow-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .fellow-photo__placeholder{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.78);border:1px solid rgba(11,23,54,.12);position:relative;}
+    .fellow-photo__placeholder::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:rgba(11,23,54,.18);}
+    .fellow-photo__placeholder::after{content:"";position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:30px;height:16px;border-radius:16px 16px 10px 10px;background:rgba(11,23,54,.18);}
+    .fellow-role{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:0 12px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:13px;font-weight:700;margin-bottom:10px;}
+    .fellow-name{margin:0;font-size:22px;line-height:1.35;font-weight:800;color:var(--navy);letter-spacing:-0.02em;}
+    .fellow-title{margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--text);font-weight:700;}
+    .fellow-field{margin:6px 0 0;font-size:15px;line-height:1.65;color:var(--muted);}
+    .fellows-note{margin-top:18px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);position:relative;z-index:2;}
+    .fellows-note__title{margin:0 0 8px;font-size:22px;font-weight:800;color:var(--navy);}
+    .fellows-note__text{margin:0;font-size:17px;line-height:1.8;color:var(--muted);}
+
+    @media (max-width:1100px){
+      .fellows-grid{grid-template-columns:repeat(3, 1fr);}
+      .leader-card{grid-template-columns:220px 1fr;}
+    }
+    @media (max-width:980px){
+      .about-hero__title{font-size:40px;}
+      .greeting-card,.about-grid,.leader-card{grid-template-columns:1fr;}
+      .about-principles,.about-flow{grid-template-columns:1fr;}
+      .fellows-grid{grid-template-columns:repeat(2, 1fr);}
+      .leader-card__left,.greeting-profile{text-align:center;}
+      .leader-card__bio,.greeting-bio{text-align:left;}
+    }
+    @media (max-width:640px){
+      .about-hero{padding:44px 0 16px;}
+      .about-hero__title{font-size:34px;}
+      .about-hero__desc,.about-section__desc,.about-card__text,.principle-card__text,.about-highlight__text,.flow-card__text,.greeting-text,.fellows-note__text{font-size:16px;}
+      .about-section{padding:52px 0;}
+      .about-section__title{font-size:30px;}
+      .greeting-title,.about-card__title,.about-highlight__title,.leaders-stack__title{font-size:28px;}
+      .principle-card__title,.flow-card__title{font-size:22px;}
+      .greeting-photo{width:150px;height:190px;}
+      .greeting-name,.leader-card__name{font-size:24px;}
+      .leader-card__photo{width:150px;height:190px;}
+      .fellows-wrap{padding:20px;}
+      .fellows-grid{grid-template-columns:1fr;}
+      .fellow-photo{width:120px;height:150px;}
+      .fellow-name{font-size:20px;}
+    }
+  </style>
 </head>
 <body>
-  <header id="header-include"></header>
+  <div id="siteHeader"></div>
 
-  <header class="hero">
-    <div class="container">
-      <div class="pill">
-        <span class="dot" aria-hidden="true"></span>
-        <strong>기관소개</strong>
-        <span>정체성과 방향을 명확히 합니다</span>
-      </div>
-      <h1>집현전21의 비전</h1>
-      <p>
-        집현전21은 역사 속 현인들의 지성을 오늘의 언어로 재구성하여,
-        21세기 대한민국의 국가 부흥과 문화적 창의 가치 확산에 기여하는 공익·연구 공동체입니다.
-        연구는 실행을 위해 존재하며, 실행은 다시 지식으로 환류되어 사회적 신뢰를 축적합니다.
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href="statutes.html">정체성/원칙</a>
-        <a class="btn" href="fields.html">연구분야</a>
-        <a class="btn" href="contact.html">협력 문의</a>
-      </div>
-    </div>
-  </header>
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <h1 class="about-hero__title">기관소개</h1>
+        <p class="about-hero__desc">
+          집현전21은 사회의 주요 과제를 근거 기반으로 분석하고,<br>
+          지식과 실천을 연결하여 공공의 가치로 확산하는 공익 연구 공동체입니다.
+        </p>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>핵심 목적</h2>
-          <p>
-            공공성과 국민화합, 그리고 K-문화의 창의적 가치 보존·홍보를 위한 연구 및 활동을 전개합니다.
+        <div class="about-pill-row" aria-label="기관 핵심 키워드">
+          <span class="about-pill">공익 연구 공동체</span>
+          <span class="about-pill">지식과 실천</span>
+          <span class="about-pill">공공성</span>
+          <span class="about-pill">신뢰</span>
+          <span class="about-pill">협력</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="about-section__head">
+          <h2 class="about-section__title">회장 인사말</h2>
+          <p class="about-section__desc">
+            집현전21의 비전과 설립 취지를 전하는 인사말입니다.
           </p>
         </div>
-      </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <span class="tag">지성의 계승</span>
-          <h3>역사의 지혜를 오늘의 과제로</h3>
-          <p>전통의 자산을 현대 사회문제 해결 프레임으로 재해석하여, 공익의 언어로 제시합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">실행의 책임</span>
-          <h3>연구 → 실천 → 확산</h3>
-          <p>근거 기반 제안과 실행 프로젝트를 병행하며, 협력 네트워크로 성과를 확산합니다.</p>
-        </div>
-      </div>
+       <div class="greeting-card">
+  <div class="greeting-profile">
+    <div class="greeting-photo">
+      <img src="./assets/lee-seung-an.jpg" alt="이승언 회장">
     </div>
-  </section>
+    <h3 class="greeting-name">이승언</h3>
+    <p class="greeting-role">현 회장 · 사회복지학 박사</p>
+    <p class="greeting-eng">
+      Chairman
+      <strong>Seung-An Lee, Ph.D</strong>
+    </p>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>운영 철학</h2>
-          <p>
-            “작게 시작하되, 오래 지속되는 구조”를 목표로 합니다.
-            기록과 공개, 검증과 개선의 루프를 통해 공익기관으로서의 신뢰를 축적합니다.
+    <ul class="greeting-bio">
+      <li>서울사회복지대학원대학교 주임교수<br>사회복지학 박사</li>
+      <li>(사) 국제위러브유운동본부 사무총장</li>
+      <li>(재) 국제위러브유 사무총장</li>
+      <li>한국 문예사조 시인, 작가</li>
+      <li>기후변화 대응 클린월드 활동가</li>
+    </ul>
+  </div>
+
+  <div class="greeting-message">
+    <div class="greeting-badge">Chairman’s Message</div>
+    <h3 class="greeting-title">지혜와 실천으로 공공의 미래를 함께 만들겠습니다.</h3>
+    <p class="greeting-text">집현전21은 지난 역사의 지혜와 오늘의 전문성을 바탕으로,
+사회가 직면한 다양한 과제를 함께 연구하고 실천 가능한 대안으로 연결하기 위해 출범하였습니다.
+
+우리는 공공성, 신뢰, 협력의 가치를 중심에 두고,
+정책과 학문, 산업과 시민사회를 연결하는 지식 공동체를 지향합니다.
+연구는 기록에 머무르지 않고 공동체의 삶을 변화시키는 실천으로 이어져야 하며,
+그 과정에서 집현전21은 책임 있는 공론장과 지속 가능한 협력의 플랫폼이 되고자 합니다.
+
+집현전21의 걸음이 사회에 희망과 통합, 그리고 미래를 향한 방향을 제시할 수 있도록
+여러분의 관심과 참여를 부탁드립니다.
+감사합니다.</p>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section class="about-section about-section--soft">
+      <div class="container">
+        <div class="about-section__head">
+          <h2 class="about-section__title">역대 회장</h2>
+          <p class="about-section__desc">
+            집현전21의 설립과 성장 과정에 함께하신 역대 회장 소개입니다.
           </p>
         </div>
+
+        <div class="leaders-stack">
+          <article class="leader-card">
+            <div class="leader-card__left">
+              <div class="leader-card__photo leader-card__photo--blank" aria-hidden="true"></div>
+              <div class="leader-card__badge">초대 회장</div>
+              <h3 class="leader-card__name">전병태</h3>
+              <p class="leader-card__role">초대 회장 · 박사</p>
+              <p class="leader-card__eng">
+                Founding Chairman
+                <strong>Byung-Tae Jeon, Ph.D</strong>
+              </p>
+            </div>
+
+            <div class="leader-card__right">
+              <ul class="leader-card__bio">
+                <li>건국대학교 축산대학 졸업 / 일본 Tohoku 대학원 박사</li>
+                <li>건국대학교 의료생명대학 교수 / 캐나다 Alberta대학 연구교수</li>
+                <li>건국대학교 부총장 (대외직명 충주캠퍼스 건국대학교 총장)</li>
+                <li>건국대학교 명예교수 / 한국녹용학회 회장</li>
+                <li>중국 ChangChun Uni. of Science and Technology 명예총장</li>
+                <li>녹용전문회사 (주)웰녹 기술고문 / 서울 Boost코리아로타리클럽 회장</li>
+                <li>저서: 노인이 살아야, 나라가 산다</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="leader-card">
+            <div class="leader-card__left">
+              <div class="leader-card__photo leader-card__photo--blank" aria-hidden="true"></div>
+              <div class="leader-card__badge">2대 회장</div>
+              <h3 class="leader-card__name">김현기</h3>
+              <p class="leader-card__role">2대 회장 · 박사</p>
+              <p class="leader-card__eng">
+                2nd Chairman
+                <strong>Hyun-Gi Kim, Ph.D</strong>
+              </p>
+            </div>
+
+            <div class="leader-card__right">
+              <ul class="leader-card__bio">
+                <li>경기대 정치대학원 교수 / 전 국방대학원 교수</li>
+                <li>해국사관학교 23기 / 예비역 대령시 박사학위</li>
+                <li>78년 미해병대 지휘참모대학 과정수료</li>
+                <li>81년 영국유학 아버딘대학원 장학생 선발 / 한국최초 석·박사 이수</li>
+                <li>국제정치학 객원교수, 국제교류협력관, 교학처장, 기획조정실장</li>
+                <li>국방대학원 명예교수 / 광양 국제페리주식회사 대표이사·회장</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="tag">공공성</span>
-          <h3>사회적 가치 최우선</h3>
-          <p>사업의 기준을 공익성과 사회적 효용에 두고, 특정 이해관계에 종속되지 않도록 설계합니다.</p>
+    <section class="about-section about-section--soft">
+      <div class="container">
+        <div class="about-section__head">
+          <h2 class="about-section__title">집현전21 소개</h2>
+          <p class="about-section__desc">
+            집현전21은 지난 역사의 위대한 지성을 바탕으로, 오늘의 사회적 과제를 연구와 실천으로 연결하고자 합니다.
+          </p>
         </div>
-        <div class="card">
-          <span class="tag">투명성</span>
-          <h3>기록·공개·보고</h3>
-          <p>활동 기록과 성과 보고를 정례화하여, 외부 검증이 가능한 운영을 지향합니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">협력</span>
-          <h3>기관·기업·시민 연대</h3>
-          <p>전문성과 실행력을 결합하기 위해 다양한 주체와 협력 모델을 구축합니다.</p>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <div class="about-card__badge">Mission</div>
+            <h3 class="about-card__title">지식의 깊이와 실천의 책임</h3>
+            <p class="about-card__text">
+              집현전21은 정책, 사회, 문화, 환경, 가족 등 다양한 분야의 현안을 학문적 엄밀성과
+              공공적 책임을 바탕으로 연구하고, 실질적인 대안과 협력 네트워크로 연결합니다.
+              연구 결과는 보고서, 브리프, 포럼, 교육, 프로젝트의 형태로 사회에 환원됩니다.
+            </p>
+          </article>
+
+          <div class="about-highlight">
+            <div class="about-highlight__eyebrow">Identity</div>
+            <h3 class="about-highlight__title">
+              지혜를 공공의 가치로 확산하는<br>
+              싱크탱크형 지식 공동체
+            </h3>
+            <p class="about-highlight__text">
+              집현전21은 연구를 축적하는 기관에 머무르지 않고,
+              공익과 실천을 향해 지식을 연결하는 플랫폼을 지향합니다.
+              사회적 질문에 답하고, 더 나은 공동체를 위한 지적 토대를 만들어 갑니다.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer id="footer-include"></footer>
+    <section class="about-section" id="identity">
+      <div class="container">
+        <div class="about-section__head">
+          <h2 class="about-section__title">정체성 · 원칙</h2>
+          <p class="about-section__desc">
+            집현전21은 공공의 가치를 중심으로 연구와 실천을 연결하는 지식 공동체이며, 다음의 원칙을 바탕으로 운영됩니다.
+          </p>
+        </div>
 
-  <script>
-    async function loadInclude() {
-      try {
-        const headerRes = await fetch('assets/header.html');
-        if (headerRes.ok) {
-          document.getElementById('header-include').innerHTML = await headerRes.text();
-          const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-          document.querySelectorAll('.nav a').forEach(a => {
-            if ((a.getAttribute('href') || '').toLowerCase() === current) a.classList.add('active');
-          });
-        }
+        <div class="about-principles">
+          <article class="principle-card">
+            <div class="principle-card__badge">Principle 01</div>
+            <h3 class="principle-card__title">공공성</h3>
+            <p class="principle-card__text">
+              지식과 연구는 사회 전체의 공익을 위해 사용되어야 합니다.
+              집현전21은 특정 이익이 아니라 공공의 가치를 중심에 둡니다.
+            </p>
+          </article>
 
-        const footerRes = await fetch('assets/footer.html');
-        if (footerRes.ok) {
-          document.getElementById('footer-include').innerHTML = await footerRes.text();
-          const y = document.getElementById('year');
-          if (y) y.textContent = new Date().getFullYear();
-        }
-      } catch (e) {
-        console.error('Include load failed:', e);
-      }
-    }
-    window.addEventListener('DOMContentLoaded', loadInclude);
-  </script>
+          <article class="principle-card">
+            <div class="principle-card__badge">Principle 02</div>
+            <h3 class="principle-card__title">신뢰</h3>
+            <p class="principle-card__text">
+              연구와 활동의 과정, 결과, 운영을 투명하게 공유하며
+              책임 있는 조직 운영을 통해 신뢰를 구축합니다.
+            </p>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-card__badge">Principle 03</div>
+            <h3 class="principle-card__title">실천</h3>
+            <p class="principle-card__text">
+              연구는 지식에 머무르지 않고 사회적 변화와 실행 가능한 대안으로 이어져야 합니다.
+            </p>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-card__badge">Principle 04</div>
+            <h3 class="principle-card__title">협력</h3>
+            <p class="principle-card__text">
+              기관, 기업, 시민사회, 전문가 네트워크와의 협력을 통해
+              지식과 실천의 연결을 확장합니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section about-section--soft">
+      <div class="container">
+        <div class="about-section__head">
+          <h2 class="about-section__title">활동 방식</h2>
+          <p class="about-section__desc">
+            집현전21은 연구, 공론, 확산의 흐름을 통해 지식 공동체의 역할을 수행합니다.
+          </p>
+        </div>
+
+        <div class="about-flow">
+          <article class="flow-card">
+            <div class="flow-card__step">01</div>
+            <h3 class="flow-card__title">연구</h3>
+            <p class="flow-card__text">
+              사회와 공동체의 주요 과제를 근거 기반으로 분석하고 정리합니다.
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <div class="flow-card__step">02</div>
+            <h3 class="flow-card__title">공론</h3>
+            <p class="flow-card__text">
+              포럼, 세미나, 지식교류 활동을 통해 사회적 대화와 공론의 장을 만듭니다.
+            </p>
+          </article>
+
+          <article class="flow-card">
+            <div class="flow-card__step">03</div>
+            <h3 class="flow-card__title">확산</h3>
+            <p class="flow-card__text">
+              발간물, 교육, 프로젝트, 협력을 통해 연구 성과를 사회적 자산으로 확산합니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="fellows">
+      <div class="container">
+        <div class="about-section__head">
+          <h2 class="about-section__title">연구위원</h2>
+          <p class="about-section__desc">
+            집현전21은 다양한 분야의 전문성과 경험을 갖춘 연구위원들과 함께 공익 연구와 정책 제안을 수행합니다.
+          </p>
+        </div>
+
+        <div class="fellows-wrap">
+          <div class="fellows-grid">
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+            <article class="fellow-card"><div class="fellow-photo"><div class="fellow-photo__placeholder" aria-hidden="true"></div></div><div class="fellow-role">연구위원</div><h3 class="fellow-name">이름 입력</h3><p class="fellow-title">직책 입력</p><p class="fellow-field">전문분야 입력</p></article>
+          </div>
+
+          <div class="fellows-note">
+            <h3 class="fellows-note__title">안내</h3>
+            <p class="fellows-note__text">
+              현재 영역은 연구위원 12명의 프로필을 배치할 수 있도록 설계된 구조입니다.
+              실제 사진과 이름, 직책, 전문분야는 확정 명단에 따라 반영하시면 됩니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
 </body>
 </html>

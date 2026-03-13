@@ -1,96 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>지식교류 | 집현전21</title>
-  <meta name="description" content="세미나, 포럼, 교육 프로그램을 통한 지식교류 활동" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
+  <meta name="theme-color" content="#0b1736" />
+  <title>Education | 집현전21</title>
+  <meta name="description" content="집현전21 교육" />
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./script.js" defer></script>
 </head>
 <body>
+  <div id="siteHeader"></div>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="index.html" aria-label="집현전21 홈">
-        <img class="brand-logo" src="logo.png" alt="집현전21 로고" />
-        <span>집현전21</span>
-      </a>
-
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="about.html">기관소개</a>
-        <a href="research.html">사업·연구</a>
-        <a class="active" href="education.html">지식교류</a>
-        <a href="publication.html">발간물</a>
-        <a href="notice.html">공지</a>
-        <a href="contact.html">문의</a>
-      </nav>
-
-      <div class="cta">
-        <a class="btn gold" href="notice.html">일정 확인</a>
-        <a class="btn primary" href="contact.html">참여 문의</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="container page-title">
-    <h1>지식교류</h1>
-    <p>
-      지식은 공유될 때 공공성이 생깁니다.
-      집현전21은 세미나·포럼·교육 프로그램을 통해 연구 성과를 사회로 확산합니다.
-    </p>
-  </div>
-
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>프로그램 운영 방향</h2>
-          <p>학술적 엄정함과 시민적 이해 가능성을 동시에 고려합니다.</p>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="pagehead">
+          <h1 class="h2">Education</h1>
+          <p class="muted">세미나·워크숍·브리프 교육을 통해 지식을 확산합니다.</p>
         </div>
-      </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="tag">세미나</span>
-          <h3>심층 주제 세미나</h3>
-          <p>의제별로 근거 자료를 기반으로 토론하며, 정리 결과를 브리프로 발간합니다.</p>
+        <div class="list">
+          <div class="item">
+            <div class="item__meta">EDU</div>
+            <div class="item__body">
+              <h3>정책 브리프 읽기/쓰기 (예정)</h3>
+              <p>의제 정의–근거 구성–옵션 설계–권고안 작성.</p>
+              <div class="item__tags"><span class="tag">Brief</span><span class="tag">Writing</span></div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item__meta">EDU</div>
+            <div class="item__body">
+              <h3>데이터 기반 비교분석 (예정)</h3>
+              <p>사례 비교–지표 설계–시사점 도출–정책 적용.</p>
+              <div class="item__tags"><span class="tag">Data</span><span class="tag">Comparative</span></div>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <span class="tag">포럼</span>
-          <h3>공론장 포럼</h3>
-          <p>기관·기업·시민이 함께 참여하는 대화 구조를 설계하고 사회적 합의를 돕습니다.</p>
-        </div>
-        <div class="card">
-          <span class="tag">교육</span>
-          <h3>공익 교육</h3>
-          <p>현장 적용이 가능한 교육 콘텐츠를 개발하고, 필요 시 온라인으로 확장합니다.</p>
-        </div>
+
       </div>
+    </section>
+  </main>
 
-      <div style="margin-top:14px" class="note">
-        <b style="color:var(--navy)">운영 방식(예시)</b><br/>
-        ① 주제 선정 → ② 자료 수집/읽기 목록 → ③ 세미나 진행 → ④ 요약·논점 정리 → ⑤ 이슈 브리프 발간
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="container fgrid">
-      <div>
-        <div style="font-weight:900; font-size:18px;">집현전21</div>
-        <small>지식의 깊이와 실천의 책임을 연결하는 공익·연구 공동체</small>
-      </div>
-      <div style="text-align:right;">
-        <small>© <span id="year"></span> 집현전21 · All rights reserved</small><br />
-        <small>문의: wmcprpr@gmail.com</small>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
+  <div id="siteFooter"></div>
+  <button class="to-top" type="button" aria-label="맨 위로">↑</button>
 </body>
 </html>
