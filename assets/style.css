@@ -1210,3 +1210,31 @@ button{
     width:100%;
   }
 }
+/* ===== HEADER MENU STABILITY PATCH ===== */
+.nav__menu{
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.nav__menu > li > a:not(.nav__button),
+.nav__link{
+  font-size:15px;
+  padding:0 12px;
+}
+
+@media (max-width:1180px){
+  .brand__name{
+    font-size:24px;
+  }
+
+  .brand__tag{
+    font-size:13px;
+  }
+
+  .nav__menu > li > a:not(.nav__button),
+  .nav__link,
+  .nav__button{
+    font-size:14px;
+    padding:0 10px;
+  }
+}
