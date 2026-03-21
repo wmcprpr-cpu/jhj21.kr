@@ -1,16 +1,7 @@
-const CACHE_NAME = "jhj21-pwa-v1";
+const CACHE_NAME = "jhj21-pwa-v2";
 
 const CORE_ASSETS = [
   "./",
-  "./index.html",
-  "./about.html",
-  "./governance.html",
-  "./programs.html",
-  "./publication.html",
-  "./notice.html",
-  "./contact.html",
-  "./script.js",
-  "./assets/style.css",
   "./assets/header.html",
   "./assets/footer.html",
   "./assets/icon-192.png",
@@ -46,24 +37,58 @@ self.addEventListener("fetch", (event) => {
 
   if (request.method !== "GET") return;
 
-  event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
+  const acceptHeader = request.headers.get("accept") || "";
+  const isHTMLRequest =
+    request.mode === "navigate" || acceptHeader.includes("text/html");
 
-      return fetch(request)
+  // HTML 문서는 항상 네트워크 우선
+  if (isHTMLRequest) {
+    event.respondWith(
+      fetch(request)
         .then((networkResponse) => {
-          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== "basic") {
-            return networkResponse;
-          }
-
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, responseClone);
-          });
-
           return networkResponse;
         })
-        .catch(() => caches.match("./index.html"));
+        .catch(async () => {
+          const cachedPage = await caches.match(request);
+          if (cachedPage) return cachedPage;
+
+          const cachedIndex = await caches.match("./");
+          if (cachedIndex) return cachedIndex;
+
+          return new Response("오프라인 상태입니다.", {
+            status: 503,
+            statusText: "Service Unavailable",
+            headers: { "Content-Type": "text/plain; charset=utf-8" }
+          });
+        })
+    );
+    return;
+  }
+
+  // CSS / JS / 이미지 등은 캐시 우선 + 없으면 네트워크 후 저장
+  event.respondWith(
+    caches.match(request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      return fetch(request).then((networkResponse) => {
+        if (
+          !networkResponse ||
+          networkResponse.status !== 200 ||
+          networkResponse.type !== "basic"
+        ) {
+          return networkResponse;
+        }
+
+        const responseClone = networkResponse.clone();
+
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(request, responseClone);
+        });
+
+        return networkResponse;
+      });
     })
   );
 });
