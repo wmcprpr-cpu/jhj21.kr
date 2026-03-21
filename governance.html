@@ -2,13 +2,28 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
   <meta name="theme-color" content="#0b1736" />
+
   <title>가버넌스 | 집현전21</title>
   <meta name="description" content="집현전21의 조직 구조, 운영 체계, 정관 전문을 안내합니다." />
-  <link rel="icon" href="./logo.png" />
-  <link rel="stylesheet" href="./assets/style.css" />
-  <script src="./script.js" defer></script>
+
+  <meta property="og:title" content="가버넌스 | 집현전21">
+  <meta property="og:description" content="집현전21의 조직 구조, 운영 체계, 정관 전문을 안내합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jhj21.kr/governance.html">
+  <meta property="og:image" content="https://jhj21.kr/assets/icon-512.png?v=20260321-1">
+
+  <link rel="manifest" href="./manifest.json?v=20260321-1">
+  <link rel="icon" type="image/png" href="./assets/icon-192.png?v=20260321-1">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png?v=20260321-1">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="집현전21">
+
+  <link rel="stylesheet" href="./assets/style.css?v=20260321-1" />
+  <script src="./script.js?v=20260321-1" defer></script>
 
   <style>
     .gov-hero{
@@ -62,7 +77,6 @@
       color:var(--muted);
     }
  
-    /* 조직도 박스 */
     .org-wrap{
       background:#fff;
       border:1px solid var(--line);
@@ -314,7 +328,6 @@
   <div id="siteHeader"></div>
 
   <main>
-    <!-- 페이지 소개 -->
     <section class="gov-hero">
       <div class="container">
         <h1 class="gov-hero__title">가버넌스</h1>
@@ -325,7 +338,6 @@
       </div>
     </section>
 
-    <!-- 조직도 -->
     <section class="gov-section gov-section--soft">
       <div class="container">
         <div class="gov-section__head">
@@ -372,7 +384,6 @@
                 </filter>
               </defs>
 
-              <!-- 상단 3개 -->
               <rect x="90" y="50" width="300" height="94" rx="18" class="boxSoft" filter="url(#shadow)"/>
               <text x="240" y="82" class="tag">HONORARY</text>
               <text x="240" y="124" class="title">명예회장</text>
@@ -386,11 +397,9 @@
               <text x="960" y="82" class="tag">CHAIR</text>
               <text x="960" y="124" class="title">이사장</text>
 
-              <!-- 자문위원회 -> 회장 -->
               <path class="line" d="M 600 144 L 600 188" />
               <circle cx="600" cy="188" r="5" class="dot"/>
 
-              <!-- 중단 -->
               <rect x="450" y="188" width="300" height="102" rx="18" class="box" filter="url(#shadow)"/>
               <text x="600" y="222" class="tag">PRESIDENT</text>
               <text x="600" y="258" class="title">회장</text>
@@ -409,21 +418,17 @@
               <path class="line" d="M 450 239 L 390 250" />
               <path class="line" d="M 750 239 L 810 250" />
 
-              <!-- 회장 -> 사무국 -->
               <path class="line" d="M 600 290 L 600 350" />
               <circle cx="600" cy="350" r="5" class="dot"/>
 
-              <!-- 사무국 -->
               <rect x="330" y="350" width="540" height="108" rx="18" class="boxSoft" filter="url(#shadow)"/>
               <text x="600" y="384" class="tag">SECRETARIAT</text>
               <text x="600" y="420" class="title">사무국</text>
               <text x="600" y="444" class="desc">실장 1명 · 행정 간사 2명 (기본 운영조직)</text>
 
-              <!-- 사무국 -> 하단 -->
               <path class="line" d="M 600 458 L 600 520" />
               <circle cx="600" cy="520" r="5" class="dot"/>
 
-              <!-- 1열 -->
               <rect x="70" y="540" width="320" height="72" rx="18" class="box"/>
               <text x="230" y="584" class="title" style="font-size:18px">사회통합·정책연구위원회</text>
 
@@ -433,7 +438,6 @@
               <rect x="70" y="720" width="320" height="72" rx="18" class="box"/>
               <text x="230" y="764" class="title" style="font-size:18px">가족·공동체회복위원회</text>
 
-              <!-- 2열 -->
               <rect x="440" y="540" width="320" height="72" rx="18" class="boxGold"/>
               <text x="600" y="584" class="title" style="font-size:18px">학술연구·지식교류위원회</text>
 
@@ -443,7 +447,6 @@
               <rect x="440" y="720" width="320" height="72" rx="18" class="boxGold"/>
               <text x="600" y="760" class="title" style="font-size:16px">복지실천·사회공헌위원회</text>
 
-              <!-- 3열 -->
               <rect x="810" y="540" width="320" height="72" rx="18" class="box"/>
               <text x="970" y="584" class="title" style="font-size:18px">AI·디지털지식혁신위원회</text>
 
@@ -485,7 +488,6 @@
       </div>
     </section>
 
-    <!-- 정관 요약 -->
     <section class="gov-section">
       <div class="container">
         <div class="gov-section__head">
@@ -547,7 +549,6 @@
       </div>
     </section>
 
-    <!-- 정관 전문 -->
     <section class="gov-section gov-section--soft" id="statutes-full">
       <div class="container">
         <div class="gov-section__head">
