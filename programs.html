@@ -3,21 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes">
-  <meta name="theme-color" content="#0b1736" />
 
+  <!-- 검색엔진 인증 -->
+  <meta name="google-site-verification" content="mXC6iq8p3cXsF7c8QG7YLUCKj1hMyeRA1sL-m8CsjOM">
+  <meta name="naver-site-verification" content="edc4e32cb1dcf36e829878cec04594368684b837">
+
+  <!-- 기본 SEO -->
   <title>핵심사업 | 집현전21</title>
-  <meta name="description" content="집현전21의 연구, 프로젝트, 포럼, 교육, 연구위원회 활동을 소개합니다." />
+  <meta name="description" content="집현전21의 핵심사업을 소개합니다. 연구, 프로젝트, 포럼, 교육을 중심으로 공공의 가치와 실천 가능한 대안을 연결하는 활동을 안내합니다.">
+  <meta name="keywords" content="집현전21, 핵심사업, 연구, 프로젝트, 포럼, 교육, 공익연구, 정책연구, 지식공동체, 싱크탱크">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1736">
+  <meta name="author" content="집현전21">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+  <link rel="canonical" href="https://jhj21.kr/programs.html">
 
+  <!-- Open Graph -->
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="집현전21">
   <meta property="og:title" content="핵심사업 | 집현전21">
-  <meta property="og:description" content="집현전21의 연구, 프로젝트, 포럼, 교육, 연구위원회 활동을 소개합니다.">
+  <meta property="og:description" content="집현전21의 연구, 프로젝트, 포럼, 교육 등 핵심사업을 소개합니다.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jhj21.kr/programs.html">
   <meta property="og:image" content="https://jhj21.kr/assets/icon-512.png?v=20260321-1">
+  <meta property="og:image:secure_url" content="https://jhj21.kr/assets/icon-512.png?v=20260321-1">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="집현전21 로고">
 
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="핵심사업 | 집현전21">
+  <meta name="twitter:description" content="집현전21의 연구, 프로젝트, 포럼, 교육 등 핵심사업을 소개합니다.">
+  <meta name="twitter:image" content="https://jhj21.kr/assets/icon-512.png?v=20260321-1">
+
+  <!-- 앱 / 아이콘 -->
   <link rel="manifest" href="./manifest.json?v=20260321-1">
   <link rel="icon" type="image/png" href="./assets/icon-192.png?v=20260321-1">
   <link rel="apple-touch-icon" href="./assets/icon-192.png?v=20260321-1">
-
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="집현전21">
@@ -25,12 +48,66 @@
   <link rel="stylesheet" href="./assets/style.css?v=20260321-1" />
   <script src="./script.js?v=20260321-1" defer></script>
 
+  <!-- 구조화 데이터: 웹페이지 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "핵심사업 | 집현전21",
+    "url": "https://jhj21.kr/programs.html",
+    "description": "집현전21의 핵심사업을 소개합니다. 연구, 프로젝트, 포럼, 교육을 중심으로 공공의 가치와 실천 가능한 대안을 연결하는 활동을 안내합니다.",
+    "inLanguage": "ko-KR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "집현전21",
+      "url": "https://jhj21.kr/"
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "집현전21"
+    }
+  }
+  </script>
+
+  <!-- 구조화 데이터: 조직 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "집현전21",
+    "alternateName": "Jiphyeonjeon21",
+    "url": "https://jhj21.kr/",
+    "logo": "https://jhj21.kr/assets/icon-512.png?v=20260321-1",
+    "description": "집현전21은 지혜를 공공의 가치로 확산하는 싱크탱크형 지식 공동체입니다."
+  }
+  </script>
+
   <style>
-    .program-hero{
-      padding:56px 0 20px;
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px;
+      top:16px;
+      width:auto;
+      height:auto;
+      padding:10px 14px;
+      background:#fff;
+      color:#0b1736;
+      z-index:9999;
+      border-radius:8px;
+      box-shadow:0 4px 16px rgba(0,0,0,.15);
     }
 
-    .program-hero__title{
+    .programs-hero{
+      padding:56px 0 18px;
+    }
+    .programs-hero__title{
       margin:0 0 12px;
       font-size:48px;
       line-height:1.15;
@@ -38,8 +115,7 @@
       letter-spacing:-0.02em;
       color:var(--navy);
     }
-
-    .program-hero__desc{
+    .programs-hero__desc{
       margin:0;
       max-width:920px;
       font-size:19px;
@@ -47,14 +123,13 @@
       color:var(--muted);
     }
 
-    .program-pill-row{
+    .programs-pill-row{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin-top:20px;
     }
-
-    .program-pill{
+    .programs-pill{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -68,21 +143,18 @@
       font-weight:700;
     }
 
-    .program-section{
+    .programs-section{
       padding:64px 0;
     }
-
-    .program-section--soft{
+    .programs-section--soft{
       background:#eef1f6;
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
     }
-
-    .program-section__head{
+    .programs-section__head{
       margin-bottom:24px;
     }
-
-    .program-section__title{
+    .programs-section__title{
       margin:0 0 8px;
       font-size:38px;
       line-height:1.2;
@@ -90,21 +162,20 @@
       letter-spacing:-0.02em;
       color:var(--navy);
     }
-
-    .program-section__desc{
+    .programs-section__desc{
       margin:0;
       font-size:18px;
       line-height:1.75;
       color:var(--muted);
     }
 
-    .program-grid{
+    .programs-intro-grid{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
+      grid-template-columns:1.1fr .9fr;
       gap:18px;
     }
 
-    .program-card{
+    .programs-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:24px;
@@ -113,7 +184,7 @@
       height:100%;
     }
 
-    .program-card__badge{
+    .programs-card__badge{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -128,29 +199,133 @@
       margin-bottom:18px;
     }
 
-    .program-card__title{
-      margin:0 0 12px;
-      font-size:30px;
+    .programs-card__title{
+      margin:0 0 14px;
+      font-size:32px;
       line-height:1.3;
       font-weight:800;
       letter-spacing:-0.02em;
       color:var(--navy);
     }
 
-    .program-card__text{
+    .programs-card__text{
       margin:0;
       font-size:18px;
+      line-height:1.9;
+      color:var(--muted);
+    }
+
+    .programs-highlight{
+      background:linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .programs-highlight__eyebrow{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .programs-highlight__title{
+      margin:0 0 14px;
+      font-size:34px;
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:#fff;
+    }
+
+    .programs-highlight__text{
+      margin:0;
+      font-size:18px;
+      line-height:1.9;
+      color:rgba(255,255,255,.88);
+    }
+
+    .program-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:18px;
+    }
+
+    .program-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      height:100%;
+    }
+
+    .program-item__badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      width:max-content;
+    }
+
+    .program-item__title{
+      margin:0;
+      font-size:30px;
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .program-item__text{
+      margin:0;
+      font-size:17px;
       line-height:1.85;
       color:var(--muted);
     }
 
-    .committee-grid{
+    .program-point-list{
+      margin:0;
+      padding-left:20px;
+      font-size:16px;
+      line-height:1.8;
+      color:var(--text);
+    }
+
+    .program-point-list li{
+      margin-bottom:8px;
+      color:var(--muted);
+    }
+
+    .program-point-list li:last-child{
+      margin-bottom:0;
+    }
+
+    .flow-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(4, 1fr);
       gap:16px;
     }
 
-    .committee-card{
+    .flow-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:22px;
@@ -160,23 +335,83 @@
       height:100%;
     }
 
-    .committee-title{
-      margin:0 0 8px;
-      font-size:20px;
-      line-height:1.45;
+    .flow-card__step{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:var(--gold);
+      color:#fff;
+      font-size:16px;
       font-weight:800;
-      color:var(--navy);
-      letter-spacing:-0.02em;
+      margin-bottom:14px;
     }
 
-    .committee-desc{
+    .flow-card__title{
+      margin:0 0 10px;
+      font-size:24px;
+      line-height:1.3;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .flow-card__text{
       margin:0;
       font-size:16px;
-      line-height:1.7;
+      line-height:1.8;
       color:var(--muted);
     }
 
-    .program-note{
+    .outcome-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+
+    .outcome-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      height:100%;
+    }
+
+    .outcome-card__badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:14px;
+    }
+
+    .outcome-card__title{
+      margin:0 0 10px;
+      font-size:24px;
+      line-height:1.3;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+
+    .outcome-card__text{
+      margin:0;
+      font-size:17px;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    .programs-note{
       margin-top:18px;
       padding:18px 20px;
       background:#fff;
@@ -185,200 +420,306 @@
       box-shadow:var(--shadow);
     }
 
-    .program-note__title{
+    .programs-note__title{
       margin:0 0 8px;
       font-size:22px;
       font-weight:800;
       color:var(--navy);
     }
 
-    .program-note__text{
+    .programs-note__text{
       margin:0;
       font-size:17px;
       line-height:1.8;
       color:var(--muted);
     }
 
-    @media (max-width:980px){
-      .program-hero__title{
-        font-size:40px;
+    @media (max-width:1100px){
+      .flow-grid{
+        grid-template-columns:repeat(2, 1fr);
       }
-
-      .program-grid{
+      .outcome-grid{
         grid-template-columns:1fr;
       }
+    }
 
-      .committee-grid{
+    @media (max-width:980px){
+      .programs-hero__title{
+        font-size:40px;
+      }
+      .programs-intro-grid,
+      .program-grid{
         grid-template-columns:1fr;
       }
     }
 
     @media (max-width:640px){
-      .program-hero{
+      .programs-hero{
         padding:44px 0 16px;
       }
-
-      .program-hero__title{
+      .programs-hero__title{
         font-size:34px;
       }
-
-      .program-hero__desc,
-      .program-section__desc,
-      .program-card__text,
-      .committee-desc,
-      .program-note__text{
+      .programs-hero__desc,
+      .programs-section__desc,
+      .programs-card__text,
+      .program-item__text,
+      .flow-card__text,
+      .outcome-card__text,
+      .programs-note__text{
         font-size:16px;
       }
-
-      .program-section{
+      .programs-section{
         padding:52px 0;
       }
-
-      .program-section__title{
+      .programs-section__title{
         font-size:30px;
       }
-
-      .program-card__title{
-        font-size:26px;
+      .programs-card__title,
+      .programs-highlight__title,
+      .program-item__title{
+        font-size:28px;
+      }
+      .flow-grid{
+        grid-template-columns:1fr;
+      }
+      .flow-card__title,
+      .outcome-card__title{
+        font-size:22px;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#mainContent">본문 바로가기</a>
+
   <div id="siteHeader"></div>
 
-  <main>
-    <section class="program-hero">
+  <main id="mainContent">
+    <section class="programs-hero">
       <div class="container">
-        <h1 class="program-hero__title">핵심사업</h1>
-        <p class="program-hero__desc">
-          집현전21은 연구, 공론, 실천을 연결하는 지식 공동체로서 <br> 
-          다양한 연구와 프로젝트, 포럼, 교육 활동을 통해 공공의 가치를 확산합니다.
+        <h1 class="programs-hero__title">핵심사업 | 집현전21</h1>
+        <p class="programs-hero__desc">
+          집현전21은 연구를 통해 사회의 주요 과제를 분석하고,
+          프로젝트와 포럼, 교육을 통해 지식과 실천을 연결합니다.
+          핵심사업은 공공의 가치와 지속 가능한 사회 발전을 위한 실질적 대안 제시에 목적을 둡니다.
         </p>
 
-        <div class="program-pill-row" aria-label="핵심사업 키워드">
-          <span class="program-pill">연구</span>
-          <span class="program-pill">프로젝트</span>
-          <span class="program-pill">포럼</span>
-          <span class="program-pill">교육</span>
-          <span class="program-pill">연구위원회</span>
+        <div class="programs-pill-row" aria-label="핵심사업 키워드">
+          <span class="programs-pill">연구</span>
+          <span class="programs-pill">프로젝트</span>
+          <span class="programs-pill">포럼</span>
+          <span class="programs-pill">교육</span>
+          <span class="programs-pill">공공성</span>
+          <span class="programs-pill">실천</span>
         </div>
       </div>
     </section>
 
-    <!-- 주요 활동 -->
-    <section class="program-section">
+    <section class="programs-section programs-section--soft">
       <div class="container">
-        <div class="program-section__head">
-          <h2 class="program-section__title">주요 활동</h2>
-          <p class="program-section__desc">
-            집현전21은 연구 중심의 싱크탱크 활동을 기반으로 다양한 지식 교류와 사회적 실천을 추진합니다.
+        <div class="programs-section__head">
+          <h2 class="programs-section__title">사업 방향</h2>
+          <p class="programs-section__desc">
+            집현전21은 공익 연구와 지식 확산을 통해 사회 문제 해결에 기여하는 것을 기본 방향으로 삼습니다.
+          </p>
+        </div>
+
+        <div class="programs-intro-grid">
+          <article class="programs-card">
+            <div class="programs-card__badge">Direction</div>
+            <h3 class="programs-card__title">지식의 생산에서 사회적 실천까지</h3>
+            <p class="programs-card__text">
+              집현전21의 핵심사업은 학문과 정책, 산업과 시민사회를 연결하는 데 목적이 있습니다.
+              우리는 단순한 정보 축적이 아니라 사회적 질문에 답하고,
+              공공의 가치로 이어지는 대안을 함께 모색합니다.
+              연구 결과는 보고서, 브리프, 공론장, 교육, 협력 프로젝트 형태로 구체화됩니다.
+            </p>
+          </article>
+
+          <div class="programs-highlight">
+            <div class="programs-highlight__eyebrow">Core Vision</div>
+            <h3 class="programs-highlight__title">
+              연구와 실천을 연결하는<br>
+              집현전21의 핵심사업
+            </h3>
+            <p class="programs-highlight__text">
+              집현전21은 사회의 현안을 구조적으로 이해하고,
+              다양한 분야의 전문가와 협력하여 실행 가능한 해법을 제시합니다.
+              이를 통해 공공성, 신뢰, 협력의 가치를 현실 속에서 구현하고자 합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs-section" id="research">
+      <div class="container">
+        <div class="programs-section__head">
+          <h2 class="programs-section__title">핵심사업 영역</h2>
+          <p class="programs-section__desc">
+            집현전21의 핵심사업은 연구, 프로젝트, 포럼, 교육의 네 축을 중심으로 운영됩니다.
           </p>
         </div>
 
         <div class="program-grid">
-          <article class="program-card">
-            <div class="program-card__badge">Research</div>
-            <h3 class="program-card__title">연구</h3>
-            <p class="program-card__text">
-              사회, 정책, 환경, 문화, 가족과 공동체 문제를 분석하고
-              연구 보고서와 정책 제안을 통해 공공의 가치를 위한 지식 기반을 구축합니다.
+          <article class="program-item">
+            <div class="program-item__badge">Research</div>
+            <h3 class="program-item__title">연구</h3>
+            <p class="program-item__text">
+              사회와 공동체가 직면한 주요 과제를 근거 기반으로 분석하고,
+              공익적 관점에서 실천 가능한 정책과 제안을 도출합니다.
+            </p>
+            <ul class="program-point-list">
+              <li>사회 현안 분석 및 정책 제안</li>
+              <li>공공성 중심의 연구보고서 발간</li>
+              <li>분야별 전문가 협업 연구</li>
+            </ul>
+          </article>
+
+          <article class="program-item">
+            <div class="program-item__badge">Project</div>
+            <h3 class="program-item__title">프로젝트</h3>
+            <p class="program-item__text">
+              연구 성과를 바탕으로 현장성과 실행력을 갖춘 프로젝트를 추진하며,
+              협력 모델과 실천 프로그램을 구체적으로 설계합니다.
+            </p>
+            <ul class="program-point-list">
+              <li>공익 프로젝트 기획 및 운영</li>
+              <li>민관·기관 협력 모델 구축</li>
+              <li>실행 중심의 과제 발굴</li>
+            </ul>
+          </article>
+
+          <article class="program-item">
+            <div class="program-item__badge">Forum</div>
+            <h3 class="program-item__title">포럼</h3>
+            <p class="program-item__text">
+              사회적 공론과 지식교류를 위한 포럼과 세미나를 개최하여,
+              다양한 의견이 연결되는 책임 있는 대화의 장을 만듭니다.
+            </p>
+            <ul class="program-point-list">
+              <li>주제별 포럼 및 세미나 개최</li>
+              <li>전문가·시민사회 네트워크 연계</li>
+              <li>논의 결과의 기록과 확산</li>
+            </ul>
+          </article>
+
+          <article class="program-item">
+            <div class="program-item__badge">Education</div>
+            <h3 class="program-item__title">교육</h3>
+            <p class="program-item__text">
+              연구 결과와 사회적 의제를 시민과 공유하고,
+              지식 확산과 실천 역량 강화를 위한 교육 프로그램을 운영합니다.
+            </p>
+            <ul class="program-point-list">
+              <li>지식교류 기반 교육 프로그램</li>
+              <li>공공가치 확산을 위한 학습 콘텐츠</li>
+              <li>미래세대와 시민을 위한 교육 활동</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs-section programs-section--soft">
+      <div class="container">
+        <div class="programs-section__head">
+          <h2 class="programs-section__title">사업 추진 흐름</h2>
+          <p class="programs-section__desc">
+            집현전21은 주제 발굴부터 연구, 공론, 확산까지 하나의 흐름 안에서 핵심사업을 추진합니다.
+          </p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-card">
+            <div class="flow-card__step">01</div>
+            <h3 class="flow-card__title">의제 발굴</h3>
+            <p class="flow-card__text">
+              사회가 필요로 하는 주요 의제를 선정하고 문제의식을 구체화합니다.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-card__badge">Projects</div>
-            <h3 class="program-card__title">프로젝트</h3>
-            <p class="program-card__text">
-              연구 결과를 바탕으로 사회적 문제 해결을 위한 프로젝트를 기획하고,
-              다양한 기관과 협력하여 실행 가능한 모델을 만듭니다.
+          <article class="flow-card">
+            <div class="flow-card__step">02</div>
+            <h3 class="flow-card__title">연구 수행</h3>
+            <p class="flow-card__text">
+              분야별 전문가와 함께 근거 기반 연구를 수행하고 실행 가능한 방향을 모색합니다.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-card__badge">Forum</div>
-            <h3 class="program-card__title">포럼 · 세미나</h3>
-            <p class="program-card__text">
-              학계, 정책 전문가, 시민사회가 참여하는 포럼과 세미나를 통해
-              사회적 의제를 공론화하고 지식 교류의 장을 마련합니다.
+          <article class="flow-card">
+            <div class="flow-card__step">03</div>
+            <h3 class="flow-card__title">공론화</h3>
+            <p class="flow-card__text">
+              포럼과 세미나를 통해 사회적 대화와 협력의 장을 열고 의견을 수렴합니다.
             </p>
           </article>
 
-          <article class="program-card">
-            <div class="program-card__badge">Education</div>
-            <h3 class="program-card__title">지식교류 · 교육</h3>
-            <p class="program-card__text">
-              연구 성과를 기반으로 교육 프로그램, 강연, 워크숍 등을 운영하여
-              지식의 확산과 시민 참여를 촉진합니다.
+          <article class="flow-card">
+            <div class="flow-card__step">04</div>
+            <h3 class="flow-card__title">확산·실천</h3>
+            <p class="flow-card__text">
+              발간물, 교육, 프로젝트를 통해 성과를 공유하고 현장 실천으로 연결합니다.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 연구위원회 -->
-    <section class="program-section program-section--soft">
+    <section class="programs-section">
       <div class="container">
-        <div class="program-section__head">
-          <h2 class="program-section__title">연구위원회</h2>
-          <p class="program-section__desc">
-            집현전21은 다양한 분야의 연구위원회를 중심으로 전문적인 연구 활동을 수행합니다.
+        <div class="programs-section__head">
+          <h2 class="programs-section__title">기대 성과</h2>
+          <p class="programs-section__desc">
+            집현전21의 핵심사업은 지식의 축적을 넘어 사회적 신뢰와 실질적 변화를 만드는 데 목표를 둡니다.
           </p>
         </div>
 
-        <div class="committee-grid">
-          <article class="committee-card">
-            <h3 class="committee-title">사회통합·정책연구위원회</h3>
-            <p class="committee-desc">사회 통합과 정책 연구</p>
+        <div class="outcome-grid">
+          <article class="outcome-card">
+            <div class="outcome-card__badge">Outcome 01</div>
+            <h3 class="outcome-card__title">정책 대안 제시</h3>
+            <p class="outcome-card__text">
+              연구와 공론을 통해 사회 문제에 대한 실현 가능한 정책적 대안을 제시합니다.
+            </p>
           </article>
 
-          <article class="committee-card">
-            <h3 class="committee-title">학술연구·지식교류위원회</h3>
-            <p class="committee-desc">학술 연구 및 지식 네트워크</p>
+          <article class="outcome-card">
+            <div class="outcome-card__badge">Outcome 02</div>
+            <h3 class="outcome-card__title">공론장 형성</h3>
+            <p class="outcome-card__text">
+              전문가와 시민사회를 연결하는 책임 있는 대화의 장을 통해 사회적 신뢰를 높입니다.
+            </p>
           </article>
 
-          <article class="committee-card">
-            <h3 class="committee-title">AI·디지털지식혁신위원회</h3>
-            <p class="committee-desc">AI 및 디지털 혁신 연구</p>
-          </article>
-
-          <article class="committee-card">
-            <h3 class="committee-title">문화예술보존·홍보위원회</h3>
-            <p class="committee-desc">문화 가치 보존 및 홍보</p>
-          </article>
-
-          <article class="committee-card">
-            <h3 class="committee-title">환경·기후정책연구위원회</h3>
-            <p class="committee-desc">환경 및 기후 정책 연구</p>
-          </article>
-
-          <article class="committee-card">
-            <h3 class="committee-title">건강·웰빙연구위원회</h3>
-            <p class="committee-desc">건강 및 삶의 질 연구</p>
-          </article>
-
-          <article class="committee-card">
-            <h3 class="committee-title">가족·공동체회복위원회</h3>
-            <p class="committee-desc">가족 및 공동체 연구</p>
-          </article>
-
-          <article class="committee-card">
-            <h3 class="committee-title">복지실천·사회공헌위원회</h3>
-            <p class="committee-desc">복지 및 사회공헌 활동</p>
-          </article>
-
-          <article class="committee-card">
-            <h3 class="committee-title">국제협력 · 홍보 · 브랜드 · 재정운영</h3>
-            <p class="committee-desc">국제 협력 및 브랜드 전략</p>
+          <article class="outcome-card">
+            <div class="outcome-card__badge">Outcome 03</div>
+            <h3 class="outcome-card__title">지식의 사회 환원</h3>
+            <p class="outcome-card__text">
+              연구 결과를 교육, 발간물, 프로젝트로 확산하여 공동체의 실제 변화에 기여합니다.
+            </p>
           </article>
         </div>
 
-        <div class="program-note">
-          <h3 class="program-note__title">안내</h3>
-          <p class="program-note__text">
-            연구위원 개인 프로필은 기관소개 페이지에서 확인하실 수 있으며,
-            핵심사업 페이지는 사업 영역과 연구위원회 중심으로 구성되어 있습니다.
+        <div class="programs-note">
+          <h3 class="programs-note__title">안내</h3>
+          <p class="programs-note__text">
+            본 페이지는 집현전21의 핵심사업 방향을 소개하는 개요 페이지입니다.
+            향후 세부 사업과 활동 실적, 사업별 결과물은 연구, 프로젝트, 포럼, 교육 관련 개별 페이지에서 확장해 나갈 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs-section programs-section--soft" aria-label="핵심사업 검색 보강 텍스트">
+      <div class="container">
+        <div class="programs-section__head">
+          <h2 class="programs-section__title">집현전21 핵심사업</h2>
+          <p class="programs-section__desc">
+            집현전21은 연구, 프로젝트, 포럼, 교육을 중심으로 공공의 가치와 실천 가능한 대안을 연결하는 싱크탱크형 지식 공동체입니다.
+            본 페이지에서는 집현전21의 핵심사업 방향과 주요 활동 구조를 안내합니다.
           </p>
         </div>
       </div>
@@ -387,5 +728,15 @@
 
   <div id="siteFooter"></div>
   <button class="to-top" type="button" aria-label="맨 위로">↑</button>
+
+  <noscript>
+    <section style="padding:40px 20px;max-width:1200px;margin:0 auto;">
+      <h2>핵심사업 | 집현전21</h2>
+      <p>
+        집현전21은 연구, 프로젝트, 포럼, 교육을 중심으로 공공의 가치와 실천 가능한 대안을 연결하는 지식 공동체입니다.
+        본 페이지에서는 집현전21의 핵심사업 방향과 주요 활동 구조를 확인하실 수 있습니다.
+      </p>
+    </section>
+  </noscript>
 </body>
 </html>
