@@ -1,123 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://jhj21.kr/</loc>
     <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://jhj21.kr/about.html</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://jhj21.kr/activity.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/contact.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/education.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/fellows.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/fields.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/forum.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://jhj21.kr/governance.html</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/join.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/news.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://jhj21.kr/notice.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/press.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://jhj21.kr/programs.html</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://jhj21.kr/projects.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/publication.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jhj21.kr/reports.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://jhj21.kr/research.html</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://jhj21.kr/statutes.html</loc>
+    <loc>https://jhj21.kr/projects.html</loc>
     <lastmod>2026-03-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://jhj21.kr/strategy-2026.html</loc>
+    <loc>https://jhj21.kr/forum.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jhj21.kr/education.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jhj21.kr/publication.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jhj21.kr/news.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://jhj21.kr/notice.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jhj21.kr/press.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jhj21.kr/contact.html</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
 </urlset>
