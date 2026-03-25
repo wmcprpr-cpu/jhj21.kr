@@ -302,6 +302,135 @@
     .leader-card__bio li{margin-bottom:8px;color:var(--muted);}
     .leader-card__bio li:last-child{margin-bottom:0;}
 
+
+    .leaders-swipe{
+      overflow-x:auto;
+      overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;
+      padding-bottom:10px;
+    }
+    .leaders-swipe__row{
+      display:flex;
+      flex-wrap:nowrap;
+      gap:20px;
+      min-width:max-content;
+      align-items:stretch;
+    }
+    .leaders-swipe-card{
+      flex:0 0 360px;
+      display:flex;
+      flex-direction:column;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px 22px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      min-height:980px;
+    }
+    .leaders-swipe-card__photo{
+      width:180px;
+      height:225px;
+      margin:0 auto 16px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .leaders-swipe-card__photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .leaders-swipe-card__photo--blank{
+      background:#f8fafc;
+      border:1px dashed rgba(11,23,54,.14);
+    }
+    .leaders-swipe-card__badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      margin:0 auto 12px;
+    }
+    .leaders-swipe-card__name{
+      margin:0;
+      font-size:28px;
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--navy);
+    }
+    .leaders-swipe-card__role{
+      margin:6px 0 0;
+      font-size:16px;
+      line-height:1.6;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .leaders-swipe-card__eng{
+      margin:10px 0 14px;
+      font-size:14px;
+      line-height:1.5;
+      color:var(--muted);
+    }
+    .leaders-swipe-card__eng strong{
+      display:block;
+      font-size:17px;
+      color:var(--navy);
+      margin-top:2px;
+      font-weight:800;
+      letter-spacing:-0.01em;
+    }
+    .leaders-swipe-card__bio{
+      margin:0 0 18px;
+      padding-left:18px;
+      text-align:left;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+    .leaders-swipe-card__bio li{margin-bottom:6px;}
+    .leaders-swipe-card__bio li:last-child{margin-bottom:0;}
+    .leaders-swipe-card__message{
+      margin-top:auto;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      text-align:left;
+    }
+    .leaders-swipe-card__message-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:32px;
+      padding:0 12px;
+      border-radius:999px;
+      background:#f7f2e8;
+      border:1px solid #e5d7b7;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .leaders-swipe-card__message-text{
+      margin:0;
+      font-size:16px;
+      line-height:1.9;
+      color:var(--text);
+      white-space:pre-line;
+      max-height:185px;
+      overflow-y:auto;
+      padding-right:6px;
+    }
     .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;}
     .about-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow);height:100%;}
     .about-card__badge{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:#f7f2e8;border:1px solid #e5d7b7;color:var(--navy);font-size:14px;font-weight:700;margin-bottom:18px;}
@@ -367,6 +496,10 @@
       .about-section{padding:52px 0;}
       .about-section__title{font-size:30px;}
       .greeting-title,.about-card__title,.about-highlight__title,.leaders-stack__title{font-size:28px;}
+      .leaders-swipe-card{flex:0 0 300px;min-height:920px;padding:22px 18px;}
+      .leaders-swipe-card__photo{width:150px;height:190px;}
+      .leaders-swipe-card__name{font-size:24px;}
+      .leaders-swipe-card__message-text{font-size:15px;max-height:170px;}
       .principle-card__title,.flow-card__title{font-size:22px;}
       .greeting-photo{width:150px;height:190px;}
       .greeting-name,.leader-card__name{font-size:24px;}
@@ -402,93 +535,115 @@
       </div>
     </section>
 
-    <section class="about-section">
+    
+<section class="about-section">
       <div class="container">
         <div class="about-section__head">
-          <h2 class="about-section__title">회장 인사말</h2>
-          <p class="about-section__desc">
-            집현전21의 비전과 설립 취지를 전하는 인사말입니다.
-          </p>
+          <h2 class="about-section__title">주요 임원 소개</h2>
         </div>
 
-        <div class="greeting-card">
-          <div class="greeting-profile">
-            <div class="greeting-photo">
-              <img src="./assets/lee-seung-an.jpg?v=20260321-1" alt="이승언 회장">
-            </div>
-            <h3 class="greeting-name">이승언</h3>
-            <p class="greeting-role">현 회장 · 사회복지학 박사</p>
-            <p class="greeting-eng">
-              Chairman
-              <strong>Seung-An Lee, Ph.D</strong>
-            </p>
+        <div class="leaders-swipe">
+          <div class="leaders-swipe__row">
 
-            <ul class="greeting-bio">
-              <li>서울사회복지대학원대학교 주임교수<br>사회복지학 박사</li>
-              <li>(사) 국제위러브유운동본부 사무총장</li>
-              <li>(재) 국제위러브유 사무총장</li>
-              <li>한국 문예사조 시인, 작가</li>
-              <li>기후변화 대응 클린월드 활동가</li>
-            </ul>
-          </div>
+            <article class="leaders-swipe-card">
+              <div class="leaders-swipe-card__photo leaders-swipe-card__photo--blank" aria-hidden="true"></div>
+              <div class="leaders-swipe-card__badge">초대 회장</div>
+              <h3 class="leaders-swipe-card__name">전병태</h3>
+              <p class="leaders-swipe-card__role">초대 회장 · 박사</p>
+              <p class="leaders-swipe-card__eng">
+                Founding Chairman
+                <strong>Byung-Tae Jeon, Ph.D</strong>
+              </p>
 
-          <div class="greeting-message">
-            <div class="greeting-badge">Chairman’s Message</div>
-            <h3 class="greeting-title">지혜와 실천으로 공공의 미래를 함께 만들겠습니다.</h3>
-            <p class="greeting-text">집현전21은 지난 역사의 지혜와 오늘의 전문성을 바탕으로,
-사회가 직면한 다양한 과제를 함께 연구하고 실천 가능한 대안으로 연결하기 위해 출범하였습니다.
+              <ul class="leaders-swipe-card__bio">
+                <li>건국대학교 축산대학 졸업 / 일본 Tohoku 대학원 박사</li>
+                <li>건국대학교 의료생명대학 교수 / 캐나다 Alberta대학 연구교수</li>
+                <li>건국대학교 부총장 (대외직명 충주캠퍼스 건국대학교 총장)</li>
+                <li>건국대학교 명예교수 / 한국녹용학회 회장</li>
+                <li>중국 ChangChun Uni. of Science and Technology 명예총장</li>
+                <li>녹용전문회사 (주)웰녹 기술고문 / 서울 Boost코리아로타리클럽 회장</li>
+                <li>저서: 노인이 살아야, 나라가 산다</li>
+              </ul>
 
-우리는 공공성, 신뢰, 협력의 가치를 중심에 두고,
-정책과 학문, 산업과 시민사회를 연결하는 지식 공동체를 지향합니다.
-연구는 기록에 머무르지 않고 공동체의 삶을 변화시키는 실천으로 이어져야 하며,
-그 과정에서 집현전21은 책임 있는 공론장과 지속 가능한 협력의 플랫폼이 되고자 합니다.
+              <div class="leaders-swipe-card__message">
+                <div class="leaders-swipe-card__message-badge">인사말</div>
+                <p class="leaders-swipe-card__message-text">집현전21이 지식과 인품을 함께 세우는
+공익의 장이 되기를 바랍니다.
+축적된 학문과 삶의 경험이
+다음 세대와 사회를 밝히는
+지혜의 등불로 이어지기를
+진심으로 응원합니다.</p>
+              </div>
+            </article>
 
-집현전21의 걸음이 사회에 희망과 통합, 그리고 미래를 향한 방향을 제시할 수 있도록
-여러분의 관심과 참여를 부탁드립니다.
-감사합니다.</p>
-          </div>
-        </div>
+            <article class="leaders-swipe-card">
+              <div class="leaders-swipe-card__photo">
+                <img src="./assets/lee-seung-an.jpg?v=20260321-1" alt="이승언 회장">
+              </div>
+              <div class="leaders-swipe-card__badge">현 회장</div>
+              <h3 class="leaders-swipe-card__name">이승언</h3>
+              <p class="leaders-swipe-card__role">현 회장 · 사회복지학 박사</p>
+              <p class="leaders-swipe-card__eng">
+                Chairman
+                <strong>Seung-An Lee, Ph.D</strong>
+              </p>
 
-        <div class="greeting-card" style="margin-top:24px;">
-          <div class="greeting-profile">
-            <div class="greeting-photo greeting-photo--blank" aria-hidden="true">
-              <div class="greeting-placeholder"></div>
-            </div>
-            <h3 class="greeting-name">임기환</h3>
-            <p class="greeting-role">이사장 · 사회복지학 박사</p>
-            <p class="greeting-eng">
-              Chairman of the Board
-              <strong>Ki-Whan Im, Ph.D</strong>
-            </p>
+              <ul class="leaders-swipe-card__bio">
+                <li>서울사회복지대학원대학교 주임교수<br>사회복지학 박사</li>
+                <li>(사) 국제위러브유운동본부 사무총장</li>
+                <li>(재) 국제위러브유 사무총장</li>
+                <li>한국 문예사조 시인, 작가</li>
+                <li>기후변화 대응 클린월드 활동가</li>
+              </ul>
 
-            <ul class="greeting-bio">
-              <li>문학가 · 현대문학가 · 시인</li>
-              <li>부패방지위원회 공모상(2003)</li>
-              <li>서울시 수필 우수상(2004)</li>
-              <li>동부화재 연도대상(2005)</li>
-              <li>한국나눔문학회 회장 · 물레문학회 총무이사</li>
-              <li>강동문학회 감사 · 한국문학회 감사</li>
-              <li>한국노인무료중매센터 소장</li>
-              <li>(주)인코맥스 고문 · 집현전21 고문</li>
-              <li>문예사조 시인 · 고문</li>
-              <li>(주)LQ(전기차 충전기) 부회장</li>
-              <li>사회복지학 박사</li>
-            </ul>
-          </div>
+              <div class="leaders-swipe-card__message">
+                <div class="leaders-swipe-card__message-badge">인사말</div>
+                <p class="leaders-swipe-card__message-text">집현전21은 연구와 실천을 연결하여
+공공의 가치를 넓혀가는
+지식 공동체가 되고자 합니다.
+지혜로운 토론과 책임 있는 협력으로
+사회에 실제 도움이 되는 방향을
+여러분과 함께 만들어가겠습니다.</p>
+              </div>
+            </article>
 
-          <div class="greeting-message">
-            <div class="greeting-badge">Chairman of the Board’s Message</div>
-            <h3 class="greeting-title">문학의 깊이와 공공의 책임으로 함께하겠습니다.</h3>
-            <p class="greeting-text">집현전21은 다양한 지식과 경험을 바탕으로 사회에 필요한 방향을 함께 모색하는 공익 연구 공동체입니다.
+            <article class="leaders-swipe-card">
+              <div class="leaders-swipe-card__photo leaders-swipe-card__photo--blank" aria-hidden="true">
+                <div class="greeting-placeholder"></div>
+              </div>
+              <div class="leaders-swipe-card__badge">이사장</div>
+              <h3 class="leaders-swipe-card__name">임기환</h3>
+              <p class="leaders-swipe-card__role">이사장 · 사회복지학 박사</p>
+              <p class="leaders-swipe-card__eng">
+                Chairman of the Board
+                <strong>Ki-Whan Im, Ph.D</strong>
+              </p>
 
-이사장으로서 서로의 전문성과 지혜를 존중하며,
-의미 있는 제안과 따뜻한 실천이 이어질 수 있도록 책임을 다하겠습니다.
+              <ul class="leaders-swipe-card__bio">
+                <li>문학가 · 현대문학가 · 시인</li>
+                <li>부패방지위원회 공모상(2003)</li>
+                <li>서울시 수필 우수상(2004)</li>
+                <li>동부화재 연도대상(2005)</li>
+                <li>한국나눔문학회 회장 · 물레문학회 총무이사</li>
+                <li>강동문학회 감사 · 한국문학회 감사</li>
+                <li>한국노인무료중매센터 소장</li>
+                <li>(주)인코맥스 고문 · 집현전21 고문</li>
+                <li>문예사조 시인 · 고문</li>
+                <li>(주)LQ(전기차 충전기) 부회장</li>
+                <li>사회복지학 박사</li>
+              </ul>
 
-연구와 담론이 일회성에 머무르지 않고,
-공동체에 실제로 도움이 되는 가치와 성과로 이어질 수 있도록 함께하겠습니다.
+              <div class="leaders-swipe-card__message">
+                <div class="leaders-swipe-card__message-badge">인사말</div>
+                <p class="leaders-swipe-card__message-text">집현전21이 품격 있는 연구와
+따뜻한 실천을 함께 이루는
+공동체로 성장하길 바랍니다.
+서로의 전문성과 경험을 존중하며
+사회에 유익한 제안과 성과를
+꾸준히 쌓아가도록 힘쓰겠습니다.</p>
+              </div>
+            </article>
 
-앞으로도 집현전21에 지속적인 관심과 성원을 부탁드립니다.
-감사합니다.</p>
           </div>
         </div>
       </div>
@@ -504,31 +659,6 @@
         </div>
 
         <div class="leaders-stack">
-          <article class="leader-card">
-            <div class="leader-card__left">
-              <div class="leader-card__photo leader-card__photo--blank" aria-hidden="true"></div>
-              <div class="leader-card__badge">초대 회장</div>
-              <h3 class="leader-card__name">전병태</h3>
-              <p class="leader-card__role">초대 회장 · 박사</p>
-              <p class="leader-card__eng">
-                Founding Chairman
-                <strong>Byung-Tae Jeon, Ph.D</strong>
-              </p>
-            </div>
-
-            <div class="leader-card__right">
-              <ul class="leader-card__bio">
-                <li>건국대학교 축산대학 졸업 / 일본 Tohoku 대학원 박사</li>
-                <li>건국대학교 의료생명대학 교수 / 캐나다 Alberta대학 연구교수</li>
-                <li>건국대학교 부총장 (대외직명 충주캠퍼스 건국대학교 총장)</li>
-                <li>건국대학교 명예교수 / 한국녹용학회 회장</li>
-                <li>중국 ChangChun Uni. of Science and Technology 명예총장</li>
-                <li>녹용전문회사 (주)웰녹 기술고문 / 서울 Boost코리아로타리클럽 회장</li>
-                <li>저서: 노인이 살아야, 나라가 산다</li>
-              </ul>
-            </div>
-          </article>
-
           <article class="leader-card">
             <div class="leader-card__left">
               <div class="leader-card__photo leader-card__photo--blank" aria-hidden="true"></div>
@@ -555,8 +685,7 @@
         </div>
       </div>
     </section>
-
-    <section class="about-section about-section--soft">
+<section class="about-section about-section--soft">
       <div class="container">
         <div class="about-section__head">
           <h2 class="about-section__title">집현전21 소개</h2>
