@@ -1,12 +1,12 @@
 window.SITE_POSTS = [
   {
     id: 8,
-    type: "activity",
+    type: "news",
     title: "집현전21 임원회의 개최 및 운영 전략 논의",
     summary: "집현전21은 2026년 3월 27일 임원회의를 개최하고 단체 정체성 확립, 연간 사업 로드맵, 조직 체계 정비 및 대외 협력 방향을 논의하였습니다.",
     date: "2026-03-27",
     tag: "ACTIVITY",
-    link: "./meeting-20260327.html"
+    link: "./meeting-20260327.html?v=20260402-1"
   },
   {
     id: 1,
