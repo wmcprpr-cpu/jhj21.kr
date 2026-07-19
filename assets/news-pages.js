@@ -10,7 +10,7 @@
     return `${y}.${m}.${d}`;
   }
 
-  function isNewPost(dateString, days = 14) {
+  function isNewPost(dateString, days = 30) {
     if (!dateString) return false;
 
     const postDate = new Date(`${dateString}T00:00:00`);
