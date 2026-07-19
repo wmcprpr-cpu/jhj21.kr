@@ -1470,3 +1470,45 @@ button{
 
 }
 }
+/* ===== NEW BADGE 추가 스타일 ===== */
+
+.news-new{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  height:22px;
+  margin-right:8px;
+  padding:0 8px;
+  border-radius:999px;
+  background:#ff1e1e;
+  color:#ffffff;
+  font-size:11px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.08em;
+  vertical-align:middle;
+  box-shadow:0 0 0 rgba(255,30,30,.45);
+  animation:newBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes newBlink{
+  0%,
+  100%{
+    opacity:1;
+    transform:scale(1);
+    box-shadow:0 0 0 0 rgba(255,30,30,.45);
+  }
+
+  50%{
+    opacity:.65;
+    transform:scale(1.12);
+    box-shadow:0 0 0 6px rgba(255,30,30,0);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .news-new{
+    animation:none;
+  }
+}
