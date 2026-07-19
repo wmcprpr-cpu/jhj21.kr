@@ -10,9 +10,36 @@
     return `${y}.${m}.${d}`;
   }
 
+  function isNewPost(dateString, days = 14) {
+    if (!dateString) return false;
+
+    const postDate = new Date(`${dateString}T00:00:00`);
+    const today = new Date();
+
+    if (Number.isNaN(postDate.getTime())) return false;
+
+    postDate.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
+
+    const diff =
+      (today.getTime() - postDate.getTime()) /
+      (1000 * 60 * 60 * 24);
+
+    return diff >= 0 && diff <= days;
+  }
+
+  function getNewBadge(post) {
+    if (!isNewPost(post.date)) return "";
+
+    return `<span class="news-new" aria-label="새로운 게시물">NEW</span>`;
+  }
+
   function getPosts() {
     if (!Array.isArray(window.SITE_POSTS)) return [];
-    return [...window.SITE_POSTS].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    return [...window.SITE_POSTS].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
   }
 
   function escapeHtml(value) {
@@ -29,11 +56,23 @@
       <article class="news-card-item">
         <div class="news-card-item__top">
           <span class="news-card-item__tag">${escapeHtml(post.tag)}</span>
-          <time class="news-card-item__date" datetime="${escapeHtml(post.date)}">${formatDate(post.date)}</time>
+          <time class="news-card-item__date" datetime="${escapeHtml(post.date)}">
+            ${formatDate(post.date)}
+          </time>
         </div>
-        <h3 class="news-card-item__title">${escapeHtml(post.title)}</h3>
-        <p class="news-card-item__summary">${escapeHtml(post.summary)}</p>
-        <a class="news-card-item__link" href="${escapeHtml(post.link || "#")}">자세히 보기</a>
+
+        <h3 class="news-card-item__title">
+          ${getNewBadge(post)}
+          ${escapeHtml(post.title)}
+        </h3>
+
+        <p class="news-card-item__summary">
+          ${escapeHtml(post.summary)}
+        </p>
+
+        <a class="news-card-item__link" href="${escapeHtml(post.link || "#")}">
+          자세히 보기
+        </a>
       </article>
     `;
   }
@@ -45,7 +84,8 @@
     const posts = getPosts().slice(0, 3);
 
     if (!posts.length) {
-      target.innerHTML = `<div class="news-empty"><p>등록된 최근 소식이 아직 없습니다.</p></div>`;
+      target.innerHTML =
+        `<div class="news-empty"><p>등록된 최근 소식이 아직 없습니다.</p></div>`;
       return;
     }
 
@@ -59,7 +99,8 @@
     const posts = getPosts().filter((post) => post.type === type);
 
     if (!posts.length) {
-      target.innerHTML = `<div class="news-empty"><p>등록된 게시물이 아직 없습니다.</p></div>`;
+      target.innerHTML =
+        `<div class="news-empty"><p>등록된 게시물이 아직 없습니다.</p></div>`;
       return;
     }
 
@@ -71,8 +112,16 @@
 
     renderHomeRecent();
 
-    if (page === "news") renderCategoryList("news", "newsList");
-    if (page === "press") renderCategoryList("press", "pressList");
-    if (page === "activity") renderCategoryList("activity", "activityList");
+    if (page === "news") {
+      renderCategoryList("news", "newsList");
+    }
+
+    if (page === "press") {
+      renderCategoryList("press", "pressList");
+    }
+
+    if (page === "activity") {
+      renderCategoryList("activity", "activityList");
+    }
   });
 })();
