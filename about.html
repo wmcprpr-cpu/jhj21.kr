@@ -517,7 +517,16 @@
     .leaders-swipe-card__message-text{max-height:none;overflow:visible;}
     .leader-card__right .leaders-swipe-card__message{margin-top:18px;}
     @media (max-width:640px){
-      .leaders-swipe__row{grid-template-columns:1fr;}
+      .leaders-swipe__row{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+      .leaders-swipe__row > .leaders-swipe-card{padding:14px 10px;box-sizing:border-box;border-radius:18px;overflow-wrap:anywhere;}
+      .leaders-swipe__row .leaders-swipe-card__photo{width:100%;max-width:120px;height:auto;aspect-ratio:4/5;box-sizing:border-box;}
+      .leaders-swipe__row .leaders-swipe-card__name{font-size:20px;}
+      .leaders-swipe__row .leaders-swipe-card__role{font-size:12px;}
+      .leaders-swipe__row .leaders-swipe-card__eng{font-size:11px;}
+      .leaders-swipe__row .leaders-swipe-card__eng strong{font-size:12px;}
+      .leaders-swipe__row .leaders-swipe-card__bio{font-size:12px;padding-left:12px;}
+      .leaders-swipe__row .leaders-swipe-card__message{padding:10px;}
+      .leaders-swipe__row .leaders-swipe-card__message-text{font-size:13px;line-height:1.7;}
     }
   </style>
 </head>
