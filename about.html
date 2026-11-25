@@ -509,6 +509,16 @@
       .fellow-photo{width:120px;height:150px;}
       .fellow-name{font-size:20px;}
     }
+
+    /* 현직 임원 2인 배치 및 모바일 가독성 */
+    .leaders-swipe{overflow:visible;}
+    .leaders-swipe__row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));min-width:0;}
+    .leaders-swipe-card{min-width:0;min-height:0;}
+    .leaders-swipe-card__message-text{max-height:none;overflow:visible;}
+    .leader-card__right .leaders-swipe-card__message{margin-top:18px;}
+    @media (max-width:640px){
+      .leaders-swipe__row{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
@@ -544,70 +554,6 @@
 
         <div class="leaders-swipe">
           <div class="leaders-swipe__row">
-
-            <article class="leaders-swipe-card">
-            <div class="leaders-swipe-card__photo">
-            <img src="./assets/byung-tae-jeon.jpg?v=20260326-1" alt="전병태 초대회장">
-            </div>
-              <div class="leaders-swipe-card__badge">초대 회장</div>
-              <h3 class="leaders-swipe-card__name">전병태</h3>
-              <p class="leaders-swipe-card__role">초대 회장 · 박사</p>
-              <p class="leaders-swipe-card__eng">
-                Founding Chairman
-                <strong>Byung-Tae Jeon, Ph.D</strong>
-              </p>
-
-              <ul class="leaders-swipe-card__bio">
-                <li>건국대학교 축산대학 졸업 / 일본 Tohoku 대학원 박사</li>
-                <li>건국대학교 의료생명대학 교수 / 캐나다 Alberta대학 연구교수</li>
-                <li>건국대학교 부총장 (대외직명 충주캠퍼스 건국대학교 총장)</li>
-                <li>건국대학교 명예교수 / 한국녹용학회 회장</li>
-                <li>중국 ChangChun Uni. of Science and Technology 명예총장</li>
-                <li>녹용전문회사 (주)웰녹 기술고문 / 서울 Boost코리아로타리클럽 회장</li>
-                <li>저서: 노인이 살아야, 나라가 산다</li>
-              </ul>
-
-              <div class="leaders-swipe-card__message">
-                <div class="leaders-swipe-card__message-badge">인사말</div>
-                <p class="leaders-swipe-card__message-text">집현전21이 지식과 인품을 함께 세우는
-공익의 장이 되기를 바랍니다.
-축적된 학문과 삶의 경험이
-다음 세대와 사회를 밝히는
-지혜의 등불로 이어지기를
-진심으로 응원합니다.</p>
-              </div>
-            </article>
-
-            <article class="leaders-swipe-card">
-              <div class="leaders-swipe-card__photo">
-                <img src="./assets/lee-seung-an.jpg?v=20260321-1" alt="이승언 회장">
-              </div>
-              <div class="leaders-swipe-card__badge">현 회장</div>
-              <h3 class="leaders-swipe-card__name">이승언</h3>
-              <p class="leaders-swipe-card__role">현 회장 · 사회복지학 박사</p>
-              <p class="leaders-swipe-card__eng">
-                Chairman
-                <strong>Seung-An Lee, Ph.D</strong>
-              </p>
-
-              <ul class="leaders-swipe-card__bio">
-                <li>서울사회복지대학원대학교 주임교수<br>사회복지학 박사</li>
-                <li>(사) 국제위러브유운동본부 사무총장</li>
-                <li>(재) 국제위러브유 사무총장</li>
-                <li>한국 문예사조 시인, 작가</li>
-                <li>기후변화 대응 클린월드 활동가</li>
-              </ul>
-
-              <div class="leaders-swipe-card__message">
-                <div class="leaders-swipe-card__message-badge">인사말</div>
-                <p class="leaders-swipe-card__message-text">집현전21은 연구와 실천을 연결하여
-공공의 가치를 넓혀가는
-지식 공동체가 되고자 합니다.
-지혜로운 토론과 책임 있는 협력으로
-사회에 실제 도움이 되는 방향을
-여러분과 함께 만들어가겠습니다.</p>
-              </div>
-            </article>
 
             <article class="leaders-swipe-card">
               <div class="leaders-swipe-card__photo">
@@ -646,6 +592,37 @@
               </div>
             </article>
 
+            <article class="leaders-swipe-card">
+              <div class="leaders-swipe-card__photo">
+                <img src="./assets/lee-seung-an.jpg?v=20260321-1" alt="이승언 회장">
+              </div>
+              <div class="leaders-swipe-card__badge">현 회장</div>
+              <h3 class="leaders-swipe-card__name">이승언</h3>
+              <p class="leaders-swipe-card__role">현 회장 · 사회복지학 박사</p>
+              <p class="leaders-swipe-card__eng">
+                Chairman
+                <strong>Seung-An Lee, Ph.D</strong>
+              </p>
+
+              <ul class="leaders-swipe-card__bio">
+                <li>서울사회복지대학원대학교 주임교수<br>사회복지학 박사</li>
+                <li>(사) 국제위러브유운동본부 사무총장</li>
+                <li>(재) 국제위러브유 사무총장</li>
+                <li>한국 문예사조 시인, 작가</li>
+                <li>기후변화 대응 클린월드 활동가</li>
+              </ul>
+
+              <div class="leaders-swipe-card__message">
+                <div class="leaders-swipe-card__message-badge">인사말</div>
+                <p class="leaders-swipe-card__message-text">집현전21은 연구와 실천을 연결하여
+공공의 가치를 넓혀가는
+지식 공동체가 되고자 합니다.
+지혜로운 토론과 책임 있는 협력으로
+사회에 실제 도움이 되는 방향을
+여러분과 함께 만들어가겠습니다.</p>
+              </div>
+            </article>
+
           </div>
         </div>
       </div>
@@ -661,6 +638,43 @@
         </div>
 
         <div class="leaders-stack">
+            <article class="leader-card">
+            <div class="leader-card__left">
+              <div class="leader-card__photo">
+            <img src="./assets/byung-tae-jeon.jpg?v=20260326-1" alt="전병태 초대회장">
+            </div>
+              <div class="leader-card__badge">초대 회장</div>
+              <h3 class="leader-card__name">전병태</h3>
+              <p class="leader-card__role">초대 회장 · 박사</p>
+              <p class="leader-card__eng">
+                Founding Chairman
+                <strong>Byung-Tae Jeon, Ph.D</strong>
+              </p>
+
+              </div>
+            <div class="leader-card__right">
+              <ul class="leader-card__bio">
+                <li>건국대학교 축산대학 졸업 / 일본 Tohoku 대학원 박사</li>
+                <li>건국대학교 의료생명대학 교수 / 캐나다 Alberta대학 연구교수</li>
+                <li>건국대학교 부총장 (대외직명 충주캠퍼스 건국대학교 총장)</li>
+                <li>건국대학교 명예교수 / 한국녹용학회 회장</li>
+                <li>중국 ChangChun Uni. of Science and Technology 명예총장</li>
+                <li>녹용전문회사 (주)웰녹 기술고문 / 서울 Boost코리아로타리클럽 회장</li>
+                <li>저서: 노인이 살아야, 나라가 산다</li>
+              </ul>
+
+              <div class="leaders-swipe-card__message">
+                <div class="leaders-swipe-card__message-badge">인사말</div>
+                <p class="leaders-swipe-card__message-text">집현전21이 지식과 인품을 함께 세우는
+공익의 장이 되기를 바랍니다.
+축적된 학문과 삶의 경험이
+다음 세대와 사회를 밝히는
+지혜의 등불로 이어지기를
+진심으로 응원합니다.</p>
+              </div>
+            </div>
+          </article>
+
           <article class="leader-card">
             <div class="leader-card__left">
               <div class="leader-card__photo leader-card__photo--blank" aria-hidden="true"></div>
